@@ -3415,3 +3415,73 @@ button.play-lb-trigger img {
 #navigation .logo {
   max-width: 280px;
 }
+
+/* === HARD PLAY BOOST (must win over extracted core) === */
+.play-page-root #navigation .logo {
+  max-width: 320px !important;
+  flex: 0 0 auto !important;
+}
+.play-page-root #navigation .logo > a {
+  height: 80px !important;
+  min-height: 80px !important;
+}
+.play-page-root #navigation .logo img {
+  width: auto !important;
+  height: auto !important;
+  max-height: 78px !important;
+  max-width: 300px !important;
+  object-fit: contain !important;
+}
+.play-page-root #navigation .gamemode-type {
+  bottom: -6px !important;
+  font-size: 12px !important;
+  letter-spacing: 3px !important;
+}
+.play-page-root #navigation .button,
+.play-page-root #navigation a.button {
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 18px !important;
+  font-size: 14px !important;
+  font-family: "Bowlby One SC", sans-serif !important;
+  text-transform: uppercase !important;
+  border-radius: 6px !important;
+}
+.play-page-root a.play-step-btn,
+.play-page-root .play-step-btn,
+.play-page-root .play-step-text a.button.primary,
+.play-page-root .play-step-nav .button.primary,
+.play-page-root .play-step-nav a.button.primary,
+.play-page-root .play-nav-next {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  min-width: 240px !important;
+  padding: 0 32px !important;
+  font-size: 17px !important;
+  font-family: "Bowlby One SC", sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  border-radius: 6px !important;
+  background: #fbcc46 !important;
+  color: #3a2a00 !important;
+  border: none !important;
+  text-shadow: 0 2px 0 #ffe9a0 !important;
+  box-shadow:
+    inset 3px 3px 0 #ffe08a,
+    inset -3px -3px 0 #c9a020,
+    0 12px 18px -6px rgba(0,0,0,0.35) !important;
+  line-height: 1 !important;
+}
+.play-page-root .play-step-nav .play-nav-prev,
+.play-page-root .play-step-nav button.play-nav-prev {
+  height: 60px !important;
+  min-height: 60px !important;
+  min-width: 140px !important;
+  padding: 0 24px !important;
+  font-size: 16px !important;
+  font-family: "Bowlby One SC", sans-serif !important;
+  text-transform: uppercase !important;
+}
