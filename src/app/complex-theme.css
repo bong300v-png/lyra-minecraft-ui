@@ -593,12 +593,22 @@ img {
     align-items: center;
     position: absolute;
     z-index: 5;
-    bottom: -50px;
+    bottom: -28px;
 }
 
 .landing-top .logo {
-    max-width: 390px;
+    max-width: 200px;
+    max-height: 64px;
     pointer-events: none;
+    display: block;
+}
+.landing-top .logo img {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 64px;
+    object-fit: contain;
+    display: block;
 }
 
 .global-player-count {
@@ -765,6 +775,12 @@ img {
     .landing-top .logo {
         margin: 0 auto;
         position: relative;
+        max-width: 160px;
+        max-height: 52px;
+    }
+    .landing-top .logo img {
+        max-width: 160px;
+        max-height: 52px;
     }
 
     .landing-top .left,

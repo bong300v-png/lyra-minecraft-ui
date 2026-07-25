@@ -28,7 +28,7 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
     primaryColor: "#10b981",
     message: null,
     discordInvite: "https://discord.gg/LyraVanilla",
-    forumsUrl: "https://www.lyra.host/forums/vanilla/",
+    forumsUrl: "/play/vanilla",
     gameModes: [
       { name: "Factions", players: 0, maxPlayers: 100, status: "online" },
       { name: "Prison", players: 0, maxPlayers: 100, status: "online" },
@@ -50,7 +50,7 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
     primaryColor: "#f59e0b",
     message: null,
     discordInvite: "https://discord.gg/LyraPixel",
-    forumsUrl: "https://www.lyra.host/forums/pixelmon/",
+    forumsUrl: "/play/pixelmon",
     gameModes: [
       { name: "Pixelmon", players: 0, maxPlayers: 100, status: "online" },
       { name: "Red", players: 0, maxPlayers: 100, status: "online" },
@@ -68,7 +68,7 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
     primaryColor: "#F2C6DE",
     message: null,
     discordInvite: "https://discord.gg/LyraPixel",
-    forumsUrl: "https://www.lyra.host/forums/pixelmon/",
+    forumsUrl: "/play/cobblemon",
     gameModes: [{ name: "Cobblemon", players: 0, maxPlayers: 100, status: "online" }],
     guides: [
       { name: "Getting Started", url: "/cobblemon/getting-started" },

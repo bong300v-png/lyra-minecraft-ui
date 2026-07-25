@@ -352,7 +352,7 @@ function App() {
                       transition={{ duration: 0.5, delay: isMobile ? (index * 0.1) + 0.2 : (index * 0.15) + 0.3 }}
                     >
                       {server.forumsUrl ? (
-                        <a href={server.forumsUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        <a href={server.forumsUrl} {...(server.forumsUrl.startsWith("http") ? {target: "_blank", rel: "noopener noreferrer"} : {})} style={{ color: 'inherit', textDecoration: 'none' }}>
                           {server.name}
                         </a>
                       ) : server.name}
@@ -372,8 +372,7 @@ function App() {
                     {server.forumsUrl && (
                       <motion.a
                         href={server.forumsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(server.forumsUrl.startsWith("http") ? {target: "_blank", rel: "noopener noreferrer"} : {})}
                         className="forums-link"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -482,8 +481,7 @@ function App() {
 
                       <motion.a
                         href={server.forumsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(server.forumsUrl.startsWith("http") ? {target: "_blank", rel: "noopener noreferrer"} : {})}
                         className="forums-button-card"
                         onClick={(e: MouseEvent) => e.stopPropagation()}
                         whileHover={{ scale: 1.05 }}
