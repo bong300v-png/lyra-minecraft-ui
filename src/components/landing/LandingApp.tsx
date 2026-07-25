@@ -256,16 +256,9 @@ function App() {
             </span>
           )}
         </div>
-        <nav className="right hidden-mobile" aria-label="Secondary navigation">
-          <a href="/login" className="nav-item" style={{ marginRight: 10 }}>
-            Log in
-          </a>
-          <a href="/store" className="nav-item store-button">
-            Store
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
+        {/* Original hub: logo center only — no Log in / Store in header (those live on cards) */}
+        <nav className="right hidden-mobile" aria-label="Secondary navigation" style={{ visibility: "hidden" }} aria-hidden>
+          <span className="nav-item store-button">Store</span>
         </nav>
       </motion.header>
 
