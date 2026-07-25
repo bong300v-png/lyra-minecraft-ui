@@ -83,7 +83,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                 Diễn đàn
               </Link>
               <a
-                href="https://www.lyra.host/forums/pixelmon/vote/"
+                href="https://discord.gg/LyraPixel"
                 className="button base"
                 target="_blank"
                 rel="noreferrer"
@@ -104,7 +104,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
           <div className="right">
             <div className="nav-links">
               <a
-                href="https://www.lyra.host/forums/pixelmon/help-center/"
+                href="https://discord.gg/LyraPixel"
                 className="button primary"
                 target="_blank"
                 rel="noreferrer"

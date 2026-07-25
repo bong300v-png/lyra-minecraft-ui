@@ -21,14 +21,7 @@ export default function LoginPage() {
       setMsg("Nhập tên/email và mật khẩu.");
       return;
     }
-    setMsg("Bản demo — đang mở trang đăng nhập chính thức…");
-    window.setTimeout(() => {
-      window.open(
-        "https://www.lyra.host/forums/pixelmon/login/",
-        "_blank",
-        "noopener,noreferrer",
-      );
-    }, 500);
+    setMsg("Bản demo — chưa kết nối tài khoản thật. Dùng form để xem UI.");
   }
 
   return (
@@ -98,7 +91,7 @@ export default function LoginPage() {
                   </div>
                   <a
                     className="login-forgot"
-                    href="https://www.lyra.host/forums/pixelmon/lost-password/"
+                    href="https://discord.gg/LyraPixel"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -148,11 +141,7 @@ export default function LoginPage() {
         </form>
 
         <p className="login-foot">
-          Giao diện demo — tài khoản thật trên{" "}
-          <a href="https://www.lyra.host/forums/pixelmon/login/" target="_blank" rel="noreferrer">
-            diễn đàn chính thức
-          </a>
-          .
+          Giao diện demo — chưa có backend auth. Liên hệ Discord nếu cần hỗ trợ.
         </p>
       </div>
     </div>

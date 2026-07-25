@@ -24,8 +24,7 @@ export default function StoreUsernameClient() {
   const [msg, setMsg] = useState("");
 
   const official = useMemo(() => {
-    if (store === "vanilla") return "https://www.lyra.host/forums/vanilla/store";
-    return "https://www.lyra.host/forums/pixelmon/store/username";
+    return `/store/username?store=${store}`;
   }, [store]);
 
   function onSubmit(e: FormEvent) {
@@ -35,10 +34,7 @@ export default function StoreUsernameClient() {
       setMsg("Tên người chơi phải 3–16 ký tự.");
       return;
     }
-    setMsg(`Bản demo — đang mở cửa hàng ${label} cho ${platform === "bedrock" ? "." : ""}${name}…`);
-    window.setTimeout(() => {
-      window.open(official, "_blank", "noopener,noreferrer");
-    }, 500);
+    setMsg(`Bản demo — đã nhận tên ${platform === "bedrock" ? "." : ""}${name} cho cửa hàng ${label}. Chưa nối Tebex.`);
   }
 
   return (

@@ -25,14 +25,7 @@ export default function RegisterPage() {
       setMsg("Mật khẩu không khớp.");
       return;
     }
-    setMsg("Bản demo — đang mở trang đăng ký chính thức…");
-    window.setTimeout(() => {
-      window.open(
-        "https://www.lyra.host/forums/pixelmon/register/",
-        "_blank",
-        "noopener,noreferrer",
-      );
-    }, 500);
+    setMsg("Bản demo — chưa kết nối đăng ký thật. Dùng form để xem UI.");
   }
 
   return (

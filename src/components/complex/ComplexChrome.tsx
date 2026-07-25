@@ -36,7 +36,7 @@ export function ComplexChrome({
                 Diễn đàn
               </Link>
               <a
-                href="https://www.lyra.host/forums/pixelmon/vote/"
+                href="https://discord.gg/LyraPixel"
                 className="button base"
                 target="_blank"
                 rel="noreferrer"
@@ -57,7 +57,7 @@ export function ComplexChrome({
           <div className="right">
             <div className="nav-links">
               <a
-                href="https://www.lyra.host/forums/pixelmon/help-center/"
+                href="https://discord.gg/LyraPixel"
                 className="button primary"
                 target="_blank"
                 rel="noreferrer"
