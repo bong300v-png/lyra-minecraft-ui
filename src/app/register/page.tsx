@@ -30,7 +30,7 @@ export default function RegisterPage() {
 
   return (
     <div className="login-page-root template-register">
-      <ComplexChrome modeLabel="Pixelmon" active="register" />
+      <ComplexChrome modeLabel="Survival" active="register" />
 
       <div className="p-body-main login-body">
         <div className="p-body-header">

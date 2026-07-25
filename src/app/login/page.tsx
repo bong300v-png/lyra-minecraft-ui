@@ -26,7 +26,7 @@ export default function LoginPage() {
 
   return (
     <div className="login-page-root template-login">
-      <ComplexChrome modeLabel="Pixelmon" active="login" />
+      <ComplexChrome modeLabel="Survival" active="login" />
 
       <div className="p-body-main login-body">
         <div className="p-body-header">

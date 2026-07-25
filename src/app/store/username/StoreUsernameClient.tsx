@@ -9,16 +9,16 @@ import "../../store-core-extracted.css";
 import "../../store-theme.css";
 
 const STORE_LABEL: Record<string, string> = {
-  pixelmon: "Pixelmon",
-  cobblemon: "Cobblemon",
-  vanilla: "Vanilla",
+  survival: "Survival",
+  cosmetics: "Cosmetics",
+  support: "Hỗ trợ server",
   giftcards: "Thẻ quà",
 };
 
 export default function StoreUsernameClient() {
   const sp = useSearchParams();
-  const store = (sp.get("store") || "pixelmon").toLowerCase();
-  const label = STORE_LABEL[store] || "Pixelmon";
+  const store = (sp.get("store") || "survival").toLowerCase();
+  const label = STORE_LABEL[store] || "Survival";
   const [user, setUser] = useState("");
   const [platform, setPlatform] = useState<"java" | "bedrock">("java");
   const [msg, setMsg] = useState("");
@@ -39,7 +39,7 @@ export default function StoreUsernameClient() {
 
   return (
     <div className="store-page-root template-complex_store_username_entry">
-      <ComplexChrome storeMode active="store" modeLabel={label === "Thẻ quà" ? "Pixelmon" : label} />
+      <ComplexChrome storeMode active="store" modeLabel={label === "Thẻ quà" ? "Survival" : label} />
 
       <div className="p-body-main store-body">
         <div className="block store-login" style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>

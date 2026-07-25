@@ -6,28 +6,28 @@ import "../store-core-extracted.css";
 import "../store-theme.css";
 
 export const metadata: Metadata = {
-  title: "Cửa hàng | Lyra Pixelmon",
+  title: "Cửa hàng | Lyra",
   description:
     "Chọn máy chủ bạn muốn mua vật phẩm! Thẻ quà dùng được trên Vanilla bằng /gc hoặc trong cửa hàng!",
 };
 
 const STORES = [
   {
-    id: "pixelmon",
-    name: "Pixelmon",
-    href: "/store/username?store=pixelmon",
+    id: "survival",
+    name: "Survival",
+    href: "/store/username?store=survival",
     icon: "/images/complex/mode-pixelmon.png",
   },
   {
-    id: "cobblemon",
-    name: "Cobblemon",
-    href: "/store/username?store=cobblemon",
+    id: "cosmetics",
+    name: "Cosmetics",
+    href: "/store/username?store=cosmetics",
     icon: "/images/complex/mode-cobblemon.png",
   },
   {
-    id: "vanilla",
-    name: "Vanilla",
-    href: "/store/username?store=vanilla",
+    id: "support",
+    name: "Hỗ trợ server",
+    href: "/store/username?store=support",
     icon: "/images/complex/mode-vanilla.png",
   },
   {
@@ -41,7 +41,7 @@ const STORES = [
 export default function StoreIndexPage() {
   return (
     <div className="store-page-root template-complex_store_index">
-      <ComplexChrome storeMode active="store" modeLabel="Pixelmon" />
+      <ComplexChrome storeMode active="store" modeLabel="Survival" />
 
       <div className="p-body-main store-body">
         <div className="block store--index">
@@ -84,13 +84,13 @@ export default function StoreIndexPage() {
               <div className="play-quick-links">
                 <Link href="/">Tin tức</Link>
                 <Link href="/store">Cửa hàng</Link>
-                <Link href="/play/pixelmon">Pixelmon</Link>
+                <Link href="/play/survival">Chơi</Link>
                 <Link href="/login">Đăng nhập</Link>
               </div>
             </div>
             <div className="col">
               <h1>Ủng hộ chúng tôi</h1>
-              <p>Ghé cửa hàng để mua rank, vật phẩm và hơn thế!</p>
+              <p>Ghé cửa hàng để mua cosmetic / ủng hộ server (không P2W combat)!</p>
               <Link href="/store" className="button primary">
                 Vào cửa hàng
               </Link>

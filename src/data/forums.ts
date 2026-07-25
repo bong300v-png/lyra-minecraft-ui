@@ -20,22 +20,22 @@ export type ForumCategory = {
   boards: ForumBoard[];
 };
 
-/** Structure from live dump mc-complex.com/forums/pixelmon + /forums/ */
+/** Product-aligned forum home (not Pixelmon network) */
 export const FORUM_NEWS: ForumNews[] = [
   {
-    title: "Cập nhật Pixelmon 9.1.13!",
+    title: "Lyra Phase 0 — Survival Towny",
     body:
-      "Chúng tôi đã cập nhật lên Pixelmon 9.1.13! Sau khi cập nhật xong bạn cần tải lại Pixelmon 9.1.13 để vào server. Modpack Lyra đã được cập nhật và là cách dễ nhất để bắt đầu chơi — rất khuyến nghị...",
-    author: "Gold_grilz7",
-    date: "29 Th4, 2022",
+      "Lyra ship: Lobby → Survival Towny (solo hoặc town nhóm rẻ hơn) → build → shop người chơi → optional arena PvP. Java cracked + Bedrock. Không skyblock, không hub 15 mode, không P2W combat.",
+    author: "Lyra Staff",
+    date: "2026",
     href: "/forums/#news",
   },
   {
-    title: "Chào mừng đến Lyra Pixelmon",
+    title: "Charter: không wipe town im lặng",
     body:
-      "Chào mừng tới website diễn đàn Lyra Pixelmon! Tại đây bạn có thể thảo luận Pixelmon và server Lyra Pixelmon! Cũng có thể nộp đơn Staff, kháng cáo ban và báo lỗi trên diễn đàn! Đừng ngại dùng trợ giúp và...",
-    author: "Hazzaaa",
-    date: "8 Th1, 2020",
+      "Town/survival claims là di sản — không xóa im lặng. Resource world reset chỉ khi có lịch công bố Discord (≥7 ngày). Chi tiết: product + features docs.",
+    author: "Lyra Staff",
+    date: "2026",
     href: "/forums/#news",
   },
 ];
@@ -46,48 +46,40 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
     boards: [
       {
         name: "Thông báo",
-        desc: "Tin tức và thông báo chính thức từ team Lyra.",
-        threads: 2,
-        messages: 2,
+        desc: "Tin chính thức, bảo trì, lịch resource reset.",
+        threads: 1,
+        messages: 1,
         href: "/forums/boards/#announcements",
       },
       {
-        name: "Thông báo im lặng",
-        desc: "Cập nhật nhỏ, không ping toàn server.",
-        threads: 3,
-        messages: 3,
-        href: "/forums/boards/#silent",
-      },
-      {
         name: "Nội quy",
-        desc: "Quy tắc diễn đàn và server — đọc trước khi post.",
-        threads: 2,
-        messages: 2,
+        desc: "Rules server + anti-bot/macro · non-P2W.",
+        threads: 1,
+        messages: 1,
         href: "/forums/boards/#rules",
       },
       {
-        name: "Thông tin & Hướng dẫn",
-        desc: "Guide chơi, tips, FAQ từ staff và cộng đồng.",
-        threads: 14,
-        messages: 14,
+        name: "Hướng dẫn Towny / Shop",
+        desc: "Claim solo, town nhóm, QuickShop, jobs cap.",
+        threads: 1,
+        messages: 1,
         href: "/forums/boards/#guides",
+      },
+      {
+        name: "Góp ý & Bug",
+        desc: "Báo lỗi, đề xuất Phase 0.",
+        threads: 0,
+        messages: 0,
+        href: "/forums/boards/#feedback",
       },
     ],
   },
   {
-    title: "Ứng tuyển, kháng cáo & báo cáo",
+    title: "Hỗ trợ & Staff",
     boards: [
       {
         name: "Ứng tuyển Staff",
-        desc: "Nộp đơn gia nhập đội Staff.",
-        threads: 0,
-        messages: 0,
-        href: "https://discord.gg/LyraPixel",
-        kind: "link",
-      },
-      {
-        name: "Ứng tuyển Gym Leader",
-        desc: "Đăng ký vị trí Gym Leader.",
+        desc: "Gia nhập team — qua Discord ticket.",
         threads: 0,
         messages: 0,
         href: "https://discord.gg/LyraPixel",
@@ -95,7 +87,7 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
       },
       {
         name: "Kháng cáo ban",
-        desc: "Gửi kháng cáo nếu bạn bị ban oan.",
+        desc: "LibertyBans appeal — Discord.",
         threads: 0,
         messages: 0,
         href: "https://discord.gg/LyraPixel",
@@ -103,15 +95,7 @@ export const FORUM_CATEGORIES: ForumCategory[] = [
       },
       {
         name: "Báo cáo người chơi",
-        desc: "Báo cáo hành vi vi phạm của người chơi.",
-        threads: 0,
-        messages: 0,
-        href: "https://discord.gg/LyraPixel",
-        kind: "link",
-      },
-      {
-        name: "Báo cáo Staff",
-        desc: "Báo cáo vấn đề liên quan staff.",
+        desc: "Grief / cheat / abuse.",
         threads: 0,
         messages: 0,
         href: "https://discord.gg/LyraPixel",

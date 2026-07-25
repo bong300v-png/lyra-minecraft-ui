@@ -22,7 +22,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
 
   const tracks = useMemo(() => {
     const list: { name: string; steps: PlayStep[] }[] = [
-      { name: "CurseForge", steps: page.steps },
+      { name: "Java", steps: page.steps },
       ...(page.altTracks ?? []),
     ];
     return list;
@@ -53,11 +53,9 @@ export function PlayGuide({ page }: { page: PlayPage }) {
   };
 
   const modeIcon =
-    page.slug === "vanilla"
-      ? "/images/complex/mode-vanilla.png"
-      : page.slug === "cobblemon"
-        ? "/images/complex/mode-cobblemon.png"
-        : "/images/complex/mode-pixelmon.png";
+    page.slug === "bedrock"
+      ? "/images/complex/mode-cobblemon.png"
+      : "/images/complex/mode-vanilla.png";
 
   return (
     <div
@@ -151,20 +149,15 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                 <div className="menu menu--gamemodes is-open">
                   <div className="menu-content">
                     <h3 className="menu-header">Chọn chế độ</h3>
-                    <Link href="/play/vanilla" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
+                    <Link href="/play/survival" className={`menu-linkRow w-icon${page.slug !== "bedrock" ? " menu-selected" : ""}`} onClick={() => setModeOpen(false)}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src="/images/complex/mode-vanilla.png" alt="" className="dropdown-icon" />
-                      Vanilla
+                      Survival
                     </Link>
-                    <Link href="/play/pixelmon" className={`menu-linkRow w-icon${page.slug === "pixelmon" ? " menu-selected" : ""}`} onClick={() => setModeOpen(false)}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/complex/mode-pixelmon.png" alt="" className="dropdown-icon" />
-                      Pixelmon
-                    </Link>
-                    <Link href="/play/cobblemon" className={`menu-linkRow w-icon${page.slug === "cobblemon" ? " menu-selected" : ""}`} onClick={() => setModeOpen(false)}>
+                    <Link href="/play/bedrock" className={`menu-linkRow w-icon${page.slug === "bedrock" ? " menu-selected" : ""}`} onClick={() => setModeOpen(false)}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src="/images/complex/mode-cobblemon.png" alt="" className="dropdown-icon" />
-                      Cobblemon
+                      Bedrock
                     </Link>
                   </div>
                 </div>
@@ -228,7 +221,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                       setStep(0);
                     }}
                   >
-                    CurseForge
+                    Java
                   </button>
                   {page.altTracks.map((t, i) => (
                     <button
@@ -358,9 +351,9 @@ export function PlayGuide({ page }: { page: PlayPage }) {
               <div className="play-quick-links">
                 <Link href="/">Tin tức</Link>
                 <Link href="/store">Cửa hàng</Link>
-                <Link href="/play/vanilla">Vanilla</Link>
-                <Link href="/play/pixelmon">Pixelmon</Link>
-                <Link href="/play/cobblemon">Cobblemon</Link>
+                <Link href="/play/survival">Survival</Link>
+                <Link href="/play/survival">Chơi</Link>
+                <Link href="/play/bedrock">Bedrock</Link>
               </div>
             </div>
             <div className="col">

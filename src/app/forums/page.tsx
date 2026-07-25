@@ -6,15 +6,15 @@ import "../play-theme.css";
 import "../forums-theme.css";
 
 export const metadata: Metadata = {
-  title: "Trang chủ | Lyra Pixelmon",
+  title: "Trang chủ | Lyra",
   description:
-    "Diễn đàn Lyra Pixelmon — tin tức, chơi game, Discord và ứng tuyển staff.",
+    "Diễn đàn Lyra — tin tức, chơi game, Discord và ứng tuyển staff.",
 };
 
 export default function ForumsHomePage() {
   return (
     <div className="forums-page-root template-forum_list">
-      <ComplexChrome modeLabel="Pixelmon" active="forums" />
+      <ComplexChrome modeLabel="Survival" active="forums" />
 
       <div className="p-body-inner">
         <div className="p-body-header">
@@ -41,15 +41,15 @@ export default function ForumsHomePage() {
               <div className="right section-text">
                 <h1>Tham gia vui chơi!</h1>
                 <p>
-                  Tại đây bạn có thể thảo luận về server Lyra Pixelmon! Cũng có thể nộp đơn Staff, xem
+                  Tại đây bạn có thể thảo luận về server Lyra! Cũng có thể nộp đơn Staff, xem
                   Cửa hàng, và duyệt diễn đàn cùng người chơi khác!
                 </p>
                 <div className="flex gap-md">
-                  <Link href="/play/pixelmon" className="button primary btn-lg">
-                    Chơi Pixelmon
+                  <Link href="/play/survival" className="button primary btn-lg">
+                    Chơi Survival
                   </Link>
-                  <Link href="/play/cobblemon" className="button btn-lg">
-                    Chơi Cobblemon
+                  <Link href="/play/bedrock" className="button btn-lg">
+                    Chơi Bedrock
                   </Link>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function ForumsHomePage() {
               </div>
               <div className="right section-image flip">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/forums/discord.gif" alt="" />
+                <img src="/images/forums/discord.png" alt="" />
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function ForumsHomePage() {
               <Link href="/forums">Tin tức</Link>
               <Link href="/forums/boards">Diễn đàn</Link>
               <Link href="/store">Cửa hàng</Link>
-              <Link href="/play/pixelmon">Chơi</Link>
+              <Link href="/play/survival">Chơi</Link>
               <a href="https://discord.gg/LyraPixel" target="_blank" rel="noreferrer">
                 Discord
               </a>

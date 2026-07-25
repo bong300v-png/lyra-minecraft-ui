@@ -3,16 +3,16 @@ import "./globals.css";
 import "./complex-theme.css";
 
 export const metadata: Metadata = {
-  title: "Lyra — Duyệt máy chủ",
+  title: "Lyra — Survival Towny",
   description:
-    "Lyra — Duyệt máy chủ Minecraft Servers | Vanilla, Pixelmon & Cobblemon",
+    "Lyra Survival Towny · Lobby · Shop · Java + Bedrock · non-P2W",
   themeColor: "#000000",
   icons: {
     icon: "/seo/favicon.svg",
   },
   openGraph: {
     title: "Lyra",
-    description: "Tham gia mạng Minecraft Lyra",
+    description: "Lobby → Towny land → shop · Java + Bedrock",
     siteName: "Lyra",
   },
 };

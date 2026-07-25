@@ -11,17 +11,15 @@ type ChromeProps = {
 
 /** Shared XenForo chrome — Vietnamese UI */
 export function ComplexChrome({
-  modeLabel = "Pixelmon",
+  modeLabel = "Survival",
   storeMode = false,
   active,
 }: ChromeProps) {
   const [modeOpen, setModeOpen] = useState(false);
   const modeIcon =
-    modeLabel.toLowerCase() === "vanilla"
-      ? "/images/complex/mode-vanilla.png"
-      : modeLabel.toLowerCase() === "cobblemon"
-        ? "/images/complex/mode-cobblemon.png"
-        : "/images/complex/mode-pixelmon.png";
+    modeLabel.toLowerCase() === "bedrock"
+      ? "/images/complex/mode-cobblemon.png"
+      : "/images/complex/mode-vanilla.png";
 
   return (
     <>
@@ -47,7 +45,7 @@ export function ComplexChrome({
           </div>
 
           <div className="logo">
-            <Link href={storeMode ? "/store" : "/play/pixelmon"}>
+            <Link href={storeMode ? "/store" : "/forums"}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.png" alt="Lyra" />
               <span className="gamemode-type">{modeLabel}</span>
@@ -110,20 +108,15 @@ export function ComplexChrome({
                   <div className="menu menu--gamemodes is-open">
                     <div className="menu-content">
                       <h3 className="menu-header">Chọn chế độ</h3>
-                      <Link href="/play/vanilla" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
+                      <Link href="/play/survival" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/images/complex/mode-vanilla.png" alt="" className="dropdown-icon" />
-                        Vanilla
+                        Survival
                       </Link>
-                      <Link href="/play/pixelmon" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/images/complex/mode-pixelmon.png" alt="" className="dropdown-icon" />
-                        Pixelmon
-                      </Link>
-                      <Link href="/play/cobblemon" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
+                      <Link href="/play/bedrock" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/images/complex/mode-cobblemon.png" alt="" className="dropdown-icon" />
-                        Cobblemon
+                        Bedrock
                       </Link>
                     </div>
                   </div>

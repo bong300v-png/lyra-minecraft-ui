@@ -6,14 +6,14 @@ import "../../play-theme.css";
 import "../../forums-theme.css";
 
 export const metadata: Metadata = {
-  title: "Danh sách diễn đàn | Lyra Pixelmon",
-  description: "Danh sách chuyên mục diễn đàn Lyra Pixelmon.",
+  title: "Danh sách diễn đàn | Lyra",
+  description: "Danh sách chuyên mục diễn đàn Lyra.",
 };
 
 export default function ForumsBoardsPage() {
   return (
     <div className="forums-page-root template-forum_list">
-      <ComplexChrome modeLabel="Pixelmon" active="forums" />
+      <ComplexChrome modeLabel="Survival" active="forums" />
 
       <div className="p-body-inner">
         <div className="p-body-header">
@@ -34,7 +34,7 @@ export default function ForumsBoardsPage() {
           <Link href="/forums/boards" className="is-active">
             Danh sách chuyên mục
           </Link>
-          <Link href="/play/pixelmon">Chơi Pixelmon</Link>
+          <Link href="/play/survival">Chơi Survival</Link>
           <Link href="/store">Cửa hàng</Link>
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function ForumsBoardsPage() {
               <Link href="/forums">Tin tức</Link>
               <Link href="/forums/boards">Diễn đàn</Link>
               <Link href="/store">Cửa hàng</Link>
-              <Link href="/play/pixelmon">Chơi</Link>
+              <Link href="/play/survival">Chơi</Link>
             </div>
           </div>
           <div className="col">

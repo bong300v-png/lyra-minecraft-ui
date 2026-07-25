@@ -81,7 +81,7 @@ function App() {
     });
   };
 
-  const itemsPerPage = isMobile ? servers.length : 3;
+  const itemsPerPage = Math.min(servers.length || 1, isMobile ? servers.length || 1 : 3);
   const visibleServers = isMobile
     ? servers
     : servers.slice(currentIndex, currentIndex + itemsPerPage);
@@ -98,16 +98,8 @@ function App() {
     }
   };
 
-  const getPlayUrl = (server: Server) => {
-    // Internal play UIs (cloned from Lyra sub-pages)
-    const n = server.name.toLowerCase();
-    if (n.includes('cobble') || n.includes('creative')) return '/play/cobblemon';
-    if (n.includes('pixel') || n.includes('vanilla+')) return '/play/pixelmon';
-    if (n.includes('vanilla') || n.includes('survival')) return '/play/vanilla';
-    // original Lyra mapping fallback
-    if (server.name === 'Cobblemon') return '/play/cobblemon';
-    if (server.name === 'Pixelmon') return '/play/pixelmon';
-    return '/play/vanilla';
+  const getPlayUrl = (_server: Server) => {
+    return "/play/survival";
   };
 
   const canGoPrev = currentIndex > 0;
