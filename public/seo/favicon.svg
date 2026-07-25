@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0b0f1a"/>
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f5f7fa"/>
-      <stop offset="45%" stop-color="#cfd8e3"/>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#d1d9e6"/>
       <stop offset="100%" stop-color="#8b95a5"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0b0f1a"/>
-  <!-- stylized L (Lyra) -->
-  <path d="M18 12h12v32h18v10H18V12z" fill="url(#g)"/>
-  <path d="M20 14h8v28h18v6H20V14z" fill="#ffffff" opacity="0.18"/>
+  <path fill="url(#m)" d="M18 12h13v31h19v9H18z"/>
 </svg>
