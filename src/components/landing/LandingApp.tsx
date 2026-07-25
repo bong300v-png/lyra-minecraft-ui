@@ -4,7 +4,6 @@ import { useEffect, useState, type MouseEvent, type CSSProperties } from "react"
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LYRA_FALLBACK_SERVERS,
-  normalizeServers,
   type Server,
 } from "@/data/servers";
 
@@ -38,23 +37,10 @@ function App() {
 
   // Fetch server data from API
   useEffect(() => {
-    fetch('https://api.lyra.host/servers')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Không tải được dữ liệu máy chủ');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const normalizedData = brandServers(normalizeServers(data));
-        setServers(normalizedData);
-        setLoading(false);
-      })
-      .catch((err: unknown) => {
-        console.error("Error fetching servers:", err);
-        setServers(LYRA_FALLBACK_SERVERS);
-        setLoading(false);
-      });
+    // Product: static fallback is source of truth (api.lyra.host often missing)
+    setServers(brandServers(LYRA_FALLBACK_SERVERS));
+    setLoading(false);
+    // no remote API — product data is local (api.lyra.host does not resolve)
   }, []);
 
   useEffect(() => {

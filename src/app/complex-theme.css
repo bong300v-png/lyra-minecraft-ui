@@ -969,3 +969,48 @@ html, body, button, input, select, textarea, .button, a.button {
     max-height: 64px;
   }
 }
+
+
+/* === Force single-card center (override) === */
+.landing-grid {
+  width: 100%;
+  justify-content: center !important;
+  align-items: stretch;
+}
+.landing-grid-inner {
+  width: 100% !important;
+  max-width: 100%;
+  justify-content: center !important;
+  align-items: stretch;
+  display: flex !important;
+}
+.landing-grid .item {
+  flex: 0 0 min(440px, 100%) !important;
+  width: min(440px, 100%) !important;
+  max-width: 440px !important;
+  min-height: 540px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+  padding-bottom: 48px !important;
+}
+.landing-grid .item .server-content {
+  height: auto !important;
+  min-height: 100%;
+  padding-bottom: 24px !important;
+  justify-content: space-between !important;
+}
+.landing-grid .item .server-actions.secondary-actions {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.landing-grid .item .store-button-card,
+.landing-grid .item .forums-button-card {
+  flex: 1 1 140px;
+  min-width: 0;
+}
+/* hide side marquee on single product hub — less visual noise */
+.landing-grid .item .scroll-container {
+  display: none !important;
+}
