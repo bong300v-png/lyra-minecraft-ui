@@ -906,3 +906,66 @@ html, body, button, input, select, textarea, .button, a.button {
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
 }
+
+/* === Single-product hub fixes (1 card, not 3) === */
+.landing-top .logo-wrap {
+  bottom: -36px;
+}
+.landing-top .logo {
+  max-width: 260px;
+}
+.landing-top .logo img {
+  max-width: 260px;
+  max-height: 88px;
+}
+.landing-grid-inner {
+  justify-content: center;
+}
+.landing-grid .item {
+  flex: 0 1 420px;
+  max-width: 440px;
+  min-height: 520px;
+  margin: 0 auto;
+}
+.landing-grid .item .server-content {
+  padding-top: 48px;
+  padding-bottom: 28px;
+  justify-content: center;
+  gap: 28px;
+}
+.landing-grid .item .server-header {
+  flex: 0 0 auto;
+}
+.landing-grid .item h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  text-align: center;
+}
+.landing-grid .item .server-message {
+  position: static;
+  margin: 0 auto 8px;
+  max-width: 95%;
+}
+.landing-grid .item .server-stats {
+  max-width: 100%;
+}
+.landing-grid .item .server-actions {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* side marquees softer / less broken */
+.landing-grid .item .scroll-container {
+  opacity: 0.35;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+}
+@media only screen and (max-width: 768px) {
+  .landing-grid .item {
+    max-width: 100%;
+    min-height: 420px;
+    flex: 1 1 auto;
+  }
+  .landing-top .logo img {
+    max-width: 200px;
+    max-height: 64px;
+  }
+}

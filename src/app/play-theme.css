@@ -3536,3 +3536,57 @@ html, body, button, input, select, textarea, .button, a.button {
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
 }
+
+/* === Play layout fixes === */
+.play-faq-body {
+  display: none;
+}
+.play-faq-body.is-active {
+  display: block !important;
+}
+.play-step {
+  text-align: left;
+}
+.play-step-inner.has-image {
+  gap: 32px;
+  align-items: stretch;
+}
+.play-step-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.play-step-image {
+  width: min(48%, 420px);
+}
+#navigation .button,
+#navigation a.button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  font-size: 12px !important;
+  padding: 0 12px !important;
+}
+#navigation .logo img {
+  max-height: 56px !important;
+  max-width: 200px !important;
+}
+.play-page-root .p-body-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 24px 40px;
+}
+@media (max-width: 900px) {
+  .play-step-inner.has-image {
+    flex-direction: column;
+  }
+  .play-step-image {
+    width: 100%;
+  }
+}
+
+/* force FAQ closed */
+.play-page-root .play-faq-body:not(.is-active){display:none!important}
+.play-page-root .play-faq-body.is-active{display:block!important}

@@ -25,7 +25,7 @@ export type Server = {
  */
 export const LYRA_FALLBACK_SERVERS: Server[] = [
   {
-    name: "Lyra Survival",
+    name: "Survival",
     url: "lyra.host",
     className: "vanilla",
     primaryColor: "#47a7eb",

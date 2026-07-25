@@ -315,18 +315,18 @@ function App() {
               >
                 <div className="scroll-container left hidden-mobile">
                   <div className="scroll-content">
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
                   </div>
                 </div>
                 <div className="scroll-container right hidden-mobile">
                   <div className="scroll-content">
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
-                    <span>{server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • {server.name} • </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
+                    <span>{server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · {server.name} · </span>
                   </div>
                 </div>
                 <div className="server-content">
