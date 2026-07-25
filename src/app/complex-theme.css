@@ -1014,3 +1014,115 @@ html, body, button, input, select, textarea, .button, a.button {
 .landing-grid .item .scroll-container {
   display: none !important;
 }
+
+/* === Hub single-card hard layout (final) === */
+#app, .app-inner {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+.app-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 24px 20px 40px !important;
+  overflow: visible !important;
+}
+.landing-top {
+  width: 100%;
+  max-width: 960px;
+  height: auto !important;
+  min-height: 100px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 20;
+}
+.landing-top .logo-wrap {
+  position: relative !important;
+  bottom: auto !important;
+  margin: 0 auto;
+}
+.landing-top .logo img {
+  max-width: 220px !important;
+  max-height: 72px !important;
+}
+.landing-grid {
+  width: 100% !important;
+  flex: 0 0 auto !important;
+  overflow: visible !important;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+}
+.landing-grid-inner {
+  width: 100% !important;
+  max-width: 960px !important;
+  overflow: visible !important;
+  justify-content: center !important;
+  display: flex !important;
+  flex: 0 0 auto !important;
+}
+.landing-grid .item {
+  position: relative !important;
+  flex: 0 0 auto !important;
+  width: min(420px, calc(100vw - 40px)) !important;
+  max-width: 420px !important;
+  min-height: auto !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  padding: 36px 28px 32px !important;
+  overflow: visible !important;
+}
+.landing-grid .item .server-content {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  gap: 20px !important;
+  justify-content: flex-start !important;
+}
+.landing-grid .item .server-header {
+  flex: 0 0 auto !important;
+  gap: 10px !important;
+}
+.landing-grid .item h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem) !important;
+  line-height: 1.1 !important;
+}
+.landing-grid .item .server-message {
+  position: static !important;
+  top: auto !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  font-size: 13px !important;
+  padding: 8px 12px !important;
+}
+.landing-grid .item .server-stats {
+  max-width: 100% !important;
+  gap: 12px !important;
+}
+.landing-grid .item .server-actions {
+  width: 100%;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+.landing-grid .item .play-button,
+.landing-grid .item .discord-button {
+  flex: 1 1 140px;
+  justify-content: center !important;
+  min-width: 0;
+}
+.landing-grid .item .secondary-actions {
+  width: 100%;
+  margin-top: 4px !important;
+}
+.landing-grid .item .store-button-card,
+.landing-grid .item .forums-button-card {
+  flex: 1 1 140px !important;
+}
+.landing-grid .item .scroll-container {
+  display: none !important;
+}
+.landing-nav-item {
+  display: none !important;
+}
