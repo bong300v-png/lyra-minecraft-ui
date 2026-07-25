@@ -1,9 +1,6 @@
 import { LandingApp } from "@/components/landing/LandingApp";
 
 export default function Home() {
-  return (
-    <div id="app">
-      <LandingApp />
-    </div>
-  );
+  // No #app wrapper — complex-theme #app {display:flex} broke single-card centering
+  return <LandingApp />;
 }
