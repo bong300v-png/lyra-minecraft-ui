@@ -143,7 +143,7 @@ export function ComplexChrome({
             <div className="nav-links">
               <div className="p-navgroup p-account p-navgroup--guest">
                 {storeMode ? (
-                  <Link href="/store/username?store=pixelmon" className="p-navgroup-link p-navgroup-link--textual">
+                  <Link href="/store/username?store=survival" className="p-navgroup-link p-navgroup-link--textual">
                     <span className="p-navgroup-linkText">Đăng nhập</span>
                   </Link>
                 ) : (

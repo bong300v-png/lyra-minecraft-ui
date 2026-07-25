@@ -8,7 +8,7 @@ import "../store-theme.css";
 export const metadata: Metadata = {
   title: "Cửa hàng | Lyra",
   description:
-    "Chọn máy chủ bạn muốn mua vật phẩm! Thẻ quà dùng được trên Vanilla bằng /gc hoặc trong cửa hàng!",
+    "Cửa hàng Lyra — cosmetic / ủng hộ server. Không P2W combat.",
 };
 
 const STORES = [
@@ -16,7 +16,7 @@ const STORES = [
     id: "survival",
     name: "Survival",
     href: "/store/username?store=survival",
-    icon: "/images/complex/mode-pixelmon.png",
+    icon: "/images/complex/mode-vanilla.png",
   },
   {
     id: "cosmetics",
@@ -49,8 +49,7 @@ export default function StoreIndexPage() {
             <div className="block-body store-hero">
               <h1>Chọn cửa hàng</h1>
               <p>
-                Chọn máy chủ bạn muốn mua vật phẩm ở các lựa chọn bên dưới! Thẻ quà dùng được trên
-                Vanilla bằng lệnh /gc hoặc trong cửa hàng!
+                Ủng hộ Lyra Survival Towny — cosmetic / gift (không P2W combat). Chọn mục bên dưới.
               </p>
             </div>
 
