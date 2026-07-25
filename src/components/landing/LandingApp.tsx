@@ -27,21 +27,15 @@ function brandServers(data: Server[]): Server[] {
 
 
 function App() {
-  const [servers, setServers] = useState<Server[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [servers, setServers] = useState<Server[]>(() => brandServers(LYRA_FALLBACK_SERVERS));
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [expandedServer, setExpandedServer] = useState<string | null>(null);
 
-  // Fetch server data from API
-  useEffect(() => {
-    // Product: static fallback is source of truth (api.lyra.host often missing)
-    setServers(brandServers(LYRA_FALLBACK_SERVERS));
-    setLoading(false);
-    // no remote API — product data is local (api.lyra.host does not resolve)
-  }, []);
+  // Product data is local (no remote servers API)
 
   useEffect(() => {
     const checkMobile = () => {
