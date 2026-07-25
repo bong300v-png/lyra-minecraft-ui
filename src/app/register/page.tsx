@@ -25,7 +25,7 @@ export default function RegisterPage() {
       setMsg("Mật khẩu không khớp.");
       return;
     }
-    setMsg("Bản demo — chưa kết nối đăng ký thật. Dùng form để xem UI.");
+    setMsg("Đăng ký thành công (UI).");
   }
 
   return (

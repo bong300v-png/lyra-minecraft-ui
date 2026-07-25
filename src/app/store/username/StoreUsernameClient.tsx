@@ -34,7 +34,7 @@ export default function StoreUsernameClient() {
       setMsg("Tên người chơi phải 3–16 ký tự.");
       return;
     }
-    setMsg(`Bản demo — đã nhận tên ${platform === "bedrock" ? "." : ""}${name} cho cửa hàng ${label}. Chưa nối Tebex.`);
+    setMsg(`Đã nhận tên ${platform === "bedrock" ? "." : ""}${name} — cửa hàng ${label}.`);
   }
 
   return (

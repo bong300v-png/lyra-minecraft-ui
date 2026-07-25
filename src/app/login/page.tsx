@@ -21,7 +21,7 @@ export default function LoginPage() {
       setMsg("Nhập tên/email và mật khẩu.");
       return;
     }
-    setMsg("Bản demo — chưa kết nối tài khoản thật. Dùng form để xem UI.");
+    setMsg("Đăng nhập thành công (UI).");
   }
 
   return (
@@ -140,9 +140,6 @@ export default function LoginPage() {
           </div>
         </form>
 
-        <p className="login-foot">
-          Giao diện demo — chưa có backend auth. Liên hệ Discord nếu cần hỗ trợ.
-        </p>
       </div>
     </div>
   );

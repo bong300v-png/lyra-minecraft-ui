@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Đăng ký | Lyra Pixelmon",
-  description: "Đăng ký diễn đàn Lyra (UI demo).",
+  description: "Đăng ký Lyra Pixelmon.",
   robots: { index: false },
 };
 
