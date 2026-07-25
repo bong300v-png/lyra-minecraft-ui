@@ -68,10 +68,12 @@ html, body { margin:0; padding:0; background: var(--bg); color: #f5f5f5; font-fa
   position: relative;
   z-index: 5;
 }
+/* Original: logo fills 72px slot (width:100%; max-height:100%) — Lyra wordmark needs room */
 #navigation .logo img {
-  height: 48px;
+  height: auto;
   width: auto;
-  max-width: 180px;
+  max-height: 68px;
+  max-width: 260px;
   object-fit: contain;
   position: relative;
   z-index: 5;
@@ -107,14 +109,14 @@ html, body { margin:0; padding:0; background: var(--bg); color: #f5f5f5; font-fa
   white-space: nowrap;
 }
 
-/* Bowlby-style nav buttons */
+/* Bowlby nav buttons — match original #navigation .button (height 50 / pad 16) */
 #navigation .button,
 #navigation a.button {
   font-family: "Bowlby One SC", sans-serif !important;
   text-transform: uppercase !important;
-  font-size: 13px !important;
-  padding: 0 12px !important;
-  height: 46px !important;
+  font-size: 14px !important;
+  padding: 0 16px !important;
+  height: 50px !important;
   white-space: nowrap !important;
   border-radius: 6px !important;
   border: none !important;
@@ -128,17 +130,19 @@ html, body { margin:0; padding:0; background: var(--bg); color: #f5f5f5; font-fa
   box-shadow:
     inset 2px 2px 0 rgba(255, 255, 255, 0.12),
     inset -2px -2px 0 rgba(0, 0, 0, 0.25),
-    0 8px 10px -6px rgba(0, 0, 0, 0.25) !important;
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
 }
 #navigation .button.primary,
 #navigation a.button.primary {
   background: #fbcc46 !important;
-  color: #3a2e00 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  color: color-mix(in srgb, #fbcc46 65%, #000 65%) !important;
+  text-shadow: 0 2px 0 color-mix(in srgb, #fbcc46 100%, #fff 50%) !important;
   box-shadow:
-    inset 2px 2px 0 #ffe08a,
-    inset -2px -2px 0 #c9a020,
-    0 8px 10px -6px rgba(0, 0, 0, 0.25) !important;
+    inset 2px 2px 0 color-mix(in srgb, #fbcc46 30%, #fff 65%),
+    inset -2px -2px 0 color-mix(in srgb, #fbcc46 20%, #000 25%),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
 }
 #navigation .button.discord,
 #navigation a.button.discord {
@@ -353,17 +357,33 @@ html, body { margin:0; padding:0; background: var(--bg); color: #f5f5f5; font-fa
 .play-page-root .play-progress-line {
   margin-bottom: 0 !important;
 }
+/* Chunky primary CTAs (CurseForge Website / Next) — original btn-lg feel */
 .play-page-root .button.primary,
-.play-page-root a.button.primary {
+.play-page-root a.button.primary,
+.play-page-root .play-step-btn,
+.play-page-root a.play-step-btn {
   background: #fbcc46 !important;
-  color: #3a2e00 !important;
+  color: color-mix(in srgb, #fbcc46 65%, #000 65%) !important;
   border: none !important;
   font-family: "Bowlby One SC", sans-serif !important;
   text-transform: uppercase !important;
+  font-size: 16px !important;
+  letter-spacing: 0.02em !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 28px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 2px 0 color-mix(in srgb, #fbcc46 100%, #fff 50%) !important;
   box-shadow:
-    inset 2px 2px 0 #ffe08a,
-    inset -2px -2px 0 #c9a020,
-    0 8px 10px -6px rgba(0, 0, 0, 0.25) !important;
+    inset 3px 3px 0 color-mix(in srgb, #fbcc46 30%, #fff 65%),
+    inset -3px -3px 0 color-mix(in srgb, #fbcc46 20%, #000 25%),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  line-height: 1 !important;
 }
 .play-page-root .button.play-nav-prev {
   background: color-mix(in srgb, #e93a4f 55%, #111) !important;
@@ -560,7 +580,8 @@ html, body { margin:0; padding:0; background: var(--bg); color: #f5f5f5; font-fa
   padding: 28px;
 }
 .play-step-btn {
-  height: 54px;
+  height: 56px !important;
+  min-width: 220px;
 }
 /* Progress bar */
 .play-progress {
@@ -1889,11 +1910,15 @@ body[data-template="complex_wiki_page_view"] .p-breadcrumbs {
   z-index: 0;
   opacity: .35;
 }
+/* Override extracted core — big center wordmark like COMPLEX */
 #navigation .logo img {
   position: relative;
   z-index: 5;
-  width: 100%;
-  max-height: 100%;
+  width: auto !important;
+  height: auto !important;
+  max-height: 68px !important;
+  max-width: 260px !important;
+  object-fit: contain;
 }
 #navigation .logo > a {
   display: flex;
@@ -3366,4 +3391,26 @@ button.play-lb-trigger {
 button.play-lb-trigger img {
   width: 100%;
   display: block;
+}
+
+
+/* play footer step nav — thick Bowlby like original */
+.play-page-root .play-step-nav .button.primary,
+.play-page-root .play-step-nav a.button.primary,
+.play-page-root .play-nav-next {
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 28px !important;
+  font-size: 16px !important;
+  font-family: "Bowlby One SC", sans-serif !important;
+}
+.play-page-root .play-step-nav .play-nav-prev {
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 24px !important;
+  font-family: "Bowlby One SC", sans-serif !important;
+  text-transform: uppercase !important;
+}
+#navigation .logo {
+  max-width: 280px;
 }
