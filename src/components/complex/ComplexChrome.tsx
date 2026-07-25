@@ -6,7 +6,7 @@ import { useState } from "react";
 type ChromeProps = {
   modeLabel?: string;
   storeMode?: boolean;
-  active?: "store" | "login" | "register" | "play";
+  active?: "store" | "login" | "register" | "play" | "forums";
 };
 
 /** Shared XenForo chrome — Vietnamese UI */
@@ -32,7 +32,7 @@ export function ComplexChrome({
               <Link href="/" className="button base">
                 Trang chủ
               </Link>
-              <Link href="/play/pixelmon" className="button base">
+              <Link href="/forums" className={`button base${active === "forums" ? " is-active-store" : ""}`}>
                 Diễn đàn
               </Link>
               <a

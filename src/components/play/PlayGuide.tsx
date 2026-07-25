@@ -79,7 +79,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
               <Link href="/" className="button base">
                 Trang chủ
               </Link>
-              <Link href="/play/pixelmon" className="button base">
+              <Link href="/forums" className="button base">
                 Diễn đàn
               </Link>
               <a
