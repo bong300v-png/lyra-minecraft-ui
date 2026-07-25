@@ -23,7 +23,7 @@ export type Server = {
 export const LYRA_FALLBACK_SERVERS: Server[] = [
   {
     name: "Vanilla",
-    url: "play.lyra.host",
+    url: "lyra.host",
     className: "vanilla",
     primaryColor: "#10b981",
     message: null,
@@ -45,7 +45,7 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
   },
   {
     name: "Pixelmon",
-    url: "play.lyra.host",
+    url: "lyra.host",
     className: "pixelmon",
     primaryColor: "#f59e0b",
     message: null,
@@ -63,7 +63,7 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
   },
   {
     name: "Cobblemon",
-    url: "play.lyra.host",
+    url: "lyra.host",
     className: "cobblemon",
     primaryColor: "#F2C6DE",
     message: null,

@@ -25,7 +25,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     slug: "vanilla",
     title: "Chơi ngay | Lyra Vanilla",
     heading: "Chơi ngay",
-    ip: "play.lyra.host",
+    ip: "lyra.host",
     primaryColor: "#10b981",
     discord: "https://discord.gg/LyraVanilla",
     modeLabel: "Vanilla",
@@ -53,7 +53,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
       },
       {
         title: "Dán IP và bật Resource Pack",
-        body: "Dán play.lyra.host làm địa chỉ máy chủ và bật resource pack khi được hỏi.",
+        body: "Dán lyra.host làm địa chỉ máy chủ và bật resource pack khi được hỏi.",
         image: "/images/play/vanilla/step4.png",
       },
       {
@@ -65,7 +65,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     faqs: [
       {
         q: "Có chơi cùng bạn bè được không?",
-        a: "Có — chia sẻ play.lyra.host để bạn bè vào cùng mạng.",
+        a: "Có — chia sẻ lyra.host để bạn bè vào cùng mạng.",
       },
       {
         q: "Cần hỗ trợ ở đâu?",
@@ -77,7 +77,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     slug: "pixelmon",
     title: "Chơi Pixelmon | Lyra Pixelmon",
     heading: "Chơi Pixelmon",
-    ip: "play.lyra.host",
+    ip: "lyra.host",
     primaryColor: "#e93a4f",
     discord: "https://discord.gg/LyraPixel",
     modeLabel: "Pixelmon",
@@ -140,7 +140,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     slug: "cobblemon",
     title: "Chơi Cobblemon | Lyra",
     heading: "Chơi Cobblemon",
-    ip: "play.lyra.host",
+    ip: "lyra.host",
     primaryColor: "#F2C6DE",
     discord: "https://discord.gg/LyraPixel",
     modeLabel: "Cobblemon",
@@ -168,7 +168,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
       },
       {
         title: "Vào máy chủ",
-        body: "Thêm play.lyra.host trong Multiplayer và join.",
+        body: "Thêm lyra.host trong Multiplayer và join.",
         image: "/images/play/cobblemon/step4.png",
       },
     ],
@@ -194,7 +194,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
           },
           {
             title: 'Bấm "Play" để bắt đầu cuộc phiêu lưu Lyra Cobblemon!',
-            body: "Khởi động và join play.lyra.host.",
+            body: "Khởi động và join lyra.host.",
             image: "/images/play/cobblemon/modrinth4.png",
           },
         ],
@@ -207,7 +207,7 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
       },
       {
         q: "IP máy chủ là gì?",
-        a: "play.lyra.host",
+        a: "lyra.host",
       },
     ],
   },

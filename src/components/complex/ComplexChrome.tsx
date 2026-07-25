@@ -140,7 +140,7 @@ export function ComplexChrome({
               </div>
             ) : (
               <button type="button" className="player-status" title="IP">
-                <span className="text">play.lyra.host</span>
+                <span className="text">lyra.host</span>
                 <span className="count">1324</span>
               </button>
             )}
