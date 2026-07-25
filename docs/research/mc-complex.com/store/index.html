@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<!-- Set Active Server -->
+
+	
+
+	
+		
+		
+		
+		
+		
+	
+
+	
+
+<html id="XF" lang="en-US" dir="LTR"
+	data-xf="2.3"
+	data-app="public"
+	
+	
+	data-template="complex_store_index"
+	data-container-key=""
+	data-content-key=""
+	data-logged-in="false"
+	data-cookie-prefix="xf_"
+	data-csrf="1784984024,83701792171d4ccc9cf2b8c99339c9ec"
+	class="has-no-js template-complex_store_index"
+	>
+<head>
+	
+	
+	
+	
+		
+	
+
+	<meta charset="utf-8" />
+	<title>
+	
+		Store
+	
+ | MC-Complex Pixelmon</title>
+	<link rel="manifest" href="/forums/pixelmon/webmanifest.php">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	
+		<meta name="theme-color" content="#222328" />
+	
+	<meta name="apple-mobile-web-app-title" content="MC-Complex">
+	
+
+	
+
+	
+		
+	
+	
+	<meta property="og:site_name" content="MC-Complex" />
+
+
+	
+	
+		
+	
+	
+	<meta property="og:type" content="website" />
+
+
+	
+	
+		
+	
+	
+	
+		<meta property="og:title" content="
+	
+		Store
+	
+" />
+		<meta property="twitter:title" content="Store" />
+	
+
+
+	
+	
+	
+		
+	
+	
+	<meta property="og:url" content="https://www.mc-complex.com/forums/pixelmon/store/" />
+
+
+	
+	
+
+	
+	
+	
+	
+
+	<link rel="stylesheet" href="/forums/pixelmon/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=12&amp;l=1&amp;d=1784834886&amp;k=502aadd54c65073ce41e8daf5ef67156f27a254a" />
+
+	<link rel="stylesheet" href="/forums/pixelmon/css.php?css=public%3Acomplex_store.less%2Cpublic%3Aextra.less&amp;s=12&amp;l=1&amp;d=1784834886&amp;k=4d56297d2d4fba1ae43d43bff391cfec7f3a38f4" />
+<style>
+
+.store--index {}
+
+.store--index .block-container {
+    padding: 50px;
+    text-align: center;
+}
+
+.store-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+	
+.storeCard {
+    display: flex;
+    border: 1px solid var(--border-color);
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    padding: 30px;
+}
+
+</style>
+
+
+	
+		<script data-cfasync="false" src="/forums/pixelmon/js/xf/preamble.min.js?_v=e091b498"></script>
+	
+
+	
+	<script data-cfasync="false" src="/forums/pixelmon/js/vendor/vendor-compiled.js?_v=e091b498" defer></script>
+	<script data-cfasync="false" src="/forums/pixelmon/js/xf/core-compiled.js?_v=e091b498" defer></script>
+
+	<script data-cfasync="false">
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: false,
+				pushAppServerKey: '',
+				url: {
+					fullBase: 'https://www.mc-complex.com/forums/pixelmon/',
+					basePath: '/forums/pixelmon/',
+					css: '/forums/pixelmon/css.php?css=__SENTINEL__&s=12&l=1&d=1784834886',
+					js: '/forums/pixelmon/js/__SENTINEL__?_v=e091b498',
+					icon: '/forums/pixelmon/data/local/icons/__VARIANT__.svg?v=1784178509#__NAME__',
+					iconInline: '/forums/pixelmon/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/forums/pixelmon/login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'xf_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '1784984024,83701792171d4ccc9cf2b8c99339c9ec',
+				js: {"\/forums\/pixelmon\/js\/complexcore\/core\/navigation.min.js?_v=e091b498":true},
+				fullJs: false,
+				css: {"public:complex_store.less":true,"public:extra.less":true},
+				time: {
+					now: 1784984024,
+					today: 1784934000,
+					todayDow: 6,
+					tomorrow: 1785020400,
+					yesterday: 1784847600,
+					week: 1784415600,
+					month: 1782860400,
+					year: 1767225600
+				},
+				style: {
+					light: '',
+					dark: '',
+					defaultColorScheme: 'dark'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'r',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: '0',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 104857600,
+				uploadMaxWidth: 0,
+				uploadMaxHeight: 0,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"f53d83b5","xf\/embed.js":"f53d83b5","xf\/form.js":"f53d83b5","xf\/structure.js":"05b94cf1","xf\/tooltip.js":"f53d83b5"},
+				jsState: {},
+				publicMetadataLogoUrl: '',
+				publicPushBadgeUrl: 'https://www.mc-complex.com/forums/pixelmon/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at MC-Complex",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	</script>
+
+	<script data-cfasync="false" src="/forums/pixelmon/js/complexcore/core/navigation.min.js?_v=e091b498" defer></script>
+
+
+
+	
+
+		
+
+	<!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body data-template="complex_store_index">
+
+<div class="p-pageWrapper" id="top">
+	
+
+	<header class="p-header" id="header">
+		<div class="p-header-inner">
+			<div class="p-header-content">
+				<div class="p-header-logo p-header-logo--image">
+					<a href="https://www.mc-complex.com/forums/pixelmon/">
+						
+
+	
+
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations="{&quot;default&quot;:{&quot;1&quot;:&quot;https:\/\/staging.benjdzn.com\/complex_main\/logo.png&quot;,&quot;2&quot;:null}}">
+		
+		
+		
+
+		
+
+		<img src="https://staging.benjdzn.com/complex_main/logo.png"  width="100" height="36" alt="MC-Complex"  />
+	</picture>
+
+
+					</a>
+				</div>
+
+				
+			</div>
+		</div>
+	</header>
+
+	
+	
+
+	
+		<div id="navigation">
+			<div class="container p-nav-inner">
+				<!-- Mobile Menu Trigger -->
+				<a class="p-nav-menuTrigger mobile-trigger mobile-only hidden-lg" data-xf-click="off-canvas" 
+				   data-menu=".js-storeOffCanvasMenu" 
+				   role="button" tabindex="0">
+					<i class="fa--xf far fa-bars "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#bars"></use></svg></i>
+				</a>
+
+
+				<!-- Left Navigation -->
+				<div class="left hidden-sm">
+					<div class="nav-links">
+						
+							
+						
+							
+								
+									<!-- Simple link -->
+									<a href="/forums/pixelmon/" class="button base hidden-md" position="left" data-nav-id="complexCoreHome">
+										Home
+									</a>
+								
+							
+						
+							
+						
+							
+								
+									<!-- Dropdown with children -->
+									<div class="" style="position: relative">
+										<a href="/forums/pixelmon/forums/"
+											data-xf-click="menu"
+											data-menu-pos-ref="< .nav-dropdown"
+											class="p-navEl-linkHolder button nav-dropdown hidden-md base"
+											position="left"
+											data-nav-id="forums"
+											role="button"
+											tabindex="0"
+											aria-expanded="false"
+											aria-haspopup="true">
+											Forums
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+											</svg>
+										</a>
+										<!-- XenForo Dropdown Menu -->
+										<div class="menu menu--structural dropdown-menu start" data-menu="menu" aria-hidden="true">
+											<div class="menu-content" style="padding: 0.5rem 0">
+												
+													
+													<a href="/forums/pixelmon/forums/-/list" class="menu-linkRow dropdown-item">
+														
+														Forum list
+													</a>
+												
+													
+													<a href="/forums/pixelmon/members/" class="menu-linkRow dropdown-item">
+														
+														Members
+													</a>
+												
+													
+													<a href="/forums/pixelmon/whats-new/" class="menu-linkRow dropdown-item">
+														
+														What's new
+													</a>
+												
+											</div>
+										</div>
+									</div>
+								
+							
+						
+							
+								
+									<!-- Simple link -->
+									<a href="/forums/pixelmon/vote/" class="button base hidden-md" position="left" data-nav-id="complexCoreVote">
+										Vote
+									</a>
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</div>
+				</div>
+
+				<!-- Logo -->
+				<div class="logo">
+					<a href="https://www.mc-complex.com/forums/pixelmon/">
+						<img src="https://staging.benjdzn.com/complex_main/logo.png" alt="MC-Complex" />
+						<span class="gamemode-type">Pixelmon</span>
+					</a>
+				</div>
+
+				<!-- Right Navigation -->
+				<div class="right">
+					<div class="nav-links">
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+								
+									<!-- Dropdown with children -->
+									<div style="position: relative">
+										<a href="#"
+											data-xf-click="menu"
+											data-menu-pos-ref="< .nav-dropdown"
+											class="p-navEl-linkHolder button nav-dropdown hidden-md base"
+											position="right"
+											data-nav-id="help"
+											role="button"
+											tabindex="0"
+											aria-expanded="false"
+											aria-haspopup="true">
+											Help
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+											</svg>
+										</a>
+										<!-- XenForo Dropdown Menu -->
+										<div class="menu menu--structural dropdown-menu start" data-menu="menu" aria-hidden="true">
+											<div class="menu-content" style="padding: 0.5rem 0">
+												
+													
+													<a href="/forums/pixelmon/forms/" class="menu-linkRow dropdown-item">
+														
+															<i class="fa--xf far fa-file-alt  sm-icon"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#file-alt"></use></svg></i>
+														
+														Forms
+													</a>
+												
+													
+													<a href="/forums/pixelmon/appeals/" class="menu-linkRow dropdown-item">
+														
+															<i class="fa--xf far fa-gavel  sm-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-hidden="true" ><path d="M497.965 176.618l-23.185-23.185c-13.611-13.61-33.433-17.321-50.434-11.133l-54.624-54.624c6.189-16.998 2.479-36.821-11.133-50.433l-23.185-23.174c-18.757-18.757-49.122-18.76-67.882 0L163.914 117.667c-18.715 18.715-18.715 49.167 0 67.883l23.184 23.184c13.613 13.613 33.433 17.326 50.434 11.133l10.342 10.342-56.543 56.52c-22.021-22.02-51.866-19.249-69.498-1.616L14.069 392.908c-18.757 18.757-18.76 49.122 0 67.882l37.163 37.174c18.714 18.714 49.165 18.715 67.882 0l107.773-107.796c17.412-17.41 20.652-47.231-1.616-69.499l56.543-56.519 10.341 10.341c-6.189 16.998-2.479 36.821 11.134 50.434l25.417 25.417c17.484 17.484 45.932 17.485 63.417 0L497.965 244.5c18.713-18.715 18.713-49.167 0-67.882zM85.195 464.043l-.021-.021L48 426.849l107.773-107.795 37.173 37.173L85.195 464.043zm275.219-149.875l-23.184-23.184 14.793-14.793L235.832 160l-14.792 14.792-23.184-23.184L301.465 48l23.184 23.184L307.832 88l116.191 116.191 16.816-16.816 23.184 23.184-103.609 103.609z"/></svg></i>
+														
+														Appeals
+													</a>
+												
+													
+													<a href="/forums/pixelmon/apply/" class="menu-linkRow dropdown-item">
+														
+															<i class="fa--xf far fa-check-circle  sm-icon"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#check-circle"></use></svg></i>
+														
+														Apply
+													</a>
+												
+													
+													<a href="/forums/pixelmon/wiki/" class="menu-linkRow dropdown-item">
+														
+															<i class="fa--xf far fa-folder-open  sm-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" role="img" aria-hidden="true" ><path d="M527.9 224H480v-48c0-26.5-21.5-48-48-48H272l-64-64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h400c16.5 0 31.9-8.5 40.7-22.6l79.9-128c20-31.9-3-73.4-40.7-73.4zM48 118c0-3.3 2.7-6 6-6h134.1l64 64H426c3.3 0 6 2.7 6 6v42H152c-16.8 0-32.4 8.8-41.1 23.2L48 351.4zm400 282H72l77.2-128H528z"/></svg></i>
+														
+														Wiki
+													</a>
+												
+													
+													<a href="/forums/pixelmon/staff/" class="menu-linkRow dropdown-item">
+														
+															<i class="fa--xf far fa-shield-alt  sm-icon"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#shield-alt"></use></svg></i>
+														
+														Staff
+													</a>
+												
+													
+														<hr class="menu-separator" style="border-top: 1px solid var(--border-color, #333); margin: 0.5rem 0" />
+													
+													<a href="/forums/pixelmon/help-center/" class="menu-linkRow dropdown-item">
+														
+															<i class="fa--xf far fa-life-ring  sm-icon"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#life-ring"></use></svg></i>
+														
+														Help Center
+													</a>
+												
+											</div>
+										</div>
+									</div>
+								
+							
+						
+							
+								
+									<!-- Simple link -->
+									<a href="/forums/pixelmon/store/" class="button hidden-md primary" position="right" data-nav-id="store">
+										Store
+									</a>
+								
+							
+						
+							
+								
+									<!-- Simple link -->
+									<a href="https://discord.gg/ComplexPixel" class="button hidden-md discord" position="right" data-nav-id="discord">
+										Discord
+									</a>
+								
+							
+						
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+		<div id="sub-navigation">
+			<div class="container p-nav-inner">
+				<div class="left">
+					<!-- Dropdown -->
+					<div class="p-navgroup p-serverSelected">
+						<a
+							class="p-navgroup-link selected-mode"
+							data-xf-click="menu"
+							aria-expanded="false"
+							aria-haspopup="true">
+							<h4>
+								<img src="https://www.mc-complex.com/forums/pixelmon/styles/complex/images/pixelmon.png" alt="" class="dropdown-icon" />
+								Pixelmon
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path></svg>
+							</h4>
+						</a>
+						<div class="menu menu--gamemodes menu--structural" data-menu="menu" aria-hidden="true">
+							<div class="menu-content">
+								<h3 class="menu-header">Choose Gamemode</h3>
+								
+									<a href="https://www.mc-complex.com/forums/vanilla/" data-server-url="hub.mc-complex.com" class="menu-linkRow w-icon">
+										
+											<img src="https://www.mc-complex.com/forums/pixelmon/styles/complex/images/vanilla.png" alt="" class="dropdown-icon" />
+										
+										Vanilla
+									</a>
+								
+									<a href="https://www.mc-complex.com/forums/pixelmon/" data-server-url="pixel.mc-complex.com" class="menu-linkRow w-icon menu-selected">
+										
+											<img src="https://www.mc-complex.com/forums/pixelmon/styles/complex/images/pixelmon.png" alt="" class="dropdown-icon" />
+										
+										Pixelmon
+									</a>
+								
+									<a href="https://www.mc-complex.com/forums/pixelmon/" data-server-url="cobble.mc-complex.com" class="menu-linkRow w-icon">
+										
+											<img src="https://www.mc-complex.com/forums/pixelmon/styles/complex/images/cobblemon.png" alt="" class="dropdown-icon" />
+										
+										Cobblemon
+									</a>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center hidden-sm">
+					<div class="player-status" data-xf-init="copy-to-clipboard" data-copy-text="pixel.mc-complex.com">
+						<span class="text">pixel.mc-complex.com</span>
+						<span class="count">1320</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-6 inline-icon hidden"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z"
+							></path>
+						</svg>
+					</div>
+				</div>
+				<div class="right">
+
+					<div class="nav-links">
+						<div class="p-navgroup p-account p-navgroup--guest">
+							
+								<a href="/forums/pixelmon/login/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn"
+									data-xf-click="overlay" data-follow-redirects="on">
+									<span class="p-navgroup-linkText">Log in</span>
+								</a>
+								
+									<a href="/forums/pixelmon/register/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--register"
+										data-xf-click="overlay" data-follow-redirects="on">
+										<span class="p-navgroup-linkText">Register</span>
+									</a>
+								
+							
+							
+								<a href="/forums/pixelmon/help-center/" class="p-navgroup-link badgeContainer p-navgroup-link--iconic hidden"
+									>
+									<i class="fa--xf far fa-life-ring "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#life-ring"></use></svg></i>
+									<span class="p-navgroup-linkText"></span>
+								</a>
+							
+
+							
+								
+									
+										<a class="p-navgroup-link badgeContainer" data-xf-click="menu" aria-expanded="false" aria-haspopup="true">
+											<i class="fa--xf far fa-search "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#search"></use></svg></i>
+										</a>
+										<div class="menu menu--gamemodes menu--structural" data-menu="menu" aria-hidden="true">
+											<form action="/forums/pixelmon/search/search" method="post"
+													class="menu-content"
+													data-xf-init="quick-search">
+
+													<h3 class="menu-header">Search</h3>
+													
+													<div class="menu-row">
+														
+															<input type="text" class="input" name="keywords" data-acurl="/forums/pixelmon/search/auto-complete" placeholder="Search…" aria-label="Search" data-menu-autofocus="true" />
+														
+													</div>
+
+													
+													<div class="menu-row">
+														<label class="iconic"><input type="checkbox"  name="c[title_only]" value="1" /><i aria-hidden="true"></i><span class="iconic-label">Search titles only</span></label>
+
+													</div>
+													
+													<div class="menu-row">
+														<div class="inputGroup">
+															<span class="inputGroup-text" id="ctrl_search_menu_by_member">By:</span>
+															<input type="text" class="input" name="c[users]" data-xf-init="auto-complete" placeholder="Member" aria-labelledby="ctrl_search_menu_by_member" />
+														</div>
+													</div>
+													<div class="menu-footer">
+													<span class="menu-footer-controls">
+														<button type="submit" class="button button--icon button--icon--search button--primary"><i class="fa--xf far fa-search "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#search"></use></svg></i><span class="button-text">Search</span></button>
+														<button type="submit" class="button " name="from_search_menu"><span class="button-text">Advanced search…</span></button>
+													</span>
+													</div>
+
+													<input type="hidden" name="_xfToken" value="1784984024,83701792171d4ccc9cf2b8c99339c9ec" />
+												</form>
+										</div>
+									
+								
+							
+							
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	
+	
+
+	<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="complexNav">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="/forums/pixelmon/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator" />
+					
+						<div class="offCanvasMenu-linkHolder">
+							<a href="/forums/pixelmon/register/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator" />
+					
+				</div>
+			
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS">
+					<div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="/forums/pixelmon/styles/default/xenforo/add_to_home.mp4"
+										width="280" height="480" autoplay loop muted playsinline></video>
+								</p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+		</div>
+	</div>
+
+<!-- Store Off-Canvas Menu -->
+
+	
+	<div class="offCanvasMenu offCanvasMenu--nav js-storeOffCanvasMenu" data-menu="menu" aria-hidden="true">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Store Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+
+			<ul class="offCanvasMenu-list">
+				<!-- Category Navigation -->
+				
+
+				<!-- User Info -->
+				
+
+				<!-- Basket Link -->
+				
+			</ul>
+		</div>
+	</div>
+	<script type="99056448c93018360dfb9d19-text/javascript">
+	(function() {
+		document.addEventListener('click', function(e) {
+			var btn = e.target.closest('.js-ocToggle');
+			if (!btn) return;
+			e.preventDefault();
+			var submenu = btn.nextElementSibling;
+			if (submenu && submenu.classList.contains('toggleTarget')) {
+				submenu.classList.toggle('is-active');
+			}
+		});
+	})();
+	</script>
+
+
+
+	
+		
+	<div id="sub-navigation" class="store-sub-navigation">
+		<div class="container p-nav-inner">
+			<div class="left">
+						<!-- Dropdown -->
+						<div class="p-navgroup p-serverSelected ">
+							<a
+								class="p-navgroup-link selected-mode"
+								data-xf-click="menu"
+								aria-label="Select store"
+								aria-expanded="false"
+								aria-haspopup="true"
+								title="Select store">
+								<div class="stack-icon dropdown-icon">
+									
+										<img src="/forums/pixelmon/styles/complex/images/compass.png">
+									
+								</div>
+								<div class="stacked-text">
+									<h4>
+										
+											Select Store
+										
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path></svg>
+									</h4>
+								</div>
+							</a>
+							<div class="menu menu--gamemodes menu--structural" data-menu="menu" aria-hidden="true">
+								<div class="menu-content">
+									<h3 class="menu-header">Choose Store</h3>
+									
+										
+											
+											
+												
+													
+												
+											
+
+											
+												<a href="/forums/pixelmon/store/select-store?store_id=1"
+												   class="menu-linkRow w-icon">
+													<div class="dropdown-icon">
+														
+															<img src="/forums/pixelmon/styles/complex/images/pixelmon.png" alt="Pixelmon" />
+														
+													</div>
+													Pixelmon
+												</a>
+											
+										
+											
+											
+												
+													
+												
+											
+
+											
+												<a href="/forums/pixelmon/store/select-store?store_id=2"
+												   class="menu-linkRow w-icon">
+													<div class="dropdown-icon">
+														
+															<img src="/forums/pixelmon/styles/complex/images/cobblemon.png" alt="Cobblemon" />
+														
+													</div>
+													Cobblemon
+												</a>
+											
+										
+											
+											
+												
+													
+														
+													
+												
+											
+
+											
+												<a href="https://www.mc-complex.com/forums/vanilla/store"
+												   class="menu-linkRow w-icon">
+													<div class="dropdown-icon">
+														
+															<img src="/forums/pixelmon/styles/complex/images/vanilla.png" alt="Vanilla" />
+														
+													</div>
+													Vanilla
+												</a>
+											
+										
+											
+											
+												
+													
+												
+											
+
+											
+												<a href="/forums/pixelmon/store/select-store?store_id=6"
+												   class="menu-linkRow w-icon">
+													<div class="dropdown-icon">
+														
+															<img src="/forums/pixelmon/styles/complex/images/giftcard.png" alt="Giftcards" />
+														
+													</div>
+													Giftcards
+												</a>
+											
+										
+									
+								</div>
+							</div>
+						</div>
+			</div>
+			<div class="center hidden-sm">
+				
+					<div class="current-viewing">
+						<span class="text-muted" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Currently Viewing</span>
+						<div style="font-weight: 600;">Store</div>
+					</div>
+				
+			</div>
+			<div class="right">
+				<div class="nav-links">
+					<div class="p-navgroup p-account p-navgroup--member">
+						
+							<a  href="/forums/pixelmon/store/username"
+								aria-label="Logged in as "
+								aria-expanded="false"
+								aria-haspopup="true"
+								title="Logged in as "
+								class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--user">
+								<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="99056448c93018360dfb9d19-|49"></script><img src="https://mc-heads.net/avatar//32"
+														 alt=""
+														 class="avatar avatar--xxs avatar--default"
+														 onerror="this.src='https://mc-heads.net/avatar/steve/32'" />
+								<span class="p-navgroup-linkText">Login</span>
+							</a>
+						
+						
+							<a role="button" tabindex="0" class="p-navgroup-link p-navgroup-link--iconic" title="Payment History" onclick="if (!window.__cfRLUnblockHandlers) return false; window._launchTebexPortal('5tw-b29400fc2c46c31fdf051c6d46f70a3f408a8b4f'); return false;" style="cursor:pointer;" data-cf-modified-99056448c93018360dfb9d19-="">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+								</svg>
+							</a>
+						
+						<a data-xf-click="menu"
+						   class="p-navgroup-link p-navgroup-link--basket badgeContainer"
+						   aria-expanded="false"
+						   aria-haspopup="true"
+						   title="Shopping Cart">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+							</svg>
+						</a>
+						<div class="menu menu--structural menu--medium" data-menu="menu" aria-hidden="true"
+							data-href="/forums/pixelmon/store/basket-popup"
+							data-nocache="true"
+							data-load-target=".js-basketMenuBody">
+							<div class="menu-content">
+								<h3 class="menu-header">Your Cart</h3>
+								<div class="js-basketMenuBody">
+									<div class="menu-row" style="text-align: center; padding: 15px;">Loading...</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	
+
+	
+		<script type="99056448c93018360dfb9d19-text/javascript">
+			window._launchTebexPortal = function(publicToken) {
+				function doLaunch() {
+					Tebex.portal.init({
+						token: publicToken,
+						theme: 'dark',
+						colors: [{ name: 'primary', color: '#EB5526' }]
+					});
+					Tebex.portal.launch();
+				}
+				if (window.Tebex) {
+					doLaunch();
+					return;
+				}
+				if (!window._tebexLoaded) {
+					window._tebexLoaded = true;
+					var script = document.createElement('script');
+					script.src = 'https://js.tebex.io/v/1.js';
+					script.onload = function() { doLaunch(); };
+					document.head.appendChild(script);
+				} else {
+					var attempts = 0;
+					var check = setInterval(function() {
+						attempts++;
+						if (window.Tebex || attempts > 50) {
+							clearInterval(check);
+							if (window.Tebex) { doLaunch(); }
+						}
+					}, 100);
+				}
+			};
+		</script>
+	
+
+
+	
+	<div class="p-body">
+		<div class="p-body-inner">
+			<!--XF:EXTRA_OUTPUT-->
+			
+			
+				
+
+			
+
+			
+
+			
+
+			
+			
+	
+		<ul class="p-breadcrumbs "
+			itemscope itemtype="https://schema.org/BreadcrumbList">
+			
+				
+
+				
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://www.mc-complex.com/forums/pixelmon/" itemprop="item">
+			<span itemprop="name">Home</span>
+		</a>
+		<meta itemprop="position" content="1" />
+	</li>
+
+				
+
+				
+				
+			
+		</ul>
+	
+
+			
+
+			
+	<noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br />You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+				<div class="p-body-header">
+					
+						
+							<div class="p-title ">
+								<div class="inline-icon base md mr-md">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+									</svg>
+								</div>
+								
+									
+										<h1 class="p-title-value">
+	
+		Store
+	
+</h1>
+									
+									
+								
+							</div>
+						
+
+						
+					
+				</div>
+			
+
+			<div class="p-body-main  ">
+				
+				<div class="p-body-contentCol"></div>
+				
+
+				
+
+				<div class="p-body-content">
+					
+					<div class="p-body-pageContent">
+
+
+
+	<!-- No store selected, show store selection -->
+	<div class="block store--index">
+		<div class="block-container">
+			<div class="block-body store-hero">
+				<h1>Select Your Store</h1>
+				
+					<p>Select the server you wish to purchase something on from the options below! Giftcards are usable on Vanilla using /gc OR in the store!</p>
+				
+			</div>
+			<div class="block-body">
+				
+					<div class="store-categories-grid">
+
+    
+    
+        
+    
+    
+	
+		
+		
+			
+				
+			
+		
+
+		
+			<!-- Store with 0-1 children: navigate directly -->
+			<a href="/forums/pixelmon/store/select-store?store_id=1" class="storeCard" data-gamemode="Pixelmon">
+				<div>
+					<div class="storeCard-icon">
+						
+							<img src="/forums/pixelmon/styles/complex/images/pixelmon.png" alt="Pixelmon" />
+						
+					</div>
+					<div class="storeCard-image">
+						
+							<i class="fa fa-shopping-cart fa-2x"></i>
+						
+					</div>
+					<div class="storeCard-text">
+						<h1>Pixelmon</h1>
+						<div>Select store</div>
+					</div>
+				</div>
+				
+			</a>
+		
+	
+
+
+    
+    
+        
+    
+    
+	
+		
+		
+			
+				
+			
+		
+
+		
+			<!-- Store with 0-1 children: navigate directly -->
+			<a href="/forums/pixelmon/store/select-store?store_id=2" class="storeCard" data-gamemode="Cobblemon">
+				<div>
+					<div class="storeCard-icon">
+						
+							<img src="/forums/pixelmon/styles/complex/images/cobblemon.png" alt="Cobblemon" />
+						
+					</div>
+					<div class="storeCard-image">
+						
+							<i class="fa fa-shopping-cart fa-2x"></i>
+						
+					</div>
+					<div class="storeCard-text">
+						<h1>Cobblemon</h1>
+						<div>Select store</div>
+					</div>
+				</div>
+				
+			</a>
+		
+	
+
+
+    
+    
+        
+            
+        
+    
+    
+	
+		
+		
+			
+				
+					
+				
+			
+		
+
+		
+			<!-- Store with external URL: redirect directly to other site -->
+			<a href="https://www.mc-complex.com/forums/vanilla/store" class="storeCard" data-gamemode="Vanilla">
+				<div>
+					<div class="storeCard-icon">
+						
+							<img src="/forums/pixelmon/styles/complex/images/vanilla.png" alt="Vanilla" />
+						
+					</div>
+					<div class="storeCard-image">
+						
+							<i class="fa fa-shopping-cart fa-2x"></i>
+						
+					</div>
+					<div class="storeCard-text">
+						<h1>Vanilla</h1>
+						<div>Select store</div>
+					</div>
+				</div>
+				
+			</a>
+		
+	
+
+
+    
+    
+        
+    
+    
+	
+		
+		
+			
+				
+			
+		
+
+		
+			<!-- Store with 0-1 children: navigate directly -->
+			<a href="/forums/pixelmon/store/select-store?store_id=6" class="storeCard" data-gamemode="Giftcards">
+				<div>
+					<div class="storeCard-icon">
+						
+							<img src="/forums/pixelmon/styles/complex/images/giftcard.png" alt="Giftcards" />
+						
+					</div>
+					<div class="storeCard-image">
+						
+							<i class="fa fa-shopping-cart fa-2x"></i>
+						
+					</div>
+					<div class="storeCard-text">
+						<h1>Giftcards</h1>
+						<div>Select store</div>
+					</div>
+				</div>
+				
+			</a>
+		
+	
+
+
+
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+</div>
+					
+				</div>
+
+				
+			</div>
+
+			
+			
+	
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom"
+			itemscope itemtype="https://schema.org/BreadcrumbList">
+			
+				
+
+				
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://www.mc-complex.com/forums/pixelmon/" itemprop="item">
+			<span itemprop="name">Home</span>
+		</a>
+		<meta itemprop="position" content="1" />
+	</li>
+
+				
+
+				
+				
+			
+		</ul>
+	
+
+			
+		</div>
+	</div>
+
+	<div id="footer" class="wrapper--art blocky">
+    <div class="container p-footer-inner">
+        <div class="footer-cols">
+            <div class="col">
+                <div class="col-title"><h1>Complex Gaming</h1></div>
+                <div class="col-body">
+                    <p>Check out our quick links for fast access to important locations on the forums!</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="col-title"><h1>Quick Links</h1></div>
+                <div class="col-body">
+                    <ul class="col-links split">
+                        <li><a href="/forums/pixelmon/">News</a></li>
+                        <li><a href="/forums/pixelmon/wiki/">Wiki</a></li>
+                        <li><a href="/forums/pixelmon/apply/">Apply</a></li>
+                        <li><a href="/forums/pixelmon/help-center/">Support</a></li>
+                        <li><a href="/forums/pixelmon/store/">Store</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="col-title"><h1>Support Us</h1></div>
+                <div class="col-body">
+                    <p>Check out our store to purchase ranks, items, and more!</p>
+                    <a href="/forums/pixelmon/store/" class="button primary large">Visit Store</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="col">
+                <p>Complex Gaming © 2016-2026. All Rights Reserved.</p>
+                <p class="small">We are not affiliated with Mojang AB.</p>
+            </div>
+            <div class="col end">
+                <ul class="col-links social-links">
+                    <li>
+                        <a href="#" target="_blank" role="presentation"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                class="bi bi-discord"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                                ></path></svg
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" role="presentation"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                class="bi bi-twitter"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"
+                                ></path></svg
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" class="nav-item nav-icon" role="presentation"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                class="bi bi-youtube"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                                ></path></svg
+                        ></a>
+                    </li>
+					<li>
+						<a href="https://benjdzn.com" target="_blank" class="flex watermark w-12">
+							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 836.161 491.193">
+							  <defs>
+								<style>.wm-accent{fill:var(--color-primary)}.wm-shadow{fill:var(--content-700)}.wm-text{fill:#fefefe}</style>
+							  </defs>
+							  <path class="wm-shadow" d="M790.757.196c6.085-.447,8.503-.42,13.398,3.342,4.441,3.414,24.804,26.308,27.814,31.186,2.806,4.547,4.386,9.326,4.174,14.795-9.32,55.211-20.503,110.108-29.72,165.333-7.017,42.044-11.209,86.878-19.77,128.23-15.76,76.126-105.716,53.8-163.03,69.962-4.403.482-8.326-.257-12.493-1.481-2.712-.797-8.03-4.337-8.507-4.334-.563.004-6.309,5.789-8.826,6.997-27.161,13.039-56.597,6.877-77.164,12.916-3.985,2.233-13.029-6.163-13.869-6.015-.671.119-8.203,6.864-10.951,8.115-11.092,5.048-68.615,12.008-83.233,12.857-2.356.137-6-1.413-7.193-.781-4.572,2.422-6.158,2.65-11.898,3.6-47.753,7.903-96.166,12.344-143.964,20.031-4.078,1.189-12.412-4.909-14.742-4.682-1.232.12-7.233,4.282-9.671,5.274-3.925,1.597-7.671,2.381-11.799,3.201-50.289,10.001-104.121,12.443-154.693,22.304-7.35.442-12.5.125-18.511-4.463-6.114-4.668-27.448-25.938-31.976-32.024-2.503-3.364-4.538-7.736-4.064-12.018,14.364-96.356,23.873-193.489,38.205-289.839,2.457-16.519,1.187-41.46,22.618-44.382,49.427-17.402,94.973-16.39,141.864-21.136,7.74-.783,13.554-1.074,21.237.516,2.326.481,7.432,3.158,8.664,3.024.627-.069,7.076-6.02,10.197-7.442,7.476-3.406,16.829-4.71,24.921-6.079,110.223-18.641,221.935-29.878,332.342-47.643,5.147-.828,10.383-.947,15.56-.33l1.429.17c3.347.399,6.726-.009,9.851-1.179,3.46-1.296,7.074-2.133,10.72-2.736L790.757.196Z"></path>
+							  <path class="wm-text" d="M490.15,376.048l-20.008-125.982-17.005,132.001-70.009,7.998,39.012-312.995,68.008-8.594,23.974,124.58,15.197-132.805,66.16-9.033c1.188.383,1.581,1.005,1.599,2.242.08,5.579-3.038,16.795-3.818,23.228-10.906,89.934-21.267,179.982-33.255,269.745-.51,3.816-2.291,20.352-5.542,21.458l-64.312,8.156Z"></path>
+							  <path class="wm-text" d="M212.657,287.522c-4.981,32.761-6.195,67.348-11.667,99.897-2.95,17.544-9.121,28.431-27.631,32.369l-151.226,20.264L63.568,128.997c.703-1.004,5.575-1.48,7.229-1.771,48.149-8.453,97.263-14.888,145.747-20.079,12.559,2.559,18.452,12.978,16.629,25.455l-13.32,101.181c-10.239,7.921-19.024,18.277-29.715,25.296l22.519,28.442Z"></path>
+							  <path class="wm-text" d="M402.136,80.058l-8.002,68.005-75.947,10.058-6.058,51.945,64.003-8.995c-2.399,8.08-6.221,67.578-9.698,69.01l-64.307,7.974c-1.16,17.734-5.688,35.875-7.013,53.507-.122,1.627-.173,1.668,1.449,1.449,25.437-3.436,50.847-7.921,76.573-8.949l-9.913,68.346-150.08,21.652c13.128-102.643,25.339-205.449,39.539-307.951,3.024-4.303,7.629-4.722,12.273-5.727,36.405-7.88,80.474-12.995,117.845-18.155,2.619-.362,18.651-2.859,19.337-2.17Z"></path>
+							  <path class="wm-text" d="M766.131,137.071l-26.252,178.237c-7.247,33.284-36.476,32.5-64.391,36.609-25.553,3.762-51.346,6.013-76.841,10.209-12.955-.281-20.938-7.324-20.567-20.598,4.429-33.372,6.738-67.12,12.235-100.287l67.811-10.175-7.994,60.985,23.751-3.231,19.684-141.823,72.564-9.926Z"></path>
+							  <polygon class="wm-accent" points="786.127 25.067 769.194 117.624 632.137 136.056 649.332 44.262 786.127 25.067"></polygon>
+							  <polygon class="wm-shadow" points="140.128 299.068 132.084 364.017 104.137 368.056 112.126 302.054 140.128 299.068"></polygon>
+							  <path class="wm-shadow" d="M147.002,240.929c-.732,1.206-24.627,4.603-27.852,3.652l8.995-64.504,26.977-4.015-8.12,64.867Z"></path>
+							  <polygon class="wm-shadow" points="542.894 38.241 754.804 6.136 760.033 14.173 542.894 46.217 542.894 38.241"></polygon>
+							</svg>
+						</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div> <!-- closing p-pageWrapper -->
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf far fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+	<div class="u-scrollButtons js-scrollButtons" data-trigger-type="up">
+		<a href="#top" class="button button--scroll" data-xf-click="scroll-to"><span class="button-text"><i class="fa--xf far fa-arrow-up "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forums/pixelmon/data/local/icons/regular.svg?v=1784178509#arrow-up"></use></svg></i><span class="u-srOnly">Top</span></span></a>
+		
+	</div>
+
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1" />
+	</form>
+
+	
+
+
+
+
+
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="99056448c93018360dfb9d19-|49" defer></script></body>
+</html>
+
+
+
+
+
+
+
+
+

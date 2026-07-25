@@ -1,0 +1,193 @@
+{
+  "vanilla": {
+    "slug": "vanilla",
+    "ip": "hub.mc-complex.com",
+    "discord": "https://discord.gg/ComplexVanilla",
+    "steps": [
+      {
+        "title": "Download the Minecraft Launcher",
+        "body": "Download the launcher from the Minecraft website. You may also take a look at the Lunar client as we're partnered with them here: https://www.lunarclient.com/download",
+        "image": "https://i.ibb.co/HJQWsp7/Step-1.png",
+        "cta": null
+      },
+      {
+        "title": "Login and Select Multiplayer",
+        "body": "After selecting your version, launch the client and select Multiplayer.",
+        "image": "https://i.ibb.co/S4rZbthZ/Step-2.png",
+        "cta": null
+      },
+      {
+        "title": "Add our Server",
+        "body": "Select the Add Server button.",
+        "image": "https://i.ibb.co/4Z2C35rp/Step-3.png",
+        "cta": null
+      },
+      {
+        "title": "Paste the IP Address and Enable Resource Packs",
+        "body": "Paste the IP Address in the Server Address box and set Server Resource Packs to Enabled. Doing so will allow you to view all of our custom items and entities! Additionally, we have more server IP addresses if you live in the EU, UK, AUS, SGP, and IN found using the \"Additional IP Addresses\" button below. Click Done when you've finished.",
+        "image": "https://i.ibb.co/vC6XQ7dM/Step-4.png",
+        "cta": null
+      },
+      {
+        "title": "Click to Join",
+        "body": "Double click Complex MC or click once on our server and select \"Join Server\" to join. Once joined, you'll be placed in our hub server where you can select from our various servers!",
+        "image": "https://i.ibb.co/xt987hKh/Step-5.png",
+        "cta": null
+      }
+    ],
+    "altTracks": [],
+    "faqs": [],
+    "title": "Play Now | MC-Complex Vanilla Vanilla"
+  },
+  "pixelmon": {
+    "slug": "pixelmon",
+    "ip": "pixel.mc-complex.com",
+    "discord": "https://discord.gg/ComplexPixel",
+    "steps": [
+      {
+        "title": "Download the CurseForge App",
+        "body": "Download the CurseForge launcher for your operating system to get started! This app will allow you to download our Modpack and stay up to date!",
+        "image": "https://i.ibb.co/RpBrb74C/NVIDIA-Overlay-Px-Gi9cg7b-N.png",
+        "cta": null
+      },
+      {
+        "title": "Install the \"Complex Pixelmon\" Modpack",
+        "body": "Click the link below to go to the CurseForge page for our modpack, click \"Install Via App\" to automatically download the pack. A popup may appear asking if your browser can open CurseForge, be sure to select \"Allow\". Alternatively, you can search CurseForge for \"Complex Pixelmon\" after selecting Minecraft to play.",
+        "image": "https://i.ibb.co/9mthKDjc/NVIDIA-Overlay-24o4j-BH0l9.png",
+        "cta": null
+      },
+      {
+        "title": "Click \"Play\" in CurseForge",
+        "body": "Once the Modpack has finished Downloading, you should be able to click \"Play\" to now launch within your CurseForge App! The first launch may take a while, however you should not have to edit any settings for a smooth experience!",
+        "image": "https://i.ibb.co/84LBbZc7/NVIDIA-Overlay-Lv-SPlu-XWj-P.png",
+        "cta": null
+      },
+      {
+        "title": "Click to Join the Server",
+        "body": "You should be on the Multiplayer menu once the launcher has finished loading your game. Select the Join Server button or Double Click the Server Icon from your menu to join our network!",
+        "image": "https://i.ibb.co/Q783YLry/NVIDIA-Overlay-K1h8h-IDIzh.png",
+        "cta": null
+      }
+    ],
+    "altTracks": [],
+    "faqs": [],
+    "title": "Play Pixelmon | MC-Complex Pixelmon"
+  },
+  "cobblemon": {
+    "slug": "cobblemon",
+    "ip": "cobble.mc-complex.com",
+    "discord": "https://discord.gg/ComplexPixel",
+    "steps": [
+      {
+        "title": "Download the CurseForge App",
+        "body": "Download the CurseForge launcher for your operating system to get started! This app will allow you to download our Modpack and stay up to date!",
+        "image": "https://i.ibb.co/RpBrb74C/NVIDIA-Overlay-Px-Gi9cg7b-N.png",
+        "cta": null
+      },
+      {
+        "title": "Install the \"Complex Cobblemon\" Modpack",
+        "body": "Click the link below to go to the CurseForge page for our modpack, click \"Install Via App\" to automatically download the pack. A popup may appear asking if your browser can open CurseForge, be sure to select \"Allow\". Alternatively, you can search CurseForge for \"Complex Cobblemon\" after selecting Minecraft as your game.",
+        "image": "https://i.ibb.co/NdT2Zx7D/NVIDIA-Overlay-g7resso-Rj-K.png",
+        "cta": null
+      },
+      {
+        "title": "Click \"Play\" in CurseForge",
+        "body": "Once the Modpack has finished Downloading, you should be able to click \"Play\" to now launch within your CurseForge App! The first launch may take a while, however you should not have to edit any settings for a smooth experience!",
+        "image": "https://i.ibb.co/fYjvM6QG/NVIDIA-Overlay-hdghboam80.png",
+        "cta": null
+      },
+      {
+        "title": "Click to Join the Server",
+        "body": "You should be on the Multiplayer menu once the launcher has finished loading your game. Select the Join Server button or Double Click the Server Icon from your menu to join our network!",
+        "image": "https://i.ibb.co/ZRFn7zWq/NVIDIA-Overlay-fpdhalm-Z5m.png",
+        "cta": null
+      },
+      {
+        "title": "Download the Modrinth App",
+        "body": "Click the link below to download the Modrinth Launcher! This will allow you to stay automatically up to date with Cobblemon and Complex versions as you play. You will need to sign in to your Minecraft Java account once you have installed the app using the \"Sign in to Minecraft\" button before you can play.",
+        "image": "https://i.ibb.co/qYwkw7VZ/firefox-Y6-YWL1uqq-F.png",
+        "cta": null
+      },
+      {
+        "title": "Install the \"Complex Cobblemon\" Modrinth Modpack",
+        "body": "Click the link below to go to our Modrinth page to download our Modpack, this will install everything you need automatically to play Complex Cobblemon! When on this page, click \"Play\" to begin the installation on your Modrinth App",
+        "image": "https://i.ibb.co/0yFMNs1z/firefox-YZ73ds-OGvs.png",
+        "cta": null
+      },
+      {
+        "title": "Go to the Modrinth App and click \"Install\"",
+        "body": "After clicking \"Play\" on the Modpack website, you will be asked to open the Modrinth App by your browser. Click on the app or open it on your desktop and click \"Install\" to fully add Complex Cobblemon to your Modrinth Launcher!",
+        "image": "https://i.ibb.co/XfVsschc/Modrinth-App-z91p-Wed-Diq.png",
+        "cta": null
+      },
+      {
+        "title": "Click \"Play\" to start your Complex Cobblemon Adventure!",
+        "body": "When your installation has finished, you can now click \"Play\" to start your game. This may take a moment on the first launch, so please allow the game some time to start. Once Minecraft has loaded, you will automatically be sent into the Complex Cobblemon Server!",
+        "image": "https://i.ibb.co/bjqxqZcL/Modrinth-App-q-QSE9i-YGNq.png",
+        "cta": null
+      }
+    ],
+    "altTracks": [
+      {
+        "name": "CurseForge",
+        "steps": [
+          {
+            "title": "Download the CurseForge App",
+            "body": "Download the CurseForge launcher for your operating system to get started! This app will allow you to download our Modpack and stay up to date!",
+            "image": "https://i.ibb.co/RpBrb74C/NVIDIA-Overlay-Px-Gi9cg7b-N.png",
+            "cta": null
+          },
+          {
+            "title": "Install the \"Complex Cobblemon\" Modpack",
+            "body": "Click the link below to go to the CurseForge page for our modpack, click \"Install Via App\" to automatically download the pack. A popup may appear asking if your browser can open CurseForge, be sure to select \"Allow\". Alternatively, you can search CurseForge for \"Complex Cobblemon\" after selecting Minecraft as your game.",
+            "image": "https://i.ibb.co/NdT2Zx7D/NVIDIA-Overlay-g7resso-Rj-K.png",
+            "cta": null
+          },
+          {
+            "title": "Click \"Play\" in CurseForge",
+            "body": "Once the Modpack has finished Downloading, you should be able to click \"Play\" to now launch within your CurseForge App! The first launch may take a while, however you should not have to edit any settings for a smooth experience!",
+            "image": "https://i.ibb.co/fYjvM6QG/NVIDIA-Overlay-hdghboam80.png",
+            "cta": null
+          },
+          {
+            "title": "Click to Join the Server",
+            "body": "You should be on the Multiplayer menu once the launcher has finished loading your game. Select the Join Server button or Double Click the Server Icon from your menu to join our network!",
+            "image": "https://i.ibb.co/ZRFn7zWq/NVIDIA-Overlay-fpdhalm-Z5m.png",
+            "cta": null
+          }
+        ]
+      },
+      {
+        "name": "Modrinth",
+        "steps": [
+          {
+            "title": "Download the Modrinth App",
+            "body": "Click the link below to download the Modrinth Launcher! This will allow you to stay automatically up to date with Cobblemon and Complex versions as you play. You will need to sign in to your Minecraft Java account once you have installed the app using the \"Sign in to Minecraft\" button before you can play.",
+            "image": "https://i.ibb.co/qYwkw7VZ/firefox-Y6-YWL1uqq-F.png",
+            "cta": null
+          },
+          {
+            "title": "Install the \"Complex Cobblemon\" Modrinth Modpack",
+            "body": "Click the link below to go to our Modrinth page to download our Modpack, this will install everything you need automatically to play Complex Cobblemon! When on this page, click \"Play\" to begin the installation on your Modrinth App",
+            "image": "https://i.ibb.co/0yFMNs1z/firefox-YZ73ds-OGvs.png",
+            "cta": null
+          },
+          {
+            "title": "Go to the Modrinth App and click \"Install\"",
+            "body": "After clicking \"Play\" on the Modpack website, you will be asked to open the Modrinth App by your browser. Click on the app or open it on your desktop and click \"Install\" to fully add Complex Cobblemon to your Modrinth Launcher!",
+            "image": "https://i.ibb.co/XfVsschc/Modrinth-App-z91p-Wed-Diq.png",
+            "cta": null
+          },
+          {
+            "title": "Click \"Play\" to start your Complex Cobblemon Adventure!",
+            "body": "When your installation has finished, you can now click \"Play\" to start your game. This may take a moment on the first launch, so please allow the game some time to start. Once Minecraft has loaded, you will automatically be sent into the Complex Cobblemon Server!",
+            "image": "https://i.ibb.co/bjqxqZcL/Modrinth-App-q-QSE9i-YGNq.png",
+            "cta": null
+          }
+        ]
+      }
+    ],
+    "faqs": [],
+    "title": "Play Cobblemon | MC-Complex Pixelmon"
+  }
+}

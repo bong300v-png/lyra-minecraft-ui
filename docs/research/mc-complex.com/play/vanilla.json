@@ -1,0 +1,69 @@
+{
+  "ip": "hub.mc-complex.com",
+  "steps": [
+    {
+      "title": "Download the Minecraft Launcher",
+      "body": "Download the launcher from the Minecraft website. You may also take a look at the Lunar client as we're partnered with them here: https://www.lunarclient.com/download",
+      "cta": "Download Minecraft",
+      "image": "https://i.ibb.co/HJQWsp7/Step-1.png"
+    },
+    {
+      "title": "Login and Select Multiplayer",
+      "body": "After selecting your version, launch the client and select Multiplayer.",
+      "cta": null,
+      "image": "https://i.ibb.co/S4rZbthZ/Step-2.png"
+    },
+    {
+      "title": "Add our Server",
+      "body": "Select the Add Server button.",
+      "cta": null,
+      "image": "https://i.ibb.co/4Z2C35rp/Step-3.png"
+    },
+    {
+      "title": "Paste the IP Address and Enable Resource Packs",
+      "body": "Paste the IP Address in the Server Address box and set Server Resource Packs to Enabled. Doing so will allow you to view all of our custom items and entities! Additionally, we have more server IP addresses if you live in the EU, UK, AUS, SGP, and IN found using the \"Additional IP Addresses\" button below. Click Done when you've finished.",
+      "cta": "Additonal IP Addresses",
+      "image": "https://i.ibb.co/vC6XQ7dM/Step-4.png"
+    },
+    {
+      "title": "Click to Join",
+      "body": "Double click Complex MC or click once on our server and select \"Join Server\" to join. Once joined, you'll be placed in our hub server where you can select from our various servers!",
+      "cta": null,
+      "image": "https://i.ibb.co/xt987hKh/Step-5.png"
+    },
+    {
+      "title": "Download the Minecraft Launcher",
+      "body": "Download the launcher from the Minecraft website. You may also take a look at the Lunar client as we're partnered with them here: https://www.lunarclient.com/download",
+      "cta": null,
+      "image": "https://i.ibb.co/HJQWsp7/Step-1.png"
+    },
+    {
+      "title": "Login and Select Multiplayer",
+      "body": "After selecting your version, launch the client and select Multiplayer.",
+      "cta": null,
+      "image": "https://i.ibb.co/S4rZbthZ/Step-2.png"
+    },
+    {
+      "title": "Add our Server",
+      "body": "Select the Add Server button.",
+      "cta": null,
+      "image": "https://i.ibb.co/4Z2C35rp/Step-3.png"
+    },
+    {
+      "title": "Paste the IP Address and Enable Resource Packs",
+      "body": "Paste the IP Address in the Server Address box and set Server Resource Packs to Enabled. Doing so will allow you to view all of our custom items and entities! Additionally, we have more server IP addresses if you live in the EU, UK, AUS, SGP, and IN found using the \"Additional IP Addresses\" button below. Click Done when you've finished.",
+      "cta": null,
+      "image": "https://i.ibb.co/vC6XQ7dM/Step-4.png"
+    },
+    {
+      "title": "Click to Join",
+      "body": "Double click Complex MC or click once on our server and select \"Join Server\" to join. Once joined, you'll be placed in our hub server where you can select from our various servers!",
+      "cta": null,
+      "image": "https://i.ibb.co/xt987hKh/Step-5.png"
+    }
+  ],
+  "faqs": [],
+  "tabs": [],
+  "discord": "https://discord.gg/ComplexVanilla",
+  "title": "Play Now | MC-Complex Vanilla Vanilla"
+}

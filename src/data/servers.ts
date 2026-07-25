@@ -1,0 +1,94 @@
+export type Guide = { name: string; url: string };
+export type GameMode = {
+  name: string;
+  players: number;
+  maxPlayers: number;
+  status: "online" | "offline";
+  icon?: string;
+};
+export type Server = {
+  name: string;
+  url: string;
+  className: string;
+  primaryColor: string;
+  message: string | null;
+  discordInvite: string;
+  forumsUrl: string;
+  iconUrl?: string;
+  gameModes: GameMode[];
+  guides: Guide[];
+};
+
+/** Fallback if https://api.lyra.host/servers fails */
+export const LYRA_FALLBACK_SERVERS: Server[] = [
+  {
+    name: "Vanilla",
+    url: "play.lyra.host",
+    className: "vanilla",
+    primaryColor: "#10b981",
+    message: null,
+    discordInvite: "https://discord.gg/LyraVanilla",
+    forumsUrl: "https://www.lyra.host/forums/vanilla/",
+    gameModes: [
+      { name: "Factions", players: 0, maxPlayers: 100, status: "online" },
+      { name: "Prison", players: 0, maxPlayers: 100, status: "online" },
+      { name: "Skyblock", players: 0, maxPlayers: 100, status: "online" },
+      { name: "Survival", players: 0, maxPlayers: 100, status: "online" },
+      { name: "Lifesteal", players: 0, maxPlayers: 100, status: "online" },
+      { name: "Creative", players: 0, maxPlayers: 100, status: "online" },
+    ],
+    guides: [
+      { name: "Getting Started", url: "/guides/getting-started" },
+      { name: "Server Rules", url: "/guides/rules" },
+      { name: "Commands", url: "/guides/commands" },
+    ],
+  },
+  {
+    name: "Pixelmon",
+    url: "play.lyra.host",
+    className: "pixelmon",
+    primaryColor: "#f59e0b",
+    message: null,
+    discordInvite: "https://discord.gg/LyraPixel",
+    forumsUrl: "https://www.lyra.host/forums/pixelmon/",
+    gameModes: [
+      { name: "Pixelmon", players: 0, maxPlayers: 100, status: "online" },
+      { name: "Red", players: 0, maxPlayers: 100, status: "online" },
+    ],
+    guides: [
+      { name: "Pixelmon Wiki", url: "/guides/pixelmon-wiki" },
+      { name: "Breeding Guide", url: "/guides/breeding" },
+      { name: "Legendaries", url: "/guides/legendaries" },
+    ],
+  },
+  {
+    name: "Cobblemon",
+    url: "play.lyra.host",
+    className: "cobblemon",
+    primaryColor: "#F2C6DE",
+    message: null,
+    discordInvite: "https://discord.gg/LyraPixel",
+    forumsUrl: "https://www.lyra.host/forums/pixelmon/",
+    gameModes: [{ name: "Cobblemon", players: 0, maxPlayers: 100, status: "online" }],
+    guides: [
+      { name: "Getting Started", url: "/cobblemon/getting-started" },
+      { name: "Server Rules", url: "/cobblemon/rules" },
+      { name: "Commands", url: "/cobblemon/commands" },
+    ],
+  },
+];
+
+
+type ApiGuide = { name?: string; title?: string; url: string };
+type ApiServer = Omit<Server, "guides"> & { guides?: ApiGuide[] };
+
+export function normalizeServers(data: ApiServer[]): Server[] {
+  return data.map((server) => ({
+    ...server,
+    guides:
+      server.guides?.map((guide) => ({
+        name: guide.name || guide.title || "Guide",
+        url: guide.url,
+      })) || [],
+  }));
+}

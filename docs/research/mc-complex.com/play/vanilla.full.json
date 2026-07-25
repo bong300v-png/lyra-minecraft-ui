@@ -1,0 +1,40 @@
+{
+  "slug": "vanilla",
+  "ip": "hub.mc-complex.com",
+  "discord": "https://discord.gg/ComplexVanilla",
+  "steps": [
+    {
+      "title": "Download the Minecraft Launcher",
+      "body": "Download the launcher from the Minecraft website. You may also take a look at the Lunar client as we're partnered with them here: https://www.lunarclient.com/download",
+      "image": "https://i.ibb.co/HJQWsp7/Step-1.png",
+      "cta": null
+    },
+    {
+      "title": "Login and Select Multiplayer",
+      "body": "After selecting your version, launch the client and select Multiplayer.",
+      "image": "https://i.ibb.co/S4rZbthZ/Step-2.png",
+      "cta": null
+    },
+    {
+      "title": "Add our Server",
+      "body": "Select the Add Server button.",
+      "image": "https://i.ibb.co/4Z2C35rp/Step-3.png",
+      "cta": null
+    },
+    {
+      "title": "Paste the IP Address and Enable Resource Packs",
+      "body": "Paste the IP Address in the Server Address box and set Server Resource Packs to Enabled. Doing so will allow you to view all of our custom items and entities! Additionally, we have more server IP addresses if you live in the EU, UK, AUS, SGP, and IN found using the \"Additional IP Addresses\" button below. Click Done when you've finished.",
+      "image": "https://i.ibb.co/vC6XQ7dM/Step-4.png",
+      "cta": null
+    },
+    {
+      "title": "Click to Join",
+      "body": "Double click Complex MC or click once on our server and select \"Join Server\" to join. Once joined, you'll be placed in our hub server where you can select from our various servers!",
+      "image": "https://i.ibb.co/xt987hKh/Step-5.png",
+      "cta": null
+    }
+  ],
+  "altTracks": [],
+  "faqs": [],
+  "title": "Play Now | MC-Complex Vanilla Vanilla"
+}

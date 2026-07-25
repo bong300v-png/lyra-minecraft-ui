@@ -1,0 +1,57 @@
+{
+  "ip": "hub.mc-complex.com",
+  "steps": [
+    {
+      "title": "Download the CurseForge App",
+      "body": "Download the CurseForge launcher for your operating system to get started! This app will allow you to download our Modpack and stay up to date!",
+      "cta": "CurseForge Website",
+      "image": "https://i.ibb.co/RpBrb74C/NVIDIA-Overlay-Px-Gi9cg7b-N.png"
+    },
+    {
+      "title": "Install the \"Complex Pixelmon\" Modpack",
+      "body": "Click the link below to go to the CurseForge page for our modpack, click \"Install Via App\" to automatically download the pack. A popup may appear asking if your browser can open CurseForge, be sure to select \"Allow\". Alternatively, you can search CurseForge for \"Complex Pixelmon\" after selecting Minecraft to play.",
+      "cta": "Download the Pixelmon Modpack",
+      "image": "https://i.ibb.co/9mthKDjc/NVIDIA-Overlay-24o4j-BH0l9.png"
+    },
+    {
+      "title": "Click \"Play\" in CurseForge",
+      "body": "Once the Modpack has finished Downloading, you should be able to click \"Play\" to now launch within your CurseForge App! The first launch may take a while, however you should not have to edit any settings for a smooth experience!",
+      "cta": null,
+      "image": "https://i.ibb.co/84LBbZc7/NVIDIA-Overlay-Lv-SPlu-XWj-P.png"
+    },
+    {
+      "title": "Click to Join the Server",
+      "body": "You should be on the Multiplayer menu once the launcher has finished loading your game. Select the Join Server button or Double Click the Server Icon from your menu to join our network!",
+      "cta": null,
+      "image": "https://i.ibb.co/Q783YLry/NVIDIA-Overlay-K1h8h-IDIzh.png"
+    },
+    {
+      "title": "Download the CurseForge App",
+      "body": "Download the CurseForge launcher for your operating system to get started! This app will allow you to download our Modpack and stay up to date!",
+      "cta": null,
+      "image": "https://i.ibb.co/RpBrb74C/NVIDIA-Overlay-Px-Gi9cg7b-N.png"
+    },
+    {
+      "title": "Install the \"Complex Pixelmon\" Modpack",
+      "body": "Click the link below to go to the CurseForge page for our modpack, click \"Install Via App\" to automatically download the pack. A popup may appear asking if your browser can open CurseForge, be sure to select \"Allow\". Alternatively, you can search CurseForge for \"Complex Pixelmon\" after selecting Minecraft to play.",
+      "cta": null,
+      "image": "https://i.ibb.co/9mthKDjc/NVIDIA-Overlay-24o4j-BH0l9.png"
+    },
+    {
+      "title": "Click \"Play\" in CurseForge",
+      "body": "Once the Modpack has finished Downloading, you should be able to click \"Play\" to now launch within your CurseForge App! The first launch may take a while, however you should not have to edit any settings for a smooth experience!",
+      "cta": null,
+      "image": "https://i.ibb.co/84LBbZc7/NVIDIA-Overlay-Lv-SPlu-XWj-P.png"
+    },
+    {
+      "title": "Click to Join the Server",
+      "body": "You should be on the Multiplayer menu once the launcher has finished loading your game. Select the Join Server button or Double Click the Server Icon from your menu to join our network!",
+      "cta": null,
+      "image": "https://i.ibb.co/Q783YLry/NVIDIA-Overlay-K1h8h-IDIzh.png"
+    }
+  ],
+  "faqs": [],
+  "tabs": [],
+  "discord": "https://discord.gg/ComplexPixel",
+  "title": "Play Pixelmon | MC-Complex Pixelmon"
+}
