@@ -13,7 +13,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const page = getPlayPage(slug);
-  if (!page) return { title: "Play | Lyra" };
+  if (!page) return { title: "Chơi | Lyra" };
   return { title: page.title, description: `${page.heading} — ${page.ip}` };
 }
 

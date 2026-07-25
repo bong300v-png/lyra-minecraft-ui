@@ -3,7 +3,7 @@ import "../play-theme.css";
 import "../play-core-extracted.css";
 
 export const metadata: Metadata = {
-  title: "Play | Lyra",
+  title: "Chơi | Lyra",
 };
 
 export default function PlayLayout({

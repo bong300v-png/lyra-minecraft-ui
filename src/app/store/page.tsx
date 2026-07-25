@@ -6,9 +6,9 @@ import "../store-core-extracted.css";
 import "../store-theme.css";
 
 export const metadata: Metadata = {
-  title: "Store | Lyra Pixelmon",
+  title: "Cửa hàng | Lyra Pixelmon",
   description:
-    "Select the server you wish to purchase something on from the options below! Giftcards are usable on Vanilla using /gc OR in the store!",
+    "Chọn máy chủ bạn muốn mua vật phẩm! Thẻ quà dùng được trên Vanilla bằng /gc hoặc trong cửa hàng!",
 };
 
 const STORES = [
@@ -32,7 +32,7 @@ const STORES = [
   },
   {
     id: "giftcards",
-    name: "Giftcards",
+    name: "Thẻ quà",
     href: "/store/username?store=giftcards",
     icon: "/images/complex/mode-giftcard.png",
   },
@@ -47,10 +47,10 @@ export default function StoreIndexPage() {
         <div className="block store--index">
           <div className="block-container store-panel">
             <div className="block-body store-hero">
-              <h1>Select Your Store</h1>
+              <h1>Chọn cửa hàng</h1>
               <p>
-                Select the server you wish to purchase something on from the options below! Giftcards
-                are usable on Vanilla using /gc OR in the store!
+                Chọn máy chủ bạn muốn mua vật phẩm ở các lựa chọn bên dưới! Thẻ quà dùng được trên
+                Vanilla bằng lệnh /gc hoặc trong cửa hàng!
               </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function StoreIndexPage() {
                     </div>
                     <div className="storeCard-text">
                       <h1>{s.name}</h1>
-                      <div>Select store</div>
+                      <div>Chọn cửa hàng</div>
                     </div>
                   </div>
                 </Link>
@@ -77,26 +77,26 @@ export default function StoreIndexPage() {
           <div className="footer-cols">
             <div className="col">
               <h1>Lyra</h1>
-              <p>Check out our quick links for fast access to important locations on the forums!</p>
+              <p>Xem liên kết nhanh để vào các khu vực quan trọng trên diễn đàn!</p>
             </div>
             <div className="col">
-              <h1>Quick Links</h1>
+              <h1>Liên kết nhanh</h1>
               <div className="play-quick-links">
-                <Link href="/">News</Link>
-                <Link href="/store">Store</Link>
+                <Link href="/">Tin tức</Link>
+                <Link href="/store">Cửa hàng</Link>
                 <Link href="/play/pixelmon">Pixelmon</Link>
-                <Link href="/login">Log in</Link>
+                <Link href="/login">Đăng nhập</Link>
               </div>
             </div>
             <div className="col">
-              <h1>Support Us</h1>
-              <p>Check out our store to purchase ranks, items, and more!</p>
+              <h1>Ủng hộ chúng tôi</h1>
+              <p>Ghé cửa hàng để mua rank, vật phẩm và hơn thế!</p>
               <Link href="/store" className="button primary">
-                Visit Store
+                Vào cửa hàng
               </Link>
             </div>
           </div>
-          <p className="muted">Lyra © 2016-2026. All Rights Reserved. We are not affiliated with Mojang AB.</p>
+          <p className="muted">Lyra © 2016-2026. Bảo lưu mọi quyền. Không liên kết với Mojang AB.</p>
         </footer>
       </div>
     </div>

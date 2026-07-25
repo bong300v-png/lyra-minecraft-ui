@@ -5,10 +5,8 @@ export type PlayStep = {
   cta?: { label: string; href: string };
 };
 
-export type FaqItem = { q: string; a: string };
-
 export type PlayPage = {
-  slug: "vanilla" | "pixelmon" | "cobblemon";
+  slug: string;
   title: string;
   heading: string;
   ip: string;
@@ -18,15 +16,15 @@ export type PlayPage = {
   modes: { label: string; href: string; active?: boolean }[];
   steps: PlayStep[];
   altTracks?: { name: string; steps: PlayStep[] }[];
-  faqs: FaqItem[];
+  faqs: { q: string; a: string }[];
 };
 
-/** Live dump 2026-07-25 from lyra.host play pages — copy/FAQ/IP exact */
+/** Play guides — Vietnamese UI */
 export const PLAY_PAGES: Record<string, PlayPage> = {
   vanilla: {
     slug: "vanilla",
-    title: "Play Now | Lyra Vanilla",
-    heading: "Play Now",
+    title: "Chơi ngay | Lyra Vanilla",
+    heading: "Chơi ngay",
     ip: "play.lyra.host",
     primaryColor: "#10b981",
     discord: "https://discord.gg/LyraVanilla",
@@ -38,49 +36,48 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     ],
     steps: [
       {
-        title: "Download the Minecraft Launcher",
-        body: "Download the launcher from the Minecraft website. You may also take a look at the Lunar client as we're partnered with them here: https://www.lunarclient.com/download",
+        title: "Tải Minecraft Launcher",
+        body: "Tải launcher từ trang Minecraft. Bạn cũng có thể xem Lunar Client (đối tác): https://www.lunarclient.com/download",
         image: "/images/play/vanilla/step1.png",
-        cta: { label: "Download Minecraft", href: "https://www.minecraft.net/en-us/download" },
+        cta: { label: "Tải Minecraft", href: "https://www.minecraft.net/en-us/download" },
       },
       {
-        title: "Login and Select Multiplayer",
-        body: "Once logged into Minecraft, select the Multiplayer button.",
+        title: "Đăng nhập và chọn Multiplayer",
+        body: "Mở Minecraft, đăng nhập tài khoản Java, rồi chọn Multiplayer.",
         image: "/images/play/vanilla/step2.png",
       },
       {
-        title: "Add our Server",
-        body: "Select the Add Server button.",
+        title: "Thêm máy chủ",
+        body: "Chọn nút Add Server.",
         image: "/images/play/vanilla/step3.png",
       },
       {
-        title: "Paste the IP Address and Enable Resource Packs",
-        body: "Paste play.lyra.host as the server address and enable server resource packs when prompted.",
+        title: "Dán IP và bật Resource Pack",
+        body: "Dán play.lyra.host làm địa chỉ máy chủ và bật resource pack khi được hỏi.",
         image: "/images/play/vanilla/step4.png",
       },
       {
-        title: "Click to Join",
-        body: "Select the server and click Join Server to start playing on Lyra Vanilla.",
+        title: "Nhấn Join",
+        body: "Chọn máy chủ và nhấn Join Server để chơi trên Lyra Vanilla.",
         image: "/images/play/vanilla/step5.png",
       },
     ],
     faqs: [
       {
-        q: "Can I play with friends?",
-        a: "Yes — share play.lyra.host so friends can join the same network.",
+        q: "Có chơi cùng bạn bè được không?",
+        a: "Có — chia sẻ play.lyra.host để bạn bè vào cùng mạng.",
       },
       {
-        q: "Need help?",
-        a: "Join Discord for live support and guides.",
+        q: "Cần hỗ trợ ở đâu?",
+        a: "Vào Discord để được hỗ trợ và xem hướng dẫn.",
       },
     ],
   },
   pixelmon: {
     slug: "pixelmon",
-    title: "Play Pixelmon | Lyra Pixelmon",
-    heading: "Play Pixelmon",
+    title: "Chơi Pixelmon | Lyra Pixelmon",
+    heading: "Chơi Pixelmon",
     ip: "play.lyra.host",
-    // live pixelmon extra.less primary
     primaryColor: "#e93a4f",
     discord: "https://discord.gg/LyraPixel",
     modeLabel: "Pixelmon",
@@ -91,58 +88,58 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     ],
     steps: [
       {
-        title: "Download the CurseForge App",
-        body: "Download the CurseForge launcher for your operating system to get started! This app will allow you to download our Modpack and stay up to date!",
+        title: "Tải ứng dụng CurseForge",
+        body: "Tải launcher CurseForge cho hệ điều hành của bạn! App này giúp tải Modpack và luôn cập nhật!",
         image: "/images/play/pixelmon/step1.png",
-        cta: { label: "CurseForge Website", href: "https://www.curseforge.com/download/app" },
+        cta: { label: "Trang CurseForge", href: "https://www.curseforge.com/download/app" },
       },
       {
-        title: 'Install the "Lyra Pixelmon" Modpack',
-        body: 'Click the link below to go to the CurseForge page for our modpack, click "Install Via App" to automatically download the pack. A popup may appear asking if your browser can open CurseForge, be sure to select "Allow". Alternatively, you can search CurseForge for "Lyra Pixelmon" after selecting Minecraft to play.',
+        title: 'Cài Modpack "Lyra Pixelmon"',
+        body: 'Bấm link bên dưới tới trang CurseForge, chọn "Install Via App" để tải pack. Trình duyệt có thể hỏi mở CurseForge — chọn "Allow". Hoặc tìm "Lyra Pixelmon" trong CurseForge sau khi chọn Minecraft.',
         image: "/images/play/pixelmon/step2.png",
         cta: {
-          label: "Download the Pixelmon Modpack",
-          href: "https://www.curseforge.com/minecraft/modpacks/lyra-pixelmon",
+          label: "Tải Modpack Pixelmon",
+          href: "https://www.curseforge.com/minecraft/modpacks/complex-gaming-pixelmon",
         },
       },
       {
-        title: 'Click "Play" in CurseForge',
-        body: 'Once the Modpack has finished Downloading, you should be able to click "Play" to now launch within your CurseForge App! The first launch may take a while, however you should not have to edit any settings for a smooth experience!',
+        title: 'Bấm "Play" trong CurseForge',
+        body: 'Khi Modpack tải xong, bấm "Play" để mở trong CurseForge! Lần đầu có thể lâu, thường không cần chỉnh thêm cài đặt.',
         image: "/images/play/pixelmon/step3.png",
       },
       {
-        title: "Click to Join the Server",
-        body: "You should be on the Multiplayer menu once the launcher has finished loading your game. Select the Join Server button or Double Click the Server Icon from your menu to join our network!",
+        title: "Vào máy chủ",
+        body: "Vào menu Multiplayer sau khi game load xong. Chọn Join Server hoặc double-click icon máy chủ để vào mạng!",
         image: "/images/play/pixelmon/step4.png",
       },
     ],
     faqs: [
       {
-        q: "What if I use another Launcher?",
-        a: "At this time we only actively update CurseForge, so we recommend using these for automatic updates and fixes for when Pixelmon Mod updates and custom content additions. Other launchers can be updated manually if needed however!",
+        q: "Nếu dùng launcher khác thì sao?",
+        a: "Hiện chúng tôi chỉ cập nhật chính thức trên CurseForge, nên khuyến nghị dùng để tự cập nhật khi Pixelmon/Mod nội dung thay đổi. Launcher khác có thể cập nhật thủ công!",
       },
       {
-        q: "How can I install shaders as well?",
-        a: 'You can manually add shaders by downloading the NeoForge version of "Iris" for 1.21.1 and adding it to your Mods folder within CurseForge. You can get it at this link: https://www.curseforge.com/minecraft/mc-mods/irisshaders. You will now see an Iris button in-game for shaders.',
+        q: "Làm sao cài shader?",
+        a: "Tải NeoForge version của Iris cho 1.21.1, thả vào thư mục Mods trong CurseForge: https://www.curseforge.com/minecraft/mc-mods/irisshaders — trong game sẽ có nút Iris cho shader.",
       },
       {
-        q: "Can I play with friends?",
-        a: "You can play with friends at any time on Pixelmon! When in-game use the /friends and /tpa commands to go to eachother!",
+        q: "Có chơi cùng bạn bè được không?",
+        a: "Có! Trong game dùng /friends và /tpa để đến chỗ nhau!",
       },
       {
-        q: "Why do all my items look like paper or basic minecraft textures?",
-        a: "This may mean you do not have the resourcepack installed, you can use /resourcepack in-game to download our textures and custom items!",
+        q: "Vì sao item trông như giấy / texture mặc định?",
+        a: "Có thể thiếu resourcepack — dùng /resourcepack trong game để tải texture và item tùy chỉnh!",
       },
       {
-        q: "Is the server cracked?",
-        a: "The server is not cracked and it is required to have a valid Minecraft Java account to play",
+        q: "Server có cracked không?",
+        a: "Không cracked — cần tài khoản Minecraft Java hợp lệ.",
       },
     ],
   },
   cobblemon: {
     slug: "cobblemon",
-    title: "Play Cobblemon | Lyra",
-    heading: "Play Cobblemon",
+    title: "Chơi Cobblemon | Lyra",
+    heading: "Chơi Cobblemon",
     ip: "play.lyra.host",
     primaryColor: "#F2C6DE",
     discord: "https://discord.gg/LyraPixel",
@@ -154,24 +151,24 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     ],
     steps: [
       {
-        title: "Download the CurseForge App",
-        body: "Install CurseForge to run the Lyra Cobblemon modpack.",
+        title: "Tải ứng dụng CurseForge",
+        body: "Cài CurseForge để chạy modpack Lyra Cobblemon.",
         image: "/images/play/cobblemon/step1.png",
-        cta: { label: "CurseForge Website", href: "https://www.curseforge.com/download/app" },
+        cta: { label: "Trang CurseForge", href: "https://www.curseforge.com/download/app" },
       },
       {
-        title: 'Install the "Lyra Cobblemon" Modpack',
-        body: "Install Via App from the Lyra Cobblemon CurseForge page, or search CurseForge for Lyra Cobblemon.",
+        title: 'Cài Modpack "Lyra Cobblemon"',
+        body: "Install Via App từ trang CurseForge Lyra Cobblemon, hoặc tìm Lyra Cobblemon trên CurseForge.",
         image: "/images/play/cobblemon/step2.png",
       },
       {
-        title: 'Click "Play" in CurseForge',
-        body: "Launch the modpack after it finishes installing.",
+        title: 'Bấm "Play" trong CurseForge',
+        body: "Sau khi tải xong, bấm Play để khởi động modpack.",
         image: "/images/play/cobblemon/step3.png",
       },
       {
-        title: "Click to Join the Server",
-        body: "Add play.lyra.host in Multiplayer and join.",
+        title: "Vào máy chủ",
+        body: "Thêm play.lyra.host trong Multiplayer và join.",
         image: "/images/play/cobblemon/step4.png",
       },
     ],
@@ -180,24 +177,24 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
         name: "Modrinth",
         steps: [
           {
-            title: "Download the Modrinth App",
-            body: "Install the Modrinth App as an alternative launcher for Lyra Cobblemon.",
+            title: "Tải ứng dụng Modrinth",
+            body: "Cài Modrinth App làm launcher thay thế cho Lyra Cobblemon.",
             image: "/images/play/cobblemon/modrinth1.png",
-            cta: { label: "Modrinth Website", href: "https://modrinth.com/app" },
+            cta: { label: "Trang Modrinth", href: "https://modrinth.com/app" },
           },
           {
-            title: 'Install the "Lyra Cobblemon" Modrinth Modpack',
-            body: "Install the Lyra Cobblemon pack from Modrinth.",
+            title: 'Cài Modpack "Lyra Cobblemon" trên Modrinth',
+            body: "Cài pack Lyra Cobblemon từ Modrinth.",
             image: "/images/play/cobblemon/modrinth2.png",
           },
           {
-            title: 'Go to the Modrinth App and click "Install"',
-            body: "Confirm install in the Modrinth app when prompted.",
+            title: 'Vào Modrinth App và bấm "Install"',
+            body: "Hoàn tất cài đặt trong app Modrinth.",
             image: "/images/play/cobblemon/modrinth3.png",
           },
           {
-            title: 'Click "Play" to start your Lyra Cobblemon Adventure!',
-            body: "Launch and join play.lyra.host.",
+            title: 'Bấm "Play" để bắt đầu cuộc phiêu lưu Lyra Cobblemon!',
+            body: "Khởi động và join play.lyra.host.",
             image: "/images/play/cobblemon/modrinth4.png",
           },
         ],
@@ -205,11 +202,11 @@ export const PLAY_PAGES: Record<string, PlayPage> = {
     ],
     faqs: [
       {
-        q: "CurseForge or Modrinth?",
-        a: "Both tracks are supported for Cobblemon — pick either tab above.",
+        q: "CurseForge hay Modrinth?",
+        a: "Cả hai đều được hỗ trợ cho Cobblemon — chọn tab phía trên.",
       },
       {
-        q: "Server IP?",
+        q: "IP máy chủ là gì?",
         a: "play.lyra.host",
       },
     ],

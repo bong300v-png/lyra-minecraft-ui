@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enter Minecraft Username | Lyra",
-  description: "Continue to Lyra store with your Minecraft username.",
+  title: "Nhập tên Minecraft | Lyra",
+  description: "Nhập tên Minecraft để vào cửa hàng Lyra.",
 };
 
 export default function StoreUsernameLayout({

@@ -3,16 +3,16 @@ import "./globals.css";
 import "./complex-theme.css";
 
 export const metadata: Metadata = {
-  title: "Lyra — Browse",
+  title: "Lyra — Duyệt máy chủ",
   description:
-    "Lyra — Browse Minecraft Servers | Vanilla, Pixelmon & Cobblemon",
+    "Lyra — Duyệt máy chủ Minecraft Servers | Vanilla, Pixelmon & Cobblemon",
   themeColor: "#000000",
   icons: {
     icon: "/seo/favicon.svg",
   },
   openGraph: {
     title: "Lyra",
-    description: "Join Lyra Minecraft network",
+    description: "Tham gia mạng Minecraft Lyra",
     siteName: "Lyra",
   },
 };
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

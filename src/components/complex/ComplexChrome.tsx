@@ -9,7 +9,7 @@ type ChromeProps = {
   active?: "store" | "login" | "register" | "play";
 };
 
-/** Shared XenForo chrome from mc-complex forums (nav + sub-nav) */
+/** Shared XenForo chrome — Vietnamese UI */
 export function ComplexChrome({
   modeLabel = "Pixelmon",
   storeMode = false,
@@ -30,10 +30,10 @@ export function ComplexChrome({
           <div className="left">
             <div className="nav-links">
               <Link href="/" className="button base">
-                Home
+                Trang chủ
               </Link>
               <Link href="/play/pixelmon" className="button base">
-                Forums
+                Diễn đàn
               </Link>
               <a
                 href="https://www.lyra.host/forums/pixelmon/vote/"
@@ -41,7 +41,7 @@ export function ComplexChrome({
                 target="_blank"
                 rel="noreferrer"
               >
-                Vote
+                Bình chọn
               </a>
             </div>
           </div>
@@ -62,10 +62,10 @@ export function ComplexChrome({
                 target="_blank"
                 rel="noreferrer"
               >
-                Help
+                Trợ giúp
               </a>
               <Link href="/store" className={`button base${active === "store" ? " is-active-store" : ""}`}>
-                Store
+                Cửa hàng
               </Link>
               <a
                 href="https://discord.gg/LyraPixel"
@@ -87,7 +87,7 @@ export function ComplexChrome({
               <div className="subnav-store-label">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/complex/mode-pixelmon.png" alt="" className="dropdown-icon" />
-                <span>Select Store</span>
+                <span>Chọn cửa hàng</span>
               </div>
             ) : (
               <div className="p-navgroup p-serverSelected">
@@ -109,7 +109,7 @@ export function ComplexChrome({
                 {modeOpen && (
                   <div className="menu menu--gamemodes is-open">
                     <div className="menu-content">
-                      <h3 className="menu-header">Choose Gamemode</h3>
+                      <h3 className="menu-header">Chọn chế độ</h3>
                       <Link href="/play/vanilla" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/images/complex/mode-vanilla.png" alt="" className="dropdown-icon" />
@@ -135,8 +135,8 @@ export function ComplexChrome({
           <div className="center hidden-sm">
             {storeMode ? (
               <div className="subnav-viewing">
-                <span className="muted">Currently Viewing</span>
-                <strong>Store</strong>
+                <span className="muted">Đang xem</span>
+                <strong>Cửa hàng</strong>
               </div>
             ) : (
               <button type="button" className="player-status" title="IP">
@@ -151,15 +151,15 @@ export function ComplexChrome({
               <div className="p-navgroup p-account p-navgroup--guest">
                 {storeMode ? (
                   <Link href="/store/username?store=pixelmon" className="p-navgroup-link p-navgroup-link--textual">
-                    <span className="p-navgroup-linkText">Login</span>
+                    <span className="p-navgroup-linkText">Đăng nhập</span>
                   </Link>
                 ) : (
                   <>
                     <Link href="/login" className={`p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn${active === "login" ? " is-active" : ""}`}>
-                      <span className="p-navgroup-linkText">Log in</span>
+                      <span className="p-navgroup-linkText">Đăng nhập</span>
                     </Link>
                     <Link href="/register" className={`p-navgroup-link p-navgroup-link--textual p-navgroup-link--register${active === "register" ? " is-active" : ""}`}>
-                      <span className="p-navgroup-linkText">Register</span>
+                      <span className="p-navgroup-linkText">Đăng ký</span>
                     </Link>
                   </>
                 )}

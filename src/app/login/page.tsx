@@ -7,7 +7,7 @@ import "../play-theme.css";
 import "../login-theme.css";
 import "../store-theme.css";
 
-/** UI clone of /forums/pixelmon/login/ with XenForo chrome */
+/** UI clone of /forums/pixelmon/login/ — Vietnamese */
 export default function LoginPage() {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState("");
@@ -18,10 +18,10 @@ export default function LoginPage() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!login.trim() || !password) {
-      setMsg("Enter your name/email and password.");
+      setMsg("Nhập tên/email và mật khẩu.");
       return;
     }
-    setMsg("Demo clone only — opening official Lyra Log in…");
+    setMsg("Bản demo — đang mở trang đăng nhập chính thức…");
     window.setTimeout(() => {
       window.open(
         "https://www.lyra.host/forums/pixelmon/login/",
@@ -43,7 +43,7 @@ export default function LoginPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
               </svg>
             </div>
-            <h1 className="p-title-value">Log in</h1>
+            <h1 className="p-title-value">Đăng nhập</h1>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export default function LoginPage() {
                 <dt>
                   <div className="formRow-labelWrapper">
                     <label className="formRow-label" htmlFor="login">
-                      Your name or email address
+                      Tên hoặc email
                     </label>
                   </div>
                 </dt>
@@ -75,7 +75,7 @@ export default function LoginPage() {
                 <dt>
                   <div className="formRow-labelWrapper">
                     <label className="formRow-label" htmlFor="password">
-                      Password
+                      Mật khẩu
                     </label>
                   </div>
                 </dt>
@@ -92,7 +92,7 @@ export default function LoginPage() {
                     />
                     <div className="inputGroup-text">
                       <button type="button" className="iconic-label" onClick={() => setShow((v) => !v)}>
-                        {show ? "Hide" : "Show"}
+                        {show ? "Ẩn" : "Hiện"}
                       </button>
                     </div>
                   </div>
@@ -102,7 +102,7 @@ export default function LoginPage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Forgot your password?
+                    Quên mật khẩu?
                   </a>
                 </dd>
               </dl>
@@ -121,7 +121,7 @@ export default function LoginPage() {
                           checked={remember}
                           onChange={(e) => setRemember(e.target.checked)}
                         />
-                        <span className="iconic-label">Stay logged in</span>
+                        <span className="iconic-label">Duy trì đăng nhập</span>
                       </label>
                     </li>
                   </ul>
@@ -136,10 +136,10 @@ export default function LoginPage() {
               <dd>
                 <div className="formSubmitRow-controls">
                   <Link href="/register" className="button">
-                    Register
+                    Đăng ký
                   </Link>
                   <button type="submit" className="button button--primary button--icon--login">
-                    Log in
+                    Đăng nhập
                   </button>
                 </div>
               </dd>
@@ -148,9 +148,9 @@ export default function LoginPage() {
         </form>
 
         <p className="login-foot">
-          Fan UI clone — real accounts on{" "}
+          Giao diện demo — tài khoản thật trên{" "}
           <a href="https://www.lyra.host/forums/pixelmon/login/" target="_blank" rel="noreferrer">
-            official forums
+            diễn đàn chính thức
           </a>
           .
         </p>

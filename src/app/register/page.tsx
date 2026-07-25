@@ -18,14 +18,14 @@ export default function RegisterPage() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!username.trim() || !email.trim() || !password) {
-      setMsg("Username, email, and password are required.");
+      setMsg("Cần tên người dùng, email và mật khẩu.");
       return;
     }
     if (password !== password2) {
-      setMsg("Passwords do not match.");
+      setMsg("Mật khẩu không khớp.");
       return;
     }
-    setMsg("Demo clone only — opening official Lyra Register…");
+    setMsg("Bản demo — đang mở trang đăng ký chính thức…");
     window.setTimeout(() => {
       window.open(
         "https://www.lyra.host/forums/pixelmon/register/",
@@ -47,7 +47,7 @@ export default function RegisterPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
               </svg>
             </div>
-            <h1 className="p-title-value">Register</h1>
+            <h1 className="p-title-value">Đăng ký</h1>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ export default function RegisterPage() {
               <dl className="formRow formRow--input">
                 <dt>
                   <label className="formRow-label" htmlFor="username">
-                    Username
+                    Tên người dùng
                   </label>
                 </dt>
                 <dd>
@@ -77,7 +77,7 @@ export default function RegisterPage() {
               <dl className="formRow formRow--input">
                 <dt>
                   <label className="formRow-label" htmlFor="password">
-                    Password
+                    Mật khẩu
                   </label>
                 </dt>
                 <dd>
@@ -85,7 +85,7 @@ export default function RegisterPage() {
                     <input id="password" type={show ? "text" : "password"} className="input" required value={password} onChange={(e) => setPassword(e.target.value)} />
                     <div className="inputGroup-text">
                       <button type="button" className="iconic-label" onClick={() => setShow((v) => !v)}>
-                        {show ? "Hide" : "Show"}
+                        {show ? "Ẩn" : "Hiện"}
                       </button>
                     </div>
                   </div>
@@ -94,7 +94,7 @@ export default function RegisterPage() {
               <dl className="formRow formRow--input">
                 <dt>
                   <label className="formRow-label" htmlFor="password2">
-                    Confirm password
+                    Xác nhận mật khẩu
                   </label>
                 </dt>
                 <dd>
@@ -108,10 +108,10 @@ export default function RegisterPage() {
               <dd>
                 <div className="formSubmitRow-controls">
                   <Link href="/login" className="button">
-                    Log in
+                    Đăng nhập
                   </Link>
                   <button type="submit" className="button button--primary">
-                    Register
+                    Đăng ký
                   </button>
                 </div>
               </dd>

@@ -3485,3 +3485,36 @@ button.play-lb-trigger img {
   font-family: "Bowlby One SC", sans-serif !important;
   text-transform: uppercase !important;
 }
+
+/* Nav base pills slightly stronger */
+.play-page-root #navigation .button.base,
+.play-page-root #navigation a.button.base {
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 18px !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+  background: color-mix(in srgb, #1d1e21 100%, #fff 12%) !important;
+}
+.play-page-root #navigation .button.discord,
+.play-page-root #navigation a.button.discord {
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 18px !important;
+  box-shadow:
+    inset 2px 2px 0 color-mix(in srgb, #7780ff 50%, #fff 35%),
+    inset -2px -2px 0 color-mix(in srgb, #7780ff 20%, #000 25%),
+    0 8px 10px -6px rgba(0,0,0,0.2) !important;
+}
+.play-page-root .play-ip-hint {
+  opacity: 0.65 !important;
+  font-size: 0.8rem !important;
+}
+.play-page-root .play-progress-dot {
+  width: 40px !important;
+  height: 40px !important;
+  border-width: 3px !important;
+}
+.play-page-root .play-progress-line {
+  height: 3px !important;
+}

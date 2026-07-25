@@ -12,7 +12,7 @@ const STORE_LABEL: Record<string, string> = {
   pixelmon: "Pixelmon",
   cobblemon: "Cobblemon",
   vanilla: "Vanilla",
-  giftcards: "Giftcards",
+  giftcards: "Thẻ quà",
 };
 
 export default function StoreUsernameClient() {
@@ -32,10 +32,10 @@ export default function StoreUsernameClient() {
     e.preventDefault();
     const name = user.trim();
     if (name.length < 3 || name.length > 16) {
-      setMsg("Username must be 3–16 characters.");
+      setMsg("Tên người chơi phải 3–16 ký tự.");
       return;
     }
-    setMsg(`Demo only — opening official ${label} store for ${platform === "bedrock" ? "." : ""}${name}…`);
+    setMsg(`Bản demo — đang mở cửa hàng ${label} cho ${platform === "bedrock" ? "." : ""}${name}…`);
     window.setTimeout(() => {
       window.open(official, "_blank", "noopener,noreferrer");
     }, 500);
@@ -43,15 +43,15 @@ export default function StoreUsernameClient() {
 
   return (
     <div className="store-page-root template-complex_store_username_entry">
-      <ComplexChrome storeMode active="store" modeLabel={label === "Giftcards" ? "Pixelmon" : label} />
+      <ComplexChrome storeMode active="store" modeLabel={label === "Thẻ quà" ? "Pixelmon" : label} />
 
       <div className="p-body-main store-body">
         <div className="block store-login" style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <div className="block-container">
             <div className="block-body">
-              <h2>Enter Your Minecraft Username</h2>
+              <h2>Nhập tên Minecraft</h2>
               <p className="store-selected-label">
-                Store: <strong>{label}</strong>
+                Cửa hàng: <strong>{label}</strong>
               </p>
 
               <form onSubmit={onSubmit} id="usernameForm">
@@ -77,7 +77,7 @@ export default function StoreUsernameClient() {
                   <input
                     type="text"
                     name="minecraft_username"
-                    placeholder="Enter your ingame username..."
+                    placeholder="Nhập tên trong game..."
                     maxLength={16}
                     required
                     value={user}
@@ -88,19 +88,19 @@ export default function StoreUsernameClient() {
 
                 <p className="store-note">
                   {platform === "java"
-                    ? "Java Edition · Must be 3–16 characters"
-                    : "Bedrock · Prefix . is applied on official store"}
+                    ? "Java Edition · 3–16 ký tự"
+                    : "Bedrock · Tiền tố . được thêm trên cửa hàng chính thức"}
                 </p>
 
                 <button type="submit" className="button primary store-continue">
-                  Continue to Store
+                  Tiếp tục vào cửa hàng
                 </button>
               </form>
 
               {msg ? <p className="store-msg">{msg}</p> : null}
 
               <Link href="/store" className="store-back">
-                ← Back to Store Selection
+                ← Quay lại chọn cửa hàng
               </Link>
             </div>
           </div>

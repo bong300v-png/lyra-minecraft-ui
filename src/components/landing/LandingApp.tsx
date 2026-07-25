@@ -41,7 +41,7 @@ function App() {
     fetch('https://api.lyra.host/servers')
       .then(response => {
         if (!response.ok) {
-          throw new Error('Failed to fetch server data');
+          throw new Error('Không tải được dữ liệu máy chủ');
         }
         return response.json();
       })
@@ -77,7 +77,7 @@ function App() {
   const handlePlay = (serverUrl: string) => {
     // Copy server IP to clipboard
     navigator.clipboard.writeText(serverUrl).then(() => {
-      showToast(`Server IP copied: ${serverUrl}`);
+      showToast(`Server Đã sao chép IP: ${serverUrl}`);
     });
   };
 
@@ -182,7 +182,7 @@ function App() {
                 letterSpacing: '0.05em'
               }}
             >
-              Loading servers...
+              Đang tải máy chủ...
             </motion.p>
           </motion.div>
         )}
@@ -211,7 +211,7 @@ function App() {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ef4444" style={{ width: '64px', height: '64px' }}>
               <path fillRule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clipRule="evenodd" />
             </svg>
-            <p style={{ color: 'white', fontSize: '1.25rem', fontWeight: '600' }}>Failed to load servers</p>
+            <p style={{ color: 'white', fontSize: '1.25rem', fontWeight: '600' }}>Không tải được danh sách máy chủ</p>
             <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.875rem' }}>{error}</p>
           </motion.div>
         )}
@@ -252,17 +252,17 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '12px', height: '12px' }}>
                 <circle cx="12" cy="12" r="6" fill="#10b981" />
               </svg>
-              {servers.reduce((sum: number, s: Server) => sum + s.gameModes.reduce((ms: number, m) => ms + m.players, 0), 0).toLocaleString()} online
+              {servers.reduce((sum: number, s: Server) => sum + s.gameModes.reduce((ms: number, m) => ms + m.players, 0), 0).toLocaleString()} trực tuyến
             </span>
           )}
         </div>
         {/* Original hub: logo center only — no Log in / Store in header (those live on cards) */}
         <nav className="right hidden-mobile" aria-label="Secondary navigation" style={{ visibility: "hidden" }} aria-hidden>
-          <span className="nav-item store-button">Store</span>
+          <span className="nav-item store-button">Cửa hàng</span>
         </nav>
       </motion.header>
 
-      <main className="landing-grid" role="main" aria-label="Minecraft servers">
+      <main className="landing-grid" role="main" aria-label="Máy chủ Minecraft">
         {!isMobile && canGoPrev && (
           <motion.button
             className="landing-nav-item prev"
@@ -272,7 +272,7 @@ function App() {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Navigate to previous server"
+            aria-label="Máy chủ trước"
             type="button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6" aria-hidden="true">
@@ -290,7 +290,7 @@ function App() {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Navigate to next server"
+            aria-label="Máy chủ sau"
             type="button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6" aria-hidden="true">
@@ -385,7 +385,7 @@ function App() {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '14px', height: '14px' }}>
                           <path fillRule="evenodd" d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z" clipRule="evenodd" />
                         </svg>
-                        Official Server Website
+                        Trang máy chủ chính thức
                       </motion.a>
                     )}
                   </div>
@@ -412,8 +412,8 @@ function App() {
                         <path fillRule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clipRule="evenodd" />
                         <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
                       </svg>
-                      <span aria-label={`${server.gameModes.reduce((sum: number, mode) => sum + mode.players, 0)} players online`}>
-                        {server.gameModes.reduce((sum: number, mode) => sum + mode.players, 0)} online
+                      <span aria-label={`${server.gameModes.reduce((sum: number, mode) => sum + mode.players, 0)} người chơi trực tuyến`}>
+                        {server.gameModes.reduce((sum: number, mode) => sum + mode.players, 0)} trực tuyến
                       </span>
                     </div>
 
@@ -431,13 +431,13 @@ function App() {
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        aria-label={`View ${server.name} game modes`}
+                        aria-label={`Xem chế độ ${server.name}`}
                         type="button"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="icon-play" aria-hidden="true">
                           <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clipRule="evenodd" />
                         </svg>
-                        Play
+                        Chơi
                       </motion.button>
 
                       <motion.a
@@ -448,7 +448,7 @@ function App() {
                         onClick={(e: MouseEvent) => e.stopPropagation()}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        aria-label={`Join ${server.name} Discord server`}
+                        aria-label={`Vào Discord ${server.name}`}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="icon-discord" aria-hidden="true">
                           <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
@@ -464,12 +464,12 @@ function App() {
                         onClick={(e: MouseEvent) => e.stopPropagation()}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        aria-label={`Visit ${server.name} store`}
+                        aria-label={`Vào cửa hàng ${server.name}`}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '14px', height: '14px' }} aria-hidden="true">
                           <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
                         </svg>
-                        Store
+                        Cửa hàng
                       </motion.a>
 
                       <motion.a
@@ -479,12 +479,12 @@ function App() {
                         onClick={(e: MouseEvent) => e.stopPropagation()}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        aria-label={`Visit ${server.name} forums`}
+                        aria-label={`Vào diễn đàn ${server.name}`}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '14px', height: '14px' }} aria-hidden="true">
                           <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.687 6.192l-2.033 2.033c-.342.342-.48.85-.316 1.31.163.46.556.75 1.033.75h4.172Z" clipRule="evenodd" />
                         </svg>
-                        Forums
+                        Diễn đàn
                       </motion.a>
                     </div>
                   </motion.div>
@@ -513,7 +513,7 @@ function App() {
                       {server.forumsUrl && (
                         <>
                           <div className="game-modes-header">
-                            <h3>WEBSITE</h3>
+                            <h3>TRANG WEB</h3>
                           </div>
                           <div className="guides-list">
                             <a
@@ -527,7 +527,7 @@ function App() {
                                   <path fillRule="evenodd" d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z" clipRule="evenodd" />
                                 </svg>
                               </div>
-                              <span className="guide-name">Official Server Website</span>
+                              <span className="guide-name">Trang máy chủ chính thức</span>
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="guide-arrow">
                                 <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clipRule="evenodd" />
                               </svg>
@@ -541,7 +541,7 @@ function App() {
                         <button
                           className="close-button"
                           onClick={() => setExpandedServer(null)}
-                          aria-label="Close game modes"
+                          aria-label="Đóng game modes"
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
@@ -558,7 +558,7 @@ function App() {
                                 </div>
                               )}
                               <span className="game-mode-name">{mode.name}:</span>
-                              <span className="game-mode-players">{mode.players} online</span>
+                              <span className="game-mode-players">{mode.players} trực tuyến</span>
                             </div>
                             <button
                               className="game-mode-play"
@@ -579,7 +579,7 @@ function App() {
                       {server.guides && server.guides.length > 0 && (
                         <>
                           <div className="game-modes-header other">
-                            <h3>GUIDES</h3>
+                            <h3>HƯỚNG DẪN</h3>
                           </div>
                           <div className="guides-list">
                             {server.guides.map((guide, guideIndex: number) => (

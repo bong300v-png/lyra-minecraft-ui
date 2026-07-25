@@ -7,13 +7,13 @@ import type { PlayPage, PlayStep } from "@/data/play-pages";
 /**
  * Layout from live mc-complex play vision + HTML dump:
  * #navigation (Home/Forums/Vote | logo+mode | Help/Store/Discord)
- * #sub-navigation (gamemode | IP+count | Log in/Register)
+ * #sub-navigation (gamemode | IP+count | Đăng nhập/Đăng ký)
  * .play-install card ...
  */
 export function PlayGuide({ page }: { page: PlayPage }) {
   const [step, setStep] = useState(0);
   const [track, setTrack] = useState(0);
-  const [hint, setHint] = useState("Click to copy");
+  const [hint, setHint] = useState("Bấm để sao chép");
   const [copied, setCopied] = useState(false);
   const [lb, setLb] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -37,14 +37,14 @@ export function PlayGuide({ page }: { page: PlayPage }) {
   const copyIp = async () => {
     try {
       await navigator.clipboard.writeText(page.ip);
-      setHint("✓ Copied!");
+      setHint("✓ Đã sao chép!");
       setCopied(true);
       window.setTimeout(() => {
-        setHint("Click to copy");
+        setHint("Bấm để sao chép");
         setCopied(false);
       }, 2000);
     } catch {
-      setHint("Copy failed");
+      setHint("Sao chép thất bại");
     }
   };
 
@@ -77,10 +77,10 @@ export function PlayGuide({ page }: { page: PlayPage }) {
           <div className="left">
             <div className="nav-links">
               <Link href="/" className="button base">
-                Home
+                Trang chủ
               </Link>
               <Link href="/play/pixelmon" className="button base">
-                Forums
+                Diễn đàn
               </Link>
               <a
                 href="https://www.lyra.host/forums/pixelmon/vote/"
@@ -88,7 +88,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Vote
+                Bình chọn
               </a>
             </div>
           </div>
@@ -109,10 +109,10 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Help
+                Trợ giúp
               </a>
               <Link href="/store" className="button base">
-                Store
+                Cửa hàng
               </Link>
               <a
                 href={page.discord}
@@ -150,7 +150,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
               {modeOpen && (
                 <div className="menu menu--gamemodes is-open">
                   <div className="menu-content">
-                    <h3 className="menu-header">Choose Gamemode</h3>
+                    <h3 className="menu-header">Chọn chế độ</h3>
                     <Link href="/play/vanilla" className="menu-linkRow w-icon" onClick={() => setModeOpen(false)}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src="/images/complex/mode-vanilla.png" alt="" className="dropdown-icon" />
@@ -177,7 +177,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
               type="button"
               className={`player-status${copied ? " copied" : ""}`}
               onClick={copyIp}
-              title="Click to copy IP"
+              title="Bấm để sao chép IP"
             >
               <span className="text">{page.ip}</span>
               <span className="count">{online}</span>
@@ -188,10 +188,10 @@ export function PlayGuide({ page }: { page: PlayPage }) {
             <div className="nav-links">
               <div className="p-navgroup p-account p-navgroup--guest">
                 <Link href="/login" className="p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn">
-                  <span className="p-navgroup-linkText">Log in</span>
+                  <span className="p-navgroup-linkText">Đăng nhập</span>
                 </Link>
                 <Link href="/register" className="p-navgroup-link p-navgroup-link--textual p-navgroup-link--register">
-                  <span className="p-navgroup-linkText">Register</span>
+                  <span className="p-navgroup-linkText">Đăng ký</span>
                 </Link>
               </div>
             </div>
@@ -213,7 +213,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                   if (e.key === "Enter" || e.key === " ") copyIp();
                 }}
               >
-                <span className="play-ip-label">SERVER IP</span>
+                <span className="play-ip-label">IP MÁY CHỦ</span>
                 <span className="play-ip-value">{page.ip}</span>
                 <span className="play-ip-hint">{hint}</span>
               </div>
@@ -248,7 +248,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
             </div>
 
             <div className="play-progress">
-              <button type="button" className="play-nav-arrow" disabled={idx === 0} onClick={() => go(-1)} aria-label="Previous step">
+              <button type="button" className="play-nav-arrow" disabled={idx === 0} onClick={() => go(-1)} aria-label="Bước trước">
                 ←
               </button>
               <div className="play-progress-steps">
@@ -270,7 +270,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                   </div>
                 ))}
               </div>
-              <button type="button" className="play-nav-arrow" disabled={idx >= n - 1} onClick={() => go(1)} aria-label="Next step">
+              <button type="button" className="play-nav-arrow" disabled={idx >= n - 1} onClick={() => go(1)} aria-label="Bước sau">
                 →
               </button>
             </div>
@@ -289,7 +289,7 @@ export function PlayGuide({ page }: { page: PlayPage }) {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={current.image} alt={current.title} />
                   </a>
-                  <p className="play-step-caption">Step {idx + 1}</p>
+                  <p className="play-step-caption">Bước {idx + 1}</p>
                 </div>
                 <div className="play-step-text">
                   <div className="play-step-number">{idx + 1}</div>
@@ -306,13 +306,13 @@ export function PlayGuide({ page }: { page: PlayPage }) {
 
             <div className="play-step-nav">
               <button type="button" className="button play-nav-prev" disabled={idx === 0} onClick={() => go(-1)}>
-                ← Back
+                ← Quay lại
               </button>
               <div className="play-step-counter">
-                Step <span>{idx + 1}</span> of {n}
+                Bước <span>{idx + 1}</span> / {n}
               </div>
               <button type="button" className="button primary play-nav-next" disabled={idx >= n - 1} onClick={() => go(1)}>
-                Next →
+                Tiếp →
               </button>
             </div>
           </div>
@@ -321,18 +321,18 @@ export function PlayGuide({ page }: { page: PlayPage }) {
         <div className="play-discord-help" id="playDiscordHelp">
           <div className="play-discord-help-inner">
             <div className="play-discord-help-text">
-              <h4>Need Help Installing?</h4>
-              <p>Join our Discord for quick support!</p>
+              <h4>Cần trợ giúp cài đặt?</h4>
+              <p>Vào Discord để được hỗ trợ nhanh!</p>
             </div>
             <a href={page.discord} target="_blank" rel="noopener noreferrer" className="play-discord-btn button primary">
-              Get Help
+              Nhận trợ giúp
             </a>
           </div>
         </div>
 
         {page.faqs?.length > 0 && (
           <section className="play-faq-section">
-            <h2>FAQ</h2>
+            <h2>Câu hỏi thường gặp</h2>
             {page.faqs.map((f, i) => (
               <div className="play-faq-item" key={i}>
                 <button type="button" className="play-faq-header" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
@@ -351,27 +351,27 @@ export function PlayGuide({ page }: { page: PlayPage }) {
           <div className="footer-cols">
             <div className="col">
               <h1>Lyra</h1>
-              <p>Check out our quick links for fast access to important locations on the forums!</p>
+              <p>Xem liên kết nhanh để vào các khu vực quan trọng trên diễn đàn!</p>
             </div>
             <div className="col">
-              <h1>Quick Links</h1>
+              <h1>Liên kết nhanh</h1>
               <div className="play-quick-links">
-                <Link href="/">News</Link>
-                <Link href="/store">Store</Link>
+                <Link href="/">Tin tức</Link>
+                <Link href="/store">Cửa hàng</Link>
                 <Link href="/play/vanilla">Vanilla</Link>
                 <Link href="/play/pixelmon">Pixelmon</Link>
                 <Link href="/play/cobblemon">Cobblemon</Link>
               </div>
             </div>
             <div className="col">
-              <h1>Support Us</h1>
-              <p>Check out our store to purchase ranks, items, and more!</p>
+              <h1>Ủng hộ chúng tôi</h1>
+              <p>Ghé cửa hàng để mua rank, vật phẩm và hơn thế!</p>
               <Link href="/store" className="button primary">
-                Visit Store
+                Vào cửa hàng
               </Link>
             </div>
           </div>
-          <p className="muted">Lyra © 2016-2026. All Rights Reserved. We are not affiliated with Mojang AB.</p>
+          <p className="muted">Lyra © 2016-2026. Bảo lưu mọi quyền. Không liên kết với Mojang AB.</p>
         </footer>
       </div>
 

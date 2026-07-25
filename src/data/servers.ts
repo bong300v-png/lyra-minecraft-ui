@@ -38,9 +38,9 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
       { name: "Creative", players: 0, maxPlayers: 100, status: "online" },
     ],
     guides: [
-      { name: "Getting Started", url: "/guides/getting-started" },
-      { name: "Server Rules", url: "/guides/rules" },
-      { name: "Commands", url: "/guides/commands" },
+      { name: "Bắt đầu", url: "/guides/getting-started" },
+      { name: "Nội quy", url: "/guides/rules" },
+      { name: "Lệnh", url: "/guides/commands" },
     ],
   },
   {
@@ -56,9 +56,9 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
       { name: "Red", players: 0, maxPlayers: 100, status: "online" },
     ],
     guides: [
-      { name: "Pixelmon Wiki", url: "/guides/pixelmon-wiki" },
-      { name: "Breeding Guide", url: "/guides/breeding" },
-      { name: "Legendaries", url: "/guides/legendaries" },
+      { name: "Wiki Pixelmon", url: "/guides/pixelmon-wiki" },
+      { name: "Hướng dẫn sinh sản", url: "/guides/breeding" },
+      { name: "Huyền thoại", url: "/guides/legendaries" },
     ],
   },
   {
@@ -71,9 +71,9 @@ export const LYRA_FALLBACK_SERVERS: Server[] = [
     forumsUrl: "/play/cobblemon",
     gameModes: [{ name: "Cobblemon", players: 0, maxPlayers: 100, status: "online" }],
     guides: [
-      { name: "Getting Started", url: "/cobblemon/getting-started" },
-      { name: "Server Rules", url: "/cobblemon/rules" },
-      { name: "Commands", url: "/cobblemon/commands" },
+      { name: "Bắt đầu", url: "/cobblemon/getting-started" },
+      { name: "Nội quy", url: "/cobblemon/rules" },
+      { name: "Lệnh", url: "/cobblemon/commands" },
     ],
   },
 ];
