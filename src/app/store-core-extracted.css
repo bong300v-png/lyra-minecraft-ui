@@ -109,7 +109,7 @@
 .complex-store-sale-banner .sale-text h1 {
   margin: 0px;
   overflow: hidden;
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal !important;
 }
 .complex-store-sale-banner .sale-text p {
@@ -146,7 +146,7 @@
   margin: 0 auto;
 }
 .store--index .store-hero h1 {
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
   font-size: 44px;
   margin: 0px;
@@ -579,7 +579,7 @@
   color: white !important;
 }
 .overlay--store .overlay-title {
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal !important;
   font-size: 20px;
   padding: 20px 15px;
@@ -1067,7 +1067,7 @@ a.button.button--scroll,
   position: relative;
   border-radius: 6px;
   overflow: hidden;
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1839,7 +1839,7 @@ body[data-template="complex_wiki_page_view"] .p-breadcrumbs {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 11px;
-  font-family: "Stack Sans Text", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 .dropdown-icon {
   display: inline-flex;
@@ -2026,7 +2026,7 @@ body[data-template="complex_wiki_page_view"] .p-breadcrumbs {
 .block-header,
 .block-minorHeader {
   line-height: 1;
-  font-family: "Stack Sans Text", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-size: 17px;
   font-weight: bold;
   padding-bottom: 5px !important;
@@ -2543,7 +2543,7 @@ hr {
 }
 .p-title-value {
   margin-bottom: 0px;
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 .p-title-pageAction {
   display: flex;

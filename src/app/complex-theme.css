@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap');
 
 :root {
     --bg: black;
@@ -8,7 +8,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     background: black;
-    font-family: "Stack Sans Text", sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
     overflow-x: hidden;
     width: 100%;
     height: 100%;
@@ -372,7 +372,7 @@ img {
     font-weight: 900;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-family: "Stack Sans Text", sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -448,7 +448,7 @@ img {
     font-weight: 900;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: "Stack Sans Text", sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
@@ -489,7 +489,7 @@ img {
     font-weight: 900;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: "Stack Sans Text", sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
@@ -887,4 +887,22 @@ img {
     .landing-grid .item h1 {
         font-size: 50px;
     }
+}
+
+/* Vietnamese-safe UI font (Bowlby One SC lacks VI glyphs) */
+html, body, button, input, select, textarea, .button, a.button {
+  font-family: "Be Vietnam Pro", Montserrat, system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+#navigation .button,
+#navigation a.button,
+.play-page-root .button,
+.play-page-root a.button,
+.login-page-root .button,
+.login-page-root a.button,
+.store-page-root .button,
+.store-page-root a.button,
+.p-title-value {
+  font-family: "Be Vietnam Pro", Montserrat, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
 }

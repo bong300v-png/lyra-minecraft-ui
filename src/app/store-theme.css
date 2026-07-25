@@ -4,7 +4,7 @@
   min-height: 100vh;
   background: #16171a;
   color: #f5f5f5;
-  font-family: "Stack Sans Text", Montserrat, system-ui, sans-serif;
+  font-family: "Be Vietnam Pro", Montserrat, system-ui, sans-serif;
 }
 
 .store-page-root #navigation,
@@ -76,7 +76,7 @@
   text-align: center;
 }
 .store--index .store-hero h1 {
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
   font-size: clamp(2rem, 5vw, 44px);
   margin: 0;
@@ -157,7 +157,7 @@
 
 /* username page */
 .store-login h2 {
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
   font-size: 26px;
   margin: 0 0 12px;
@@ -243,7 +243,7 @@
   margin-top: 18px;
   width: 100%;
   height: 54px;
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   text-transform: uppercase;
 }
 .store-back {
@@ -280,7 +280,7 @@
 }
 .login-page-root .p-title-value {
   margin: 0;
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-size: 1.6rem;
   font-weight: normal;
 }
@@ -406,7 +406,7 @@
   background: #fbcc46 !important;
   color: #3a2e00 !important;
   border: none !important;
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   text-transform: uppercase;
 }
 .login-msg {
@@ -436,4 +436,22 @@
   .login-block .formRow {
     grid-template-columns: 1fr;
   }
+}
+
+/* Vietnamese-safe UI font (Bowlby One SC lacks VI glyphs) */
+html, body, button, input, select, textarea, .button, a.button {
+  font-family: "Be Vietnam Pro", Montserrat, system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+#navigation .button,
+#navigation a.button,
+.play-page-root .button,
+.play-page-root a.button,
+.login-page-root .button,
+.login-page-root a.button,
+.store-page-root .button,
+.store-page-root a.button,
+.p-title-value {
+  font-family: "Be Vietnam Pro", Montserrat, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
 }
