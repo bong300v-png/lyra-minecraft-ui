@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4; }
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Vote.dc.html">VOTE</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+    </div>
+  </nav>
+  <main style="flex: 1; max-width: 960px; margin: 0 auto; padding: 40px 48px 100px; width: 100%; box-sizing: border-box;">
+    <div style="font-size: 12px; color: #f87171; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">MINH BẠCH XỬ PHẠT</div>
+    <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px;">Bảng ban công khai</h1>
+    <p style="font-size: 14.5px; color: #9aa3b5; line-height: 1.7; margin: 0 0 32px;">Mọi án phạt đều công khai để cộng đồng giám sát. Kháng ban qua ticket Discord — phản hồi trong 48 giờ.</p>
+    <div style="display: flex; gap: 10px; margin-bottom: 22px;">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+        <button onClick="{{ f.pick }}" style="border: 1px solid {{ f.border }}; background: {{ f.bg }}; color: {{ f.fg }}; border-radius: 999px; padding: 8px 20px; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: .1em; cursor: pointer;">{{ f.label }}</button>
+      </sc-for>
+    </div>
+    <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid #23232b; border-radius: 18px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 1.2fr 1.4fr .9fr .9fr .8fr; gap: 12px; padding: 14px 24px; font-size: 10.5px; font-weight: 700; letter-spacing: .18em; color: #626b7a; border-bottom: 1px solid #1a1a22;">
+        <span>NGƯỜI CHƠI</span><span>LÝ DO</span><span>LOẠI</span><span>NGÀY</span><span>HẾT HẠN</span>
+      </div>
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+        <div style="display: grid; grid-template-columns: 1.2fr 1.4fr .9fr .9fr .8fr; gap: 12px; padding: 14px 24px; font-size: 13.5px; border-bottom: 1px solid #14141c; align-items: center;">
+          <span style="display: flex; align-items: center; gap: 10px; font-weight: 600;"><img src="{{ r.avatar }}" alt="" style="width: 26px; height: 26px; image-rendering: pixelated; border-radius: 6px;">{{ r.name }}</span>
+          <span style="color: #9aa3b5;">{{ r.reason }}</span>
+          <span style="color: {{ r.typeColor }}; font-weight: 700; font-size: 12px; letter-spacing: .08em;">{{ r.type }}</span>
+          <span style="color: #9aa3b5;">{{ r.date }}</span>
+          <span style="color: {{ r.untilColor }};">{{ r.until }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 22px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em; flex-wrap: wrap;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK</span>
+    <a href="Lyra Staff.dc.html" style="color: #626b7a;">ĐỘI NGŨ</a>
+    <a href="Lyra Rules.dc.html" style="color: #626b7a;">NỘI QUY</a>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: "ALL" };
+  renderVals() {
+    const av = n => `https://minotar.net/helm/${n}/26.png`;
+    const data = [
+      { name: "xXCheat3rXx", reason: "Kill aura (Vanilla)", type: "BAN VĨNH VIỄN", key: "BAN", typeColor: "#f87171", date: "25/07/2026", until: "Không", untilColor: "#f87171", avatar: av("MHF_Steve") },
+      { name: "duperino", reason: "Giữ đồ dupe sau cảnh báo", type: "BAN 30 NGÀY", key: "BAN", typeColor: "#f87171", date: "23/07/2026", until: "22/08/2026", untilColor: "#9aa3b5", avatar: av("MHF_Alex") },
+      { name: "toxic_boy09", reason: "Ngôn từ thù ghét trong chat", type: "MUTE 7 NGÀY", key: "MUTE", typeColor: "#f0c96b", date: "22/07/2026", until: "29/07/2026", untilColor: "#9aa3b5", avatar: av("MHF_Steve") },
+      { name: "scamlord", reason: "Lừa đảo giao dịch Pixelmon", type: "BAN VĨNH VIỄN", key: "BAN", typeColor: "#f87171", date: "19/07/2026", until: "Không", untilColor: "#f87171", avatar: av("MHF_Alex") },
+      { name: "spammer123", reason: "Spam quảng cáo server khác", type: "MUTE 24 GIỜ", key: "MUTE", typeColor: "#f0c96b", date: "18/07/2026", until: "Đã hết", untilColor: "#4ade80", avatar: av("MHF_Steve") },
+      { name: "griefking", reason: "Phá công trình ngoài claim", type: "BAN 7 NGÀY", key: "BAN", typeColor: "#f87171", date: "16/07/2026", until: "Đã hết", untilColor: "#4ade80", avatar: av("MHF_Alex") }
+    ];
+    const opts = [["ALL", "TẤT CẢ"], ["BAN", "BAN"], ["MUTE", "MUTE"]];
+    return {
+      filters: opts.map(([key, label]) => {
+        const on = this.state.filter === key;
+        return { label, pick: () => this.setState({ filter: key }),
+          border: on ? "#8B5CF6" : "#23232b", bg: on ? "rgba(139,92,246,.18)" : "transparent", fg: on ? "#E6EBF4" : "#626b7a" };
+      }),
+      rows: data.filter(r => this.state.filter === "ALL" || r.key === this.state.filter)
+    };
+  }
+}
+</script>
+</body>
+</html>

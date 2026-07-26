@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4;
+  background-image: radial-gradient(1.5px 1.5px at 12% 22%, rgba(230,235,244,.7), transparent), radial-gradient(1px 1px at 68% 12%, rgba(139,92,246,.8), transparent), radial-gradient(1.5px 1.5px at 84% 58%, rgba(230,235,244,.5), transparent), radial-gradient(1px 1px at 34% 74%, rgba(230,235,244,.6), transparent);
+}
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+input::placeholder { color: #4a5262; }
+@keyframes glowpulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes modalin { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Play.dc.html">HƯỚNG DẪN</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+      <a href="Lyra Login.dc.html" style="background: #8B5CF6; color: #fff; padding: 9px 20px; border-radius: 999px; font-weight: 700;">ĐĂNG NHẬP</a>
+    </div>
+  </nav>
+  <main style="flex: 1; max-width: 1280px; margin: 0 auto; padding: 40px 48px 100px; width: 100%; box-sizing: border-box;">
+    <div style="text-align: center; margin-bottom: 14px;">
+      <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">LYRA STORE</div>
+      <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(32px, 5vw, 48px); margin: 0 0 12px; background: linear-gradient(180deg, #fff, #8B5CF6 160%); -webkit-background-clip: text; background-clip: text; color: transparent;">Nâng cấp hành trình của bạn</h1>
+      <p style="font-size: 15px; color: #9aa3b5; max-width: 480px; margin: 0 auto 46px; line-height: 1.6;">Rank áp dụng trên toàn bộ thiên hà Lyra. Thanh toán một lần, giữ vĩnh viễn.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch;">
+      <sc-for list="{{ ranks }}" as="r" hint-placeholder-count="3">
+        <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid {{ r.border }}; border-radius: 22px; padding: 34px 30px; display: flex; flex-direction: column; position: relative; overflow: hidden;">
+          <sc-if value="{{ r.hot }}" hint-placeholder-val="{{ false }}">
+            <span style="position: absolute; top: 18px; right: 18px; background: #8B5CF6; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .14em; padding: 5px 12px; border-radius: 999px; animation: glowpulse 2.5s ease-in-out infinite;">BÁN CHẠY</span>
+          </sc-if>
+          <div style="font-size: 12px; color: {{ r.tint }}; font-weight: 700; letter-spacing: .26em; margin-bottom: 8px;">{{ r.tier }}</div>
+          <div style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 30px; margin-bottom: 4px; color: {{ r.tint }};">{{ r.name }}</div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 22px;">
+            <span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 26px;">{{ r.price }}</span>
+            <span style="font-size: 12px; color: #626b7a;">VND · trọn đời</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 11px; margin-bottom: 28px; flex: 1;">
+            <sc-for list="{{ r.perks }}" as="p" hint-placeholder-count="4">
+              <div style="display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #b9c1d1;"><span style="color: {{ r.tint }}; font-weight: 700;">✦</span>{{ p }}</div>
+            </sc-for>
+          </div>
+          <button onClick="{{ r.buy }}" style="text-align: center; background: {{ r.btnBg }}; color: {{ r.btnFg }}; border: none; padding: 13px 0; border-radius: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .1em; cursor: pointer;" style-hover="filter: brightness(1.12);">MUA {{ r.name }}</button>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top: 40px; text-align: center; font-size: 12.5px; color: #626b7a; letter-spacing: .04em;">Thanh toán qua Momo / Banking / thẻ quốc tế · Rank kích hoạt tự động trong 60 giây · Hỗ trợ trên <a href="Lyra Forums.dc.html" style="color: #8B5CF6;">Forums</a> và Discord</div>
+  </main>
+
+  <!-- CHECKOUT MODAL -->
+  <sc-if value="{{ checkoutOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeCheckout }}" style="position: fixed; inset: 0; background: rgba(4,6,12,.78); backdrop-filter: blur(6px); z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px;">
+      <div onClick="{{ stop }}" style="width: 440px; max-width: 100%; background: linear-gradient(180deg, #14141c, #0b0f1a); border: 1px solid rgba(139,92,246,.4); border-radius: 22px; padding: 34px 34px 30px; animation: modalin .35s cubic-bezier(.2,.7,.2,1); position: relative;">
+        <button onClick="{{ closeCheckout }}" style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: #626b7a; font-size: 18px; cursor: pointer; padding: 6px;" style-hover="color: #fff;">✕</button>
+        <div style="font-size: 11px; color: #8B5CF6; font-weight: 700; letter-spacing: .26em; margin-bottom: 6px;">THANH TOÁN</div>
+        <div style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 24px; margin-bottom: 18px;">Rank {{ selName }} · {{ selPrice }} VND</div>
+        <label style="display: block; font-size: 12px; color: #9aa3b5; letter-spacing: .1em; margin-bottom: 8px;">TÊN TRONG GAME (IGN)</label>
+        <input value="{{ ign }}" onChange="{{ setIgn }}" type="text" placeholder="Steve_VN" style="width: 100%; box-sizing: border-box; background: rgba(230,235,244,.05); border: 1px solid #2a2a34; border-radius: 12px; padding: 13px 16px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #E6EBF4; outline: none; margin-bottom: 18px;" style-focus="border-color: #8B5CF6;">
+        <label style="display: block; font-size: 12px; color: #9aa3b5; letter-spacing: .1em; margin-bottom: 8px;">PHƯƠNG THỨC</label>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 22px;">
+          <sc-for list="{{ payments }}" as="pm" hint-placeholder-count="3">
+            <button onClick="{{ pm.pick }}" style="border: 1px solid {{ pm.border }}; background: {{ pm.bg }}; color: #E6EBF4; border-radius: 12px; padding: 12px 0; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: .04em; cursor: pointer;">{{ pm.name }}</button>
+          </sc-for>
+        </div>
+        <button onClick="{{ confirm }}" style="width: 100%; background: #8B5CF6; color: #fff; border: none; border-radius: 12px; padding: 15px 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .12em; cursor: pointer; box-shadow: 0 8px 30px rgba(139,92,246,.4);" style-hover="filter: brightness(1.12);">{{ confirmLabel }}</button>
+        <div style="text-align: center; margin-top: 14px; font-size: 11.5px; color: #626b7a; line-height: 1.6;">Rank kích hoạt tự động sau thanh toán.<br>Bằng việc mua, bạn đồng ý <a href="Lyra Terms.dc.html" style="color: #8B5CF6;">Điều khoản</a> của Lyra.</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 22px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em; flex-wrap: wrap;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK</span>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN &amp; BẢO MẬT</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { checkout: null, ign: "", pay: "Momo", done: false };
+  renderVals() {
+    const mk = (r) => ({ ...r, buy: () => this.setState({ checkout: r, done: false }) });
+    const ranks = [
+      { tier: "TIER 1", name: "STAR", price: "99K", tint: "#E6EBF4", border: "#23232b", hot: false, btnBg: "rgba(230,235,244,.1)", btnFg: "#E6EBF4",
+        perks: ["Prefix ✦ Star trong chat", "2 home + /kit star mỗi ngày", "Vào hàng chờ ưu tiên", "Particle trail cơ bản"] },
+      { tier: "TIER 2", name: "NOVA", price: "249K", tint: "#8B5CF6", border: "rgba(139,92,246,.55)", hot: true, btnBg: "#8B5CF6", btnFg: "#fff",
+        perks: ["Toàn bộ quyền Star", "5 home + /fly ở lobby", "Pet đồng hành + glow tím", "Kho đồ phụ /pv x2", "Khung avatar Nova trên web"] },
+      { tier: "TIER 3", name: "VEGA", price: "499K", tint: "#f0c96b", border: "rgba(240,201,107,.45)", hot: false, btnBg: "rgba(240,201,107,.9)", btnFg: "#1a1508",
+        perks: ["Toàn bộ quyền Nova", "10 home + /nick màu", "Cosmetic độc quyền theo mùa", "Slot riêng khi server full", "Tag VEGA vàng toàn thiên hà"] }
+    ].map(mk);
+    const sel = this.state.checkout;
+    return {
+      ranks,
+      checkoutOpen: !!sel,
+      selName: sel ? sel.name : "",
+      selPrice: sel ? sel.price : "",
+      ign: this.state.ign,
+      setIgn: (e) => this.setState({ ign: e.target.value }),
+      payments: ["Momo", "Banking", "Thẻ"].map(name => ({
+        name,
+        border: this.state.pay === name ? "#8B5CF6" : "#2a2a34",
+        bg: this.state.pay === name ? "rgba(139,92,246,.16)" : "rgba(230,235,244,.04)",
+        pick: () => this.setState({ pay: name })
+      })),
+      confirmLabel: this.state.done ? "ĐÃ TẠO ĐƠN ✓ (DEMO)" : "THANH TOÁN " + (sel ? sel.price : "") + " VND",
+      confirm: () => this.setState({ done: true }),
+      closeCheckout: () => this.setState({ checkout: null }),
+      stop: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>

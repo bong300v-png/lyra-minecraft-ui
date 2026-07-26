@@ -1,103 +1,163 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ComplexChrome } from "@/components/complex/ComplexChrome";
-import "../play-theme.css";
-import "../store-core-extracted.css";
-import "../store-theme.css";
+import { PageShell, PageKicker } from "@/components/lyra/PageShell";
+import { SITE } from "@/lib/site";
+import { StoreGrid } from "./StoreGrid";
 
 export const metadata: Metadata = {
-  title: "Cửa hàng | Lyra",
+  title: "Store — Lyra",
   description:
-    "Cửa hàng Lyra — cosmetic / ủng hộ server. Không P2W combat.",
+    "Store Lyra — cosmetic & QoL thuần, không bán sức mạnh. Cam kết non-P2W in thẳng vào store.",
 };
 
-const STORES = [
-  {
-    id: "survival",
-    name: "Survival",
-    href: "/store/username?store=survival",
-    icon: "/images/complex/mode-vanilla.png",
-  },
-  {
-    id: "cosmetics",
-    name: "Cosmetics",
-    href: "/store/username?store=cosmetics",
-    icon: "/images/complex/mode-cobblemon.png",
-  },
-  {
-    id: "support",
-    name: "Hỗ trợ server",
-    href: "/store/username?store=support",
-    icon: "/images/complex/mode-vanilla.png",
-  },
-  {
-    id: "giftcards",
-    name: "Thẻ quà",
-    href: "/store/username?store=giftcards",
-    icon: "/images/complex/mode-giftcard.png",
-  },
-] as const;
+const NEVER_SELL: readonly string[] = [
+  "Gear / enchant / crate power",
+  "Fly ngoài lobby",
+  "Đất bằng tiền thật",
+  "Tiền in-game",
+  "Unban",
+];
 
-export default function StoreIndexPage() {
+export default function StorePage() {
   return (
-    <div className="store-page-root template-complex_store_index">
-      <ComplexChrome storeMode active="store" modeLabel="Survival" />
+    <PageShell>
+      <div style={{ textAlign: "center", marginBottom: 14 }}>
+        <PageKicker>LYRA STORE</PageKicker>
+        <h1
+          className="font-display text-gradient-hero"
+          style={{
+            fontWeight: 900,
+            fontSize: "clamp(32px, 5vw, 48px)",
+            margin: "0 0 12px",
+          }}
+        >
+          Nâng cấp hành trình của bạn
+        </h1>
+        <p
+          style={{
+            fontSize: 15,
+            color: "#9aa3b5",
+            maxWidth: 480,
+            margin: "0 auto 46px",
+            lineHeight: 1.6,
+          }}
+        >
+          Toàn bộ store là cosmetic &amp; QoL thuần — không bán sức mạnh. Mỗi
+          đồng ủng hộ giữ thiên hà Lyra sáng đèn.
+        </p>
+      </div>
 
-      <div className="p-body-main store-body">
-        <div className="block store--index">
-          <div className="block-container store-panel">
-            <div className="block-body store-hero">
-              <h1>Chọn cửa hàng</h1>
-              <p>
-                Ủng hộ Lyra Survival Towny — cosmetic / gift (không P2W combat). Chọn mục bên dưới.
-              </p>
-            </div>
+      <StoreGrid />
 
-            <div className="store-categories-grid">
-              {STORES.map((s) => (
-                <Link key={s.id} href={s.href} className="storeCard" data-gamemode={s.name}>
-                  <div>
-                    <div className="storeCard-icon">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={s.icon} alt={s.name} />
-                    </div>
-                    <div className="storeCard-text">
-                      <h1>{s.name}</h1>
-                      <div>Chọn cửa hàng</div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+      <div
+        style={{
+          marginTop: 40,
+          textAlign: "center",
+          fontSize: 12.5,
+          color: "#626b7a",
+          letterSpacing: ".04em",
+        }}
+      >
+        Thanh toán P0 qua ticket Discord (VietQR / MoMo) · Giao dịch ghi log
+        công khai tại{" "}
+        <span style={{ color: "#8B5CF6" }}>#nap-log</span> · Hỗ trợ trên{" "}
+        <Link href="/forums/" style={{ color: "#8B5CF6" }}>
+          Forums
+        </Link>{" "}
+        và{" "}
+        <a href={SITE.discord} style={{ color: "#8B5CF6" }}>
+          Discord
+        </a>
+      </div>
+
+      <section style={{ marginTop: 70 }}>
+        <div
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(24,12,15,.9), rgba(11,15,26,.92))",
+            border: "1px solid rgba(248,113,113,.35)",
+            borderRadius: 22,
+            padding: "34px 34px 28px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: 11,
+              color: "#f87171",
+              fontWeight: 700,
+              letterSpacing: ".26em",
+              marginBottom: 8,
+            }}
+          >
+            CAM KẾT NON-P2W
+          </div>
+          <h2
+            className="font-display"
+            style={{
+              fontWeight: 900,
+              fontSize: 24,
+              margin: "0 0 18px",
+              color: "#f87171",
+            }}
+          >
+            KHÔNG BAO GIỜ BÁN
+          </h2>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 10,
+              marginBottom: 22,
+            }}
+          >
+            {NEVER_SELL.map((item) => (
+              <span
+                key={item}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  border: "1px solid rgba(248,113,113,.3)",
+                  background: "rgba(248,113,113,.07)",
+                  color: "#b9c1d1",
+                  borderRadius: 999,
+                  padding: "9px 16px",
+                  fontSize: 13,
+                  fontWeight: 500,
+                }}
+              >
+                <span style={{ color: "#f87171", fontWeight: 700 }}>✕</span>
+                {item}
+              </span>
+            ))}
+          </div>
+          <p
+            style={{
+              fontSize: 14,
+              color: "#b9c1d1",
+              lineHeight: 1.7,
+              margin: "0 0 18px",
+              borderLeft: "3px solid #f87171",
+              paddingLeft: 14,
+            }}
+          >
+            Cam kết non-P2W in thẳng vào store — vi phạm là phá sản niềm tin,
+            và niềm tin là sản phẩm của Lyra.
+          </p>
+          <div
+            style={{
+              borderTop: "1px solid rgba(248,113,113,.2)",
+              paddingTop: 14,
+              fontSize: 12.5,
+              color: "#626b7a",
+              lineHeight: 1.6,
+            }}
+          >
+            Town nhóm ≥3 thành viên liên kết Discord được hoàn 50% phí lập town
+            — chính sách miễn phí, không phải hàng bán.
           </div>
         </div>
-
-        <footer className="play-clone-foot" id="footer">
-          <div className="footer-cols">
-            <div className="col">
-              <h1>Lyra</h1>
-              <p>Xem liên kết nhanh để vào các khu vực quan trọng trên diễn đàn!</p>
-            </div>
-            <div className="col">
-              <h1>Liên kết nhanh</h1>
-              <div className="play-quick-links">
-                <Link href="/">Tin tức</Link>
-                <Link href="/store">Cửa hàng</Link>
-                <Link href="/play/survival">Chơi</Link>
-                <Link href="/login">Đăng nhập</Link>
-              </div>
-            </div>
-            <div className="col">
-              <h1>Ủng hộ chúng tôi</h1>
-              <p>Ghé cửa hàng để mua cosmetic / ủng hộ server (không P2W combat)!</p>
-              <Link href="/store" className="button primary">
-                Vào cửa hàng
-              </Link>
-            </div>
-          </div>
-          <p className="muted">Lyra © 2016-2026. Bảo lưu mọi quyền. Không liên kết với Mojang AB.</p>
-        </footer>
-      </div>
-    </div>
+      </section>
+    </PageShell>
   );
 }

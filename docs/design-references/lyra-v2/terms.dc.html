@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4; }
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+    </div>
+  </nav>
+  <main style="flex: 1; max-width: 820px; margin: 0 auto; padding: 40px 48px 100px; width: 100%; box-sizing: border-box;">
+    <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">PHÁP LÝ</div>
+    <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px;">Điều khoản &amp; Bảo mật</h1>
+    <div style="font-size: 12.5px; color: #626b7a; margin-bottom: 40px;">Cập nhật lần cuối: 26/07/2026</div>
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+      <div style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 18px; margin: 0 0 12px; color: #E6EBF4;">{{ s.h }}</h2>
+        <p style="font-size: 14.5px; color: #9aa3b5; line-height: 1.75; margin: 0; text-wrap: pretty;">{{ s.p }}</p>
+      </div>
+    </sc-for>
+  </main>
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 14px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK · PLAY.LYRA.HOST</span>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      sections: [
+        { h: "1. Tài khoản", p: "Mỗi người chơi chịu trách nhiệm về tài khoản và tên trong game (IGN) của mình. Không chia sẻ mật khẩu; Lyra không bao giờ hỏi mật khẩu của bạn qua chat hay Discord." },
+        { h: "2. Mua hàng & hoàn tiền", p: "Rank và vật phẩm trên Store là hàng hóa kỹ thuật số, kích hoạt tự động sau thanh toán. Giao dịch đã kích hoạt không được hoàn tiền, trừ trường hợp lỗi hệ thống được xác nhận bởi đội ngũ hỗ trợ trong vòng 7 ngày." },
+        { h: "3. Quy tắc ứng xử", p: "Nghiêm cấm hack/cheat, quảng cáo server khác, lừa đảo giao dịch và ngôn từ thù ghét. Vi phạm có thể bị mute, tạm khóa hoặc cấm vĩnh viễn tùy mức độ, không hoàn lại vật phẩm đã mua." },
+        { h: "4. Dữ liệu cá nhân", p: "Lyra chỉ lưu email, IGN và lịch sử giao dịch để vận hành dịch vụ. Chúng tôi không bán dữ liệu cho bên thứ ba. Bạn có thể yêu cầu xóa tài khoản và dữ liệu qua Discord hỗ trợ." },
+        { h: "5. Thanh toán", p: "Thanh toán được xử lý qua các cổng trung gian (Momo, chuyển khoản ngân hàng, thẻ quốc tế). Lyra không lưu số thẻ hay thông tin thanh toán nhạy cảm trên máy chủ của mình." },
+        { h: "6. Miễn trừ", p: "Lyra là máy chủ cộng đồng, không liên kết với Mojang hay Microsoft. Dịch vụ có thể gián đoạn để bảo trì; chúng tôi sẽ thông báo trước trên Discord và Forums khi có thể." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

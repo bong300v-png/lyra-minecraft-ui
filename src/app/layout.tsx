@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import "./complex-theme.css";
 
 export const metadata: Metadata = {
-  title: "Lyra — Survival Towny",
+  title: "Lyra — Survival Towny giữa thiên hà",
   description:
-    "Lyra Survival Towny · Lobby · Shop · Java + Bedrock · non-P2W",
-  themeColor: "#000000",
-  icons: {
-    icon: "/seo/favicon.svg",
-  },
+    "Lyra · Server Minecraft Survival Towny Việt Nam — không reset lén, không P2W. play.lyra.host",
+  icons: { icon: "/images/lyra-logo-transparent.svg" },
   openGraph: {
     title: "Lyra",
-    description: "Lobby → Towny land → shop · Java + Bedrock",
+    description: "Survival Towny · non-P2W · play.lyra.host",
     siteName: "Lyra",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#06080f",
 };
 
 export default function RootLayout({
@@ -32,15 +32,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body style={{ margin: 0, background: "#000" }}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

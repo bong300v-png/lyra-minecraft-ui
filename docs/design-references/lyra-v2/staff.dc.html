@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4; }
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Vote.dc.html">VOTE</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+    </div>
+  </nav>
+  <main style="flex: 1; max-width: 1080px; margin: 0 auto; padding: 40px 48px 100px; width: 100%; box-sizing: border-box;">
+    <div style="text-align: center; margin-bottom: 46px;">
+      <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">ĐỘI NGŨ</div>
+      <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(32px, 5vw, 48px); margin: 0 0 12px;">Những người giữ thiên hà</h1>
+      <p style="font-size: 15px; color: #9aa3b5; max-width: 480px; margin: 0 auto; line-height: 1.6;">Cần hỗ trợ? Ping staff trong game bằng /helpop hoặc mở ticket trên Discord.</p>
+    </div>
+    <sc-for list="{{ tiers }}" as="tier" hint-placeholder-count="3">
+      <div style="margin-bottom: 40px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+          <span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .18em; color: {{ tier.color }};">{{ tier.label }}</span>
+          <span style="flex: 1; height: 1px; background: #1a1a22;"></span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px;">
+          <sc-for list="{{ tier.members }}" as="p" hint-placeholder-count="3">
+            <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid #23232b; border-radius: 18px; padding: 24px; text-align: center; transition: border-color .3s ease;" style-hover="border-color: rgba(139,92,246,.5);">
+              <img src="{{ p.avatar }}" alt="{{ p.name }}" style="width: 72px; height: 72px; image-rendering: pixelated; border-radius: 14px; margin-bottom: 14px; background: #10101a;">
+              <div style="font-weight: 700; font-size: 15.5px;">{{ p.name }}</div>
+              <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .16em; color: {{ tier.color }}; margin-top: 5px;">{{ p.role }}</div>
+              <div style="font-size: 12.5px; color: #626b7a; margin-top: 9px; line-height: 1.5;">{{ p.area }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+    <div style="background: rgba(139,92,246,.08); border: 1px solid rgba(139,92,246,.35); border-radius: 18px; padding: 26px 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 260px;">
+        <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 17px; margin-bottom: 6px;">Muốn gia nhập đội ngũ?</div>
+        <div style="font-size: 13.5px; color: #9aa3b5; line-height: 1.6;">Tuyển Helper mỗi quý. Yêu cầu: 16+, hoạt động 10h/tuần, không tiền án ban.</div>
+      </div>
+      <a href="Lyra Forums.dc.html" style="background: #8B5CF6; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .1em; padding: 13px 26px; border-radius: 12px;" style-hover="filter: brightness(1.12);">ỨNG TUYỂN →</a>
+    </div>
+  </main>
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 22px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em; flex-wrap: wrap;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK</span>
+    <a href="Lyra Rules.dc.html" style="color: #626b7a;">NỘI QUY</a>
+    <a href="Lyra Bans.dc.html" style="color: #626b7a;">BẢNG BAN</a>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const av = n => `https://minotar.net/helm/${n}/72.png`;
+    return {
+      tiers: [
+        { label: "QUẢN TRỊ", color: "#f87171", members: [
+          { name: "bong300v", role: "OWNER", area: "Vận hành network, store, hạ tầng", avatar: av("MHF_Steve") },
+          { name: "Astra_", role: "ADMIN", area: "Kỹ thuật, plugin, chống cheat", avatar: av("MHF_Alex") }
+        ]},
+        { label: "ĐIỀU HÀNH", color: "#8B5CF6", members: [
+          { name: "NovaMod", role: "SR. MOD", area: "Vanilla · xử lý report", avatar: av("MHF_Steve") },
+          { name: "pixelquynh", role: "MOD", area: "Pixelmon · event gym", avatar: av("MHF_Alex") },
+          { name: "Kai_zx", role: "MOD", area: "Cobblemon · Discord", avatar: av("MHF_Steve") }
+        ]},
+        { label: "HỖ TRỢ", color: "#4ade80", members: [
+          { name: "mille_", role: "HELPER", area: "Chat, người chơi mới", avatar: av("MHF_Alex") },
+          { name: "Tofu2k", role: "HELPER", area: "Forums, wiki", avatar: av("MHF_Steve") },
+          { name: "starlinh", role: "BUILDER", area: "Map spawn, hub thiên hà", avatar: av("MHF_Alex") }
+        ]}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

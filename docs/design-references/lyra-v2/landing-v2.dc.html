@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4; overflow-x: hidden; }
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-22px) rotate(4deg); } }
+@keyframes floaty2 { 0%,100% { transform: translateY(0) rotate(6deg); } 50% { transform: translateY(-34px) rotate(-5deg); } }
+@keyframes glowpulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes drift { 0% { background-position: 0 0; } 100% { background-position: -1200px 600px; } }
+.reveal { opacity: 0; transform: translateY(46px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.on { opacity: 1; transform: translateY(0); }
+@keyframes orbitspin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.orbit-wrap { isolation: isolate; }
+.orbit-ring { position: absolute; inset: -18px; border: 1px dashed rgba(139,92,246,.45); border-radius: 50%; animation: orbitspin 12s linear infinite; transition: inset .4s ease, border-color .4s ease; z-index: -1; }
+.orbit-moon { position: absolute; inset: -18px; border-radius: 50%; animation: orbitspin 12s linear infinite; z-index: 1; pointer-events: none; }
+.orbit-moon::before { content: ''; position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; background: #8B5CF6; border-radius: 50%; box-shadow: 0 0 12px #8B5CF6; }
+.orbit-wrap:hover .orbit-ring, .orbit-wrap:hover .orbit-moon { animation-duration: 2.4s; }
+.orbit-wrap:hover .orbit-ring { inset: -24px; border-color: rgba(139,92,246,.9); }
+.orbit-wrap:hover .orbit-icon { transform: translateZ(40px) translateY(-10px) scale(1.08) rotate(-4deg); filter: drop-shadow(0 0 34px rgba(139,92,246,.75)); }
+@keyframes warpout { 0% { transform: scale(1) rotate(0); opacity: 1; } 55% { transform: scale(.05) rotate(540deg); opacity: .2; } 62% { transform: scale(1.35) rotate(720deg); opacity: 1; } 100% { transform: scale(1) rotate(720deg); opacity: 1; } }
+.warping { animation: warpout 1s cubic-bezier(.5,0,.2,1); }
+@keyframes sparkfly { from { transform: translate(0,0) scale(1) rotate(45deg); opacity: 1; } to { transform: translate(var(--dx), var(--dy)) scale(0) rotate(45deg); opacity: 0; } }
+.spark { position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; background: #E6EBF4; box-shadow: 0 0 10px #8B5CF6; animation: sparkfly .8s ease-out forwards; pointer-events: none; z-index: 3; }
+</style>
+</helmet>
+<div style="position: relative;">
+  <canvas id="stars" width="1600" height="900" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
+  <div style="position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(139,92,246,.16), transparent 65%);"></div>
+
+  <!-- NAV -->
+  <nav style="position: relative; z-index: 5; display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </div>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="#modes">CHẾ ĐỘ</a>
+      <a href="Lyra Play.dc.html">HƯỚNG DẪN</a>
+      <a href="Lyra Vote.dc.html">VOTE</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+      <a href="Lyra Login.dc.html">ĐĂNG NHẬP</a>
+      <a href="#join" style="background: #8B5CF6; color: #fff; padding: 9px 20px; border-radius: 999px; font-weight: 700;">CHƠI NGAY</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 70px 48px 120px; text-align: center; perspective: 900px;">
+    <img data-depth="30" src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_164044_5bb1c1d9-63a5-4c82-9fe4-efaa9b12fbda.svg" alt="" style="position: absolute; left: 6%; top: 90px; width: 96px; border-radius: 22px; animation: floaty 7s ease-in-out infinite; filter: drop-shadow(0 0 24px rgba(139,92,246,.5)); will-change: transform;">
+    <img data-depth="55" src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_164047_f77db895-7e8d-4df2-b59f-a8a48ce2f7c9.svg" alt="" style="position: absolute; right: 8%; top: 60px; width: 76px; border-radius: 18px; animation: floaty2 9s ease-in-out infinite; filter: drop-shadow(0 0 20px rgba(139,92,246,.45)); will-change: transform;">
+    <img data-depth="42" src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_164050_74ddefae-615b-4fb1-8f79-13e11301ec3d.svg" alt="" style="position: absolute; right: 16%; bottom: 40px; width: 84px; border-radius: 20px; animation: floaty 8s ease-in-out infinite 1s; filter: drop-shadow(0 0 22px rgba(230,235,244,.35)); will-change: transform;">
+    <div data-depth="18" style="display: inline-block; will-change: transform;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra mark" style="width: 168px; height: 168px; border-radius: 32px; box-shadow: 0 0 80px rgba(139,92,246,.35); animation: glowpulse 4s ease-in-out infinite;">
+    </div>
+    <h1 data-depth="10" style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(56px, 9vw, 118px); margin: 28px 0 10px; letter-spacing: -0.02em; background: linear-gradient(180deg, #ffffff 20%, #E6EBF4 45%, #8B5CF6 130%); -webkit-background-clip: text; background-clip: text; color: transparent; will-change: transform;">LYRA</h1>
+    <p style="font-size: 17px; color: #9aa3b5; max-width: 520px; margin: 0 auto 34px; line-height: 1.6;">Mạng máy chủ Minecraft giữa thiên hà. Đi dạo qua các vì sao, chọn thế giới của bạn và nhảy vào chơi.</p>
+    <div id="join" style="display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;">
+      <button onClick="{{ copyIp }}" style="display: flex; align-items: center; gap: 10px; background: rgba(230,235,244,.06); border: 1px solid rgba(139,92,246,.5); color: #E6EBF4; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: .12em; padding: 15px 28px; border-radius: 14px; cursor: pointer; backdrop-filter: blur(8px);" style-hover="background: rgba(139,92,246,.18); border-color: #8B5CF6;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
+        {{ ipLabel }}
+      </button>
+      <a href="#modes" style="background: #8B5CF6; color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .1em; padding: 16px 32px; border-radius: 14px; box-shadow: 0 8px 40px rgba(139,92,246,.45);" style-hover="filter: brightness(1.12);">BẮT ĐẦU CHƠI ▶</a>
+    </div>
+    <div style="margin-top: 18px; font-size: 12px; color: #626b7a; letter-spacing: .14em;">{{ playersLabel }}</div>
+  </header>
+
+  <!-- MODES -->
+  <section id="modes" class="reveal" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 40px 48px 90px;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">CHỌN THẾ GIỚI</div>
+      <h2 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 34px; margin: 0;">Ba hành tinh, một thiên hà</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div class="tilt" style="background: linear-gradient(180deg, rgba(16,16,22,.9), rgba(11,15,26,.9)); border: 1px solid #23232b; border-radius: 22px; padding: 34px 28px; text-align: center; position: relative; overflow: hidden; transform-style: preserve-3d; transition: transform .18s ease, border-color .3s ease; will-change: transform;" style-hover="border-color: rgba(139,92,246,.6);">
+          <div style="position: absolute; inset: auto 0 0 0; height: 60%; background: radial-gradient(ellipse at center bottom, rgba(139,92,246,.22), transparent 70%); pointer-events: none;"></div>
+          <span class="orbit-wrap" style="position: relative; display: inline-block; margin-bottom: 18px;"><span class="orbit-ring"></span><span class="orbit-moon"></span><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_164044_5bb1c1d9-63a5-4c82-9fe4-efaa9b12fbda.svg" alt="Vanilla" class="orbit-icon" style="width: 104px; height: 104px; object-fit: contain; border-radius: 24px; filter: drop-shadow(0 10px 30px rgba(0,0,0,.6)); transform: translateZ(40px); transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor: pointer;"></span>
+          <h3 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 8px;">Vanilla</h3>
+          <p style="font-size: 13.5px; color: #9aa3b5; line-height: 1.55; margin: 0 0 20px; min-height: 42px;">Sinh tồn thuần chất, kinh tế người chơi, land claim.</p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; color: #4ade80; font-weight: 700; letter-spacing: .1em; margin-bottom: 16px;">● 1.204 NGƯỜI ONLINE</div>
+          <a href="#join" style="display: inline-block; background: rgba(230,235,244,.08); border: 1px solid rgba(230,235,244,.16); padding: 10px 26px; border-radius: 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em;" style-hover="background: #8B5CF6; border-color: #8B5CF6; color: #fff;">VÀO CHƠI</a>
+        </div>
+        <div class="tilt" style="background: linear-gradient(180deg, rgba(16,16,22,.9), rgba(11,15,26,.9)); border: 1px solid #23232b; border-radius: 22px; padding: 34px 28px; text-align: center; position: relative; overflow: hidden; transform-style: preserve-3d; transition: transform .18s ease, border-color .3s ease; will-change: transform;" style-hover="border-color: rgba(139,92,246,.6);">
+          <div style="position: absolute; inset: auto 0 0 0; height: 60%; background: radial-gradient(ellipse at center bottom, rgba(139,92,246,.22), transparent 70%); pointer-events: none;"></div>
+          <span class="orbit-wrap" style="position: relative; display: inline-block; margin-bottom: 18px;"><span class="orbit-ring"></span><span class="orbit-moon"></span><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_164047_f77db895-7e8d-4df2-b59f-a8a48ce2f7c9.svg" alt="Pixelmon" class="orbit-icon" style="width: 104px; height: 104px; object-fit: contain; border-radius: 24px; filter: drop-shadow(0 10px 30px rgba(0,0,0,.6)); transform: translateZ(40px); transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor: pointer;"></span>
+          <h3 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 8px;">Pixelmon</h3>
+          <p style="font-size: 13.5px; color: #9aa3b5; line-height: 1.55; margin: 0 0 20px; min-height: 42px;">Bắt, luyện và đấu Pokémon ngay trong Minecraft.</p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; color: #4ade80; font-weight: 700; letter-spacing: .1em; margin-bottom: 16px;">● 986 NGƯỜI ONLINE</div>
+          <a href="#join" style="display: inline-block; background: rgba(230,235,244,.08); border: 1px solid rgba(230,235,244,.16); padding: 10px 26px; border-radius: 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em;" style-hover="background: #8B5CF6; border-color: #8B5CF6; color: #fff;">VÀO CHƠI</a>
+        </div>
+        <div class="tilt" style="background: linear-gradient(180deg, rgba(16,16,22,.9), rgba(11,15,26,.9)); border: 1px solid #23232b; border-radius: 22px; padding: 34px 28px; text-align: center; position: relative; overflow: hidden; transform-style: preserve-3d; transition: transform .18s ease, border-color .3s ease; will-change: transform;" style-hover="border-color: rgba(139,92,246,.6);">
+          <div style="position: absolute; inset: auto 0 0 0; height: 60%; background: radial-gradient(ellipse at center bottom, rgba(139,92,246,.22), transparent 70%); pointer-events: none;"></div>
+          <span class="orbit-wrap" style="position: relative; display: inline-block; margin-bottom: 18px;"><span class="orbit-ring"></span><span class="orbit-moon"></span><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_164050_74ddefae-615b-4fb1-8f79-13e11301ec3d.svg" alt="Cobblemon" class="orbit-icon" style="width: 104px; height: 104px; object-fit: contain; border-radius: 24px; filter: drop-shadow(0 10px 30px rgba(0,0,0,.6)); transform: translateZ(40px); transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor: pointer;"></span>
+          <h3 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 8px;">Cobblemon</h3>
+          <p style="font-size: 13.5px; color: #9aa3b5; line-height: 1.55; margin: 0 0 20px; min-height: 42px;">Thế giới Cobblemon mới với mod nhẹ, vibe chill.</p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; color: #4ade80; font-weight: 700; letter-spacing: .1em; margin-bottom: 16px;">● 657 NGƯỜI ONLINE</div>
+          <a href="#join" style="display: inline-block; background: rgba(230,235,244,.08); border: 1px solid rgba(230,235,244,.16); padding: 10px 26px; border-radius: 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em;" style-hover="background: #8B5CF6; border-color: #8B5CF6; color: #fff;">VÀO CHƠI</a>
+        </div>
+    </div>
+  </section>
+
+  <!-- GALAXY STRIP -->
+  <section id="galaxy" class="reveal" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 30px 48px 100px;">
+    <div style="background: linear-gradient(120deg, rgba(139,92,246,.14), rgba(11,15,26,.7) 55%); border: 1px solid rgba(139,92,246,.3); border-radius: 26px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; overflow: hidden; position: relative;">
+      <div data-depth="14" style="will-change: transform;">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Chòm sao Lyra" style="width: 100%; max-width: 420px; border-radius: 24px; box-shadow: 0 30px 80px rgba(0,0,0,.5);">
+      </div>
+      <div>
+        <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 12px;">CHÒM SAO LYRA</div>
+        <h2 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 30px; margin: 0 0 16px; line-height: 1.25;">Mỗi node là một thế giới, sao Vega là nhà của bạn</h2>
+        <p style="font-size: 15px; color: #9aa3b5; line-height: 1.7; margin: 0 0 26px;">Logo của Lyra là bản đồ sao thật của chòm Lyra — 5 node nối một nét, sao Vega tím rực phía đuôi. Đi dạo qua thiên hà, ghé từng hành tinh, xây thứ bạn muốn.</p>
+        <div style="display: flex; gap: 26px;">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+            <div>
+              <div style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 26px; color: #E6EBF4;">{{ s.v }}</div>
+              <div style="font-size: 11px; color: #626b7a; letter-spacing: .16em; margin-top: 4px;">{{ s.k }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal" style="position: relative; z-index: 2; text-align: center; padding: 20px 48px 110px;">
+    <h2 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(30px, 5vw, 52px); margin: 0 0 26px; background: linear-gradient(180deg, #fff, #8B5CF6 160%); -webkit-background-clip: text; background-clip: text; color: transparent;">Sẵn sàng cất cánh?</h2>
+    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+      <button onClick="{{ copyIp }}" style="background: #8B5CF6; color: #fff; border: none; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: .1em; padding: 16px 34px; border-radius: 14px; cursor: pointer; box-shadow: 0 8px 40px rgba(139,92,246,.45);" style-hover="filter: brightness(1.12);">COPY IP · PLAY.LYRA.HOST</button>
+      <a href="#" style="background: #5865F2; color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .1em; padding: 16px 34px; border-radius: 14px; display: inline-block;" style-hover="filter: brightness(1.1);">DISCORD</a>
+    </div>
+  </section>
+
+  <footer style="position: relative; z-index: 2; border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 14px; max-width: 1280px; margin: 0 auto; font-size: 12px; color: #626b7a; letter-spacing: .08em;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK · PLAY.LYRA.HOST</span>
+    <a href="Lyra Rules.dc.html" style="color: #626b7a;">NỘI QUY</a>
+    <a href="Lyra News.dc.html" style="color: #626b7a;">TIN TỨC</a>
+    <a href="Lyra Staff.dc.html" style="color: #626b7a;">ĐỘI NGŨ</a>
+    <a href="Lyra Bans.dc.html" style="color: #626b7a;">BẢNG BAN</a>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN &amp; BẢO MẬT</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { copied: false, online: 2847 };
+  renderVals() {
+    return {
+      ipLabel: this.state.copied ? "ĐÃ COPY ✓" : "PLAY.LYRA.HOST",
+      playersLabel: "● LIVE · " + this.state.online.toLocaleString("vi-VN") + " NGƯỜI ĐANG ONLINE TRÊN TOÀN THIÊN HÀ",
+      copyIp: () => {
+        navigator.clipboard && navigator.clipboard.writeText("play.lyra.host");
+        this.setState({ copied: true });
+        clearTimeout(this._t); this._t = setTimeout(() => this.setState({ copied: false }), 1800);
+      },
+      stats: [
+        { v: "3", k: "THẾ GIỚI" },
+        { v: "2.8K+", k: "NGƯỜI CHƠI" },
+        { v: "99.9%", k: "UPTIME" }
+      ]
+    };
+  }
+  componentDidMount() {
+    this._live = setInterval(() => this.setState(s => ({ online: Math.max(2500, s.online + Math.round((Math.random() - 0.45) * 14)) })), 3500);
+    const cv = document.getElementById("stars");
+    const ctx = cv.getContext("2d");
+    const fit = () => { cv.width = innerWidth; cv.height = innerHeight; };
+    fit(); addEventListener("resize", fit);
+    const stars = Array.from({ length: 180 }, () => ({
+      x: Math.random(), y: Math.random(), z: Math.random() * 0.8 + 0.2,
+      tw: Math.random() * Math.PI * 2
+    }));
+    let mx = 0, my = 0, tx = 0, ty = 0, scrollY0 = 0;
+    const loop = (t) => {
+      tx += (mx - tx) * 0.05; ty += (my - ty) * 0.05;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      for (const s of stars) {
+        const px = (s.x * cv.width + tx * 40 * s.z + cv.width) % cv.width;
+        const py = (s.y * cv.height + ty * 40 * s.z - scrollY0 * 0.15 * s.z % cv.height + cv.height) % cv.height;
+        const a = 0.25 + 0.75 * Math.abs(Math.sin(t / 1400 + s.tw));
+        ctx.fillStyle = s.z > 0.75 ? `rgba(139,92,246,${a})` : `rgba(230,235,244,${a * s.z})`;
+        const r = s.z * 1.8;
+        ctx.fillRect(px, py, r, r);
+      }
+      this._raf = requestAnimationFrame(loop);
+    };
+    this._raf = requestAnimationFrame(loop);
+    const onMove = (x, y) => {
+      mx = (x / innerWidth - 0.5) * 2; my = (y / innerHeight - 0.5) * 2;
+      document.querySelectorAll("[data-depth]").forEach(el => {
+        const d = +el.dataset.depth;
+        el.style.translate = `${(-mx * d).toFixed(1)}px ${(-my * d * 0.6).toFixed(1)}px`;
+      });
+    };
+    this._mm = e => onMove(e.clientX, e.clientY);
+    this._tm = e => e.touches[0] && onMove(e.touches[0].clientX, e.touches[0].clientY);
+    addEventListener("mousemove", this._mm, { passive: true });
+    addEventListener("touchmove", this._tm, { passive: true });
+    this._sc = () => { scrollY0 = scrollY; };
+    addEventListener("scroll", this._sc, { passive: true });
+    this._io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("on")), { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach(el => this._io.observe(el));
+    document.querySelectorAll(".orbit-wrap").forEach(w => {
+      w.addEventListener("click", () => {
+        const icon = w.querySelector(".orbit-icon");
+        if (!icon || icon.classList.contains("warping")) return;
+        icon.classList.add("warping");
+        setTimeout(() => icon.classList.remove("warping"), 1050);
+        for (let i = 0; i < 12; i++) {
+          const s = document.createElement("span");
+          s.className = "spark";
+          const a = (i / 12) * Math.PI * 2, d = 70 + Math.random() * 50;
+          s.style.setProperty("--dx", Math.cos(a) * d + "px");
+          s.style.setProperty("--dy", Math.sin(a) * d + "px");
+          w.appendChild(s);
+          setTimeout(() => s.remove(), 850);
+        }
+      });
+    });
+    document.querySelectorAll(".tilt").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const r = card.getBoundingClientRect();
+        const rx = ((e.clientY - r.top) / r.height - 0.5) * -14;
+        const ry = ((e.clientX - r.left) / r.width - 0.5) * 14;
+        card.style.transform = `perspective(700px) rotateX(${rx.toFixed(1)}deg) rotateY(${ry.toFixed(1)}deg) translateZ(6px)`;
+      });
+      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+    });
+  }
+  componentWillUnmount() {
+    clearInterval(this._live);
+    cancelAnimationFrame(this._raf);
+    removeEventListener("mousemove", this._mm);
+    removeEventListener("touchmove", this._tm);
+    removeEventListener("scroll", this._sc);
+    this._io && this._io.disconnect();
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4;
+  background-image: radial-gradient(1.5px 1.5px at 16% 18%, rgba(230,235,244,.7), transparent), radial-gradient(1px 1px at 72% 10%, rgba(139,92,246,.8), transparent), radial-gradient(1.5px 1.5px at 88% 52%, rgba(230,235,244,.5), transparent), radial-gradient(1px 1px at 30% 80%, rgba(230,235,244,.6), transparent);
+}
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+      <a href="Lyra Login.dc.html">ĐĂNG NHẬP</a>
+    </div>
+  </nav>
+  <main style="flex: 1; max-width: 1080px; margin: 0 auto; padding: 40px 48px 100px; width: 100%; box-sizing: border-box;">
+    <div style="text-align: center;">
+      <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">HƯỚNG DẪN VÀO CHƠI</div>
+      <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(32px, 5vw, 48px); margin: 0 0 12px; background: linear-gradient(180deg, #fff, #8B5CF6 160%); -webkit-background-clip: text; background-clip: text; color: transparent;">Vào thiên hà trong 60 giây</h1>
+      <p style="font-size: 15px; color: #9aa3b5; max-width: 460px; margin: 0 auto 50px; line-height: 1.6;">Java Edition 1.20+ · Bedrock hỗ trợ qua Geyser. Không cần mod cho Vanilla.</p>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
+      <sc-for list="{{ modeTabs }}" as="mt" hint-placeholder-count="3">
+        <button onClick="{{ mt.pick }}" style="border: none; background: {{ mt.bg }}; color: {{ mt.fg }}; border-radius: 999px; padding: 10px 26px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; cursor: pointer; transition: background .25s ease;">{{ mt.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 60px;">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid #23232b; border-radius: 20px; padding: 30px 26px;">
+          <div style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 34px; color: #8B5CF6; margin-bottom: 14px;">{{ s.n }}</div>
+          <div style="font-weight: 700; font-size: 17px; margin-bottom: 8px;">{{ s.t }}</div>
+          <div style="font-size: 13.5px; color: #9aa3b5; line-height: 1.6;">{{ s.d }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="background: rgba(139,92,246,.08); border: 1px solid rgba(139,92,246,.35); border-radius: 18px; padding: 22px 28px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 60px;">
+      <span style="font-size: 13px; color: #9aa3b5; letter-spacing: .1em;">ĐỊA CHỈ SERVER</span>
+      <code style="font-size: 18px; font-weight: 700; letter-spacing: .06em; color: #E6EBF4;">play.lyra.host</code>
+      <button onClick="{{ copyIp }}" style="margin-left: auto; background: #8B5CF6; color: #fff; border: none; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; padding: 11px 24px; border-radius: 10px; cursor: pointer;" style-hover="filter: brightness(1.12);">{{ copyLabel }}</button>
+    </div>
+    <h2 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 24px; margin: 0 0 22px;">Câu hỏi thường gặp</h2>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="background: rgba(16,16,22,.92); border: 1px solid #23232b; border-radius: 14px; padding: 18px 22px;">
+          <div style="font-weight: 700; font-size: 14.5px; margin-bottom: 6px; color: #E6EBF4;">{{ f.q }}</div>
+          <div style="font-size: 13.5px; color: #9aa3b5; line-height: 1.6;">{{ f.a }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 14px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK · PLAY.LYRA.HOST</span>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN &amp; BẢO MẬT</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { copied: false, mode: "Vanilla" };
+  renderVals() {
+    return {
+      copyLabel: this.state.copied ? "ĐÃ COPY ✓" : "COPY IP",
+      copyIp: () => {
+        navigator.clipboard && navigator.clipboard.writeText("play.lyra.host");
+        this.setState({ copied: true });
+        clearTimeout(this._t); this._t = setTimeout(() => this.setState({ copied: false }), 1800);
+      },
+      modeTabs: ["Vanilla", "Pixelmon", "Cobblemon"].map(name => ({
+        name,
+        bg: this.state.mode === name ? "#8B5CF6" : "rgba(230,235,244,.05)",
+        fg: this.state.mode === name ? "#fff" : "#9aa3b5",
+        pick: () => this.setState({ mode: name })
+      })),
+      steps: ({
+        Vanilla: [
+          { n: "01", t: "Mở Minecraft", d: "Java Edition 1.20 trở lên, không cần mod. Bedrock vào qua cổng 19132." },
+          { n: "02", t: "Thêm server", d: "Multiplayer → Add Server → dán địa chỉ play.lyra.host rồi Done." },
+          { n: "03", t: "Bệ Vanilla", d: "Vào lobby, bước lên bệ dịch chuyển xanh lá. /kit starter để nhận đồ." }
+        ],
+        Pixelmon: [
+          { n: "01", t: "Cài modpack", d: "Mở CurseForge launcher, tìm \"Pixelmon 1.20.2\" và bấm Install — một cú click." },
+          { n: "02", t: "Thêm server", d: "Chạy profile Pixelmon → Multiplayer → play.lyra.host." },
+          { n: "03", t: "Chọn starter", d: "Vào bệ đỏ ở lobby, chọn Pokémon khởi đầu và bắt đầu hành trình gym." }
+        ],
+        Cobblemon: [
+          { n: "01", t: "Cài modpack", d: "CurseForge launcher → tìm \"Cobblemon Official\" bản 1.20.1 → Install." },
+          { n: "02", t: "Thêm server", d: "Chạy profile Cobblemon → Multiplayer → play.lyra.host." },
+          { n: "03", t: "Bệ Cobblemon", d: "Bước lên bệ hồng ở lobby. Spawn có chợ trade và khu PokéCenter." }
+        ]
+      })[this.state.mode],
+      faqs: [
+        { q: "Chơi Pixelmon có cần cài mod không?", a: "Có — cần modpack Pixelmon bản 1.20.2. Tải một cú qua launcher CurseForge, hướng dẫn chi tiết trong Discord." },
+        { q: "Bedrock / MCPE vào được không?", a: "Được. Dùng địa chỉ play.lyra.host cổng 19132. Một số cosmetic chỉ hiển thị đầy đủ trên Java." },
+        { q: "Rank mua trên Store áp dụng ở đâu?", a: "Toàn bộ ba thế giới. Mua một lần, giữ vĩnh viễn, kích hoạt tự động trong 60 giây." },
+        { q: "Server đặt ở đâu, ping bao nhiêu?", a: "Node chính tại Singapore — ping trung bình 30–50ms từ Việt Nam." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

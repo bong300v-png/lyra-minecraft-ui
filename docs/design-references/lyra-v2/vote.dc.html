@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4;
+  background-image: radial-gradient(1.5px 1.5px at 12% 22%, rgba(230,235,244,.7), transparent), radial-gradient(1px 1px at 68% 12%, rgba(139,92,246,.8), transparent), radial-gradient(1.5px 1.5px at 84% 58%, rgba(230,235,244,.5), transparent);
+}
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+      <a href="Lyra Login.dc.html" style="background: #8B5CF6; color: #fff; padding: 9px 20px; border-radius: 999px; font-weight: 700;">ĐĂNG NHẬP</a>
+    </div>
+  </nav>
+  <main style="flex: 1; max-width: 1080px; margin: 0 auto; padding: 40px 48px 100px; width: 100%; box-sizing: border-box;">
+    <div style="text-align: center;">
+      <div style="font-size: 12px; color: #8B5CF6; font-weight: 700; letter-spacing: .3em; margin-bottom: 10px;">VOTE MỖI NGÀY</div>
+      <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(32px, 5vw, 48px); margin: 0 0 12px; background: linear-gradient(180deg, #fff, #8B5CF6 160%); -webkit-background-clip: text; background-clip: text; color: transparent;">Vote cho Lyra, nhận quà liền tay</h1>
+      <p style="font-size: 15px; color: #9aa3b5; max-width: 500px; margin: 0 auto 44px; line-height: 1.6;">Mỗi vote = 1 Vote Key + 500 Xu. Vote đủ 5 site mỗi ngày nhận thêm Star Crate. Chuỗi 7 ngày liên tục nhận Vega Crate hiếm.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; color: #9aa3b5; letter-spacing: .2em; font-weight: 700; margin-bottom: 4px;">SITE VOTE — {{ votedCount }}/5 HÔM NAY</div>
+        <sc-for list="{{ sites }}" as="v" hint-placeholder-count="5">
+          <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid {{ v.border }}; border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.3); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #8B5CF6;">{{ v.n }}</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 700; font-size: 14.5px;">{{ v.name }}</div>
+              <div style="font-size: 11.5px; color: #626b7a;">Mỗi 24 giờ · +1 Vote Key</div>
+            </div>
+            <button onClick="{{ v.vote }}" style="border: none; background: {{ v.btnBg }}; color: {{ v.btnFg }}; border-radius: 10px; padding: 10px 22px; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; cursor: pointer; transition: all .25s ease;">{{ v.label }}</button>
+          </div>
+        </sc-for>
+        <div style="background: rgba(139,92,246,.08); border: 1px solid rgba(139,92,246,.35); border-radius: 14px; padding: 14px 18px; font-size: 12.5px; color: #9aa3b5; line-height: 1.6;">✦ Nhập đúng IGN khi vote — phần thưởng rơi thẳng vào kho đồ trong game sau ~1 phút.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid #23232b; border-radius: 18px; padding: 24px 26px;">
+          <div style="font-size: 11px; color: #f0c96b; font-weight: 700; letter-spacing: .24em; margin-bottom: 16px;">🏆 TOP VOTER THÁNG 7</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <sc-for list="{{ topVoters }}" as="t" hint-placeholder-count="5">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 14px; color: {{ t.color }}; width: 28px;">{{ t.rank }}</span>
+                <span style="flex: 1; font-size: 14px; font-weight: 500;">{{ t.name }}</span>
+                <span style="font-size: 12.5px; color: #9aa3b5;">{{ t.votes }} vote</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background: linear-gradient(180deg, rgba(16,16,22,.92), rgba(11,15,26,.92)); border: 1px solid #23232b; border-radius: 18px; padding: 24px 26px;">
+          <div style="font-size: 11px; color: #8B5CF6; font-weight: 700; letter-spacing: .24em; margin-bottom: 14px;">GIẢI THƯỞNG CUỐI THÁNG</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; color: #b9c1d1;">
+            <div><span style="color: #f0c96b; font-weight: 700;">Top 1</span> — Rank NOVA 30 ngày + 50K Xu</div>
+            <div><span style="color: #c0c8d8; font-weight: 700;">Top 2–3</span> — 5 Vega Crate + 25K Xu</div>
+            <div><span style="color: #a08556; font-weight: 700;">Top 4–10</span> — 3 Star Crate + 10K Xu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 22px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em; flex-wrap: wrap;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK</span>
+    <a href="Lyra Rules.dc.html" style="color: #626b7a;">NỘI QUY</a>
+    <a href="Lyra News.dc.html" style="color: #626b7a;">TIN TỨC</a>
+    <a href="Lyra Staff.dc.html" style="color: #626b7a;">ĐỘI NGŨ</a>
+    <a href="Lyra Bans.dc.html" style="color: #626b7a;">BẢNG BAN</a>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN &amp; BẢO MẬT</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { voted: {} };
+  renderVals() {
+    const names = ["MinecraftMP", "Planet Minecraft", "TopG", "Minecraft-Server.net", "MCVoting"];
+    const votedCount = Object.values(this.state.voted).filter(Boolean).length;
+    return {
+      votedCount,
+      sites: names.map((name, i) => {
+        const done = !!this.state.voted[name];
+        return {
+          name, n: String(i + 1).padStart(2, "0"),
+          border: done ? "rgba(74,222,128,.5)" : "#23232b",
+          btnBg: done ? "rgba(74,222,128,.15)" : "#8B5CF6",
+          btnFg: done ? "#4ade80" : "#fff",
+          label: done ? "ĐÃ VOTE ✓" : "VOTE ↗",
+          vote: () => this.setState(s => ({ voted: { ...s.voted, [name]: true } }))
+        };
+      }),
+      topVoters: [
+        { rank: "01", name: "MinhKhoi_", votes: 142, color: "#f0c96b" },
+        { rank: "02", name: "byNam", votes: 138, color: "#c0c8d8" },
+        { rank: "03", name: "linhh", votes: 127, color: "#a08556" },
+        { rank: "04", name: "Steve_VN", votes: 115, color: "#626b7a" },
+        { rank: "05", name: "gaubeo204", votes: 98, color: "#626b7a" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -3,25 +3,19 @@
   "version": "0.3.1",
   "private": true,
   "description": "Lyra Minecraft network FE \u2014 hub, play, store, login (static export for Cloudflare Pages)",
-  "author": "JCodesMore",
+  "author": "bong300v-png",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template.git"
+    "url": "https://github.com/bong300v-png/lyra-minecraft-ui.git"
   },
-  "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
-  "bugs": {
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template/issues"
-  },
+  "homepage": "https://lyra.host",
   "keywords": [
-    "claude-code",
-    "website-clone",
-    "reverse-engineering",
+    "minecraft",
+    "lyra",
+    "towny",
     "nextjs",
-    "ai",
-    "template",
-    "tailwindcss",
-    "shadcn-ui"
+    "cloudflare-pages"
   ],
   "engines": {
     "node": ">=24"

@@ -1,117 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+import { PageShell } from "@/components/lyra/PageShell";
+import { AuthCard } from "../login/AuthCard";
 
-import Link from "next/link";
-import { FormEvent, useState } from "react";
-import { ComplexChrome } from "@/components/complex/ComplexChrome";
-import "../play-theme.css";
-import "../login-theme.css";
-import "../store-theme.css";
+export const metadata: Metadata = {
+  title: "Đăng ký — Lyra",
+  description:
+    "Tạo tài khoản Lyra. Tài khoản game tạo trực tiếp trong server bằng /register khi vào play.lyra.host — cổng web sẽ mở sau.",
+};
 
 export default function RegisterPage() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [show, setShow] = useState(false);
-  const [msg, setMsg] = useState("");
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!username.trim() || !email.trim() || !password) {
-      setMsg("Cần tên người dùng, email và mật khẩu.");
-      return;
-    }
-    if (password !== password2) {
-      setMsg("Mật khẩu không khớp.");
-      return;
-    }
-    setMsg("Đăng ký thành công (UI).");
-  }
-
   return (
-    <div className="login-page-root template-register">
-      <ComplexChrome modeLabel="Survival" active="register" />
-
-      <div className="p-body-main login-body">
-        <div className="p-body-header">
-          <div className="p-title">
-            <div className="inline-icon base md mr-md" aria-hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-              </svg>
-            </div>
-            <h1 className="p-title-value">Đăng ký</h1>
-          </div>
-        </div>
-
-        <form className="block login-block" onSubmit={onSubmit}>
-          <div className="block-container">
-            <div className="block-body">
-              <dl className="formRow formRow--input">
-                <dt>
-                  <label className="formRow-label" htmlFor="username">
-                    Tên người dùng
-                  </label>
-                </dt>
-                <dd>
-                  <input id="username" className="input" required maxLength={25} value={username} onChange={(e) => setUsername(e.target.value)} autoFocus />
-                </dd>
-              </dl>
-              <dl className="formRow formRow--input">
-                <dt>
-                  <label className="formRow-label" htmlFor="email">
-                    Email
-                  </label>
-                </dt>
-                <dd>
-                  <input id="email" type="email" className="input" required value={email} onChange={(e) => setEmail(e.target.value)} />
-                </dd>
-              </dl>
-              <dl className="formRow formRow--input">
-                <dt>
-                  <label className="formRow-label" htmlFor="password">
-                    Mật khẩu
-                  </label>
-                </dt>
-                <dd>
-                  <div className="inputGroup inputGroup--joined">
-                    <input id="password" type={show ? "text" : "password"} className="input" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <div className="inputGroup-text">
-                      <button type="button" className="iconic-label" onClick={() => setShow((v) => !v)}>
-                        {show ? "Ẩn" : "Hiện"}
-                      </button>
-                    </div>
-                  </div>
-                </dd>
-              </dl>
-              <dl className="formRow formRow--input">
-                <dt>
-                  <label className="formRow-label" htmlFor="password2">
-                    Xác nhận mật khẩu
-                  </label>
-                </dt>
-                <dd>
-                  <input id="password2" type={show ? "text" : "password"} className="input" required value={password2} onChange={(e) => setPassword2(e.target.value)} />
-                </dd>
-              </dl>
-            </div>
-            {msg ? <p className="login-msg">{msg}</p> : null}
-            <dl className="formRow formSubmitRow">
-              <dt />
-              <dd>
-                <div className="formSubmitRow-controls">
-                  <Link href="/login" className="button">
-                    Đăng nhập
-                  </Link>
-                  <button type="submit" className="button button--primary">
-                    Đăng ký
-                  </button>
-                </div>
-              </dd>
-            </dl>
-          </div>
-        </form>
+    <PageShell>
+      <div
+        style={{
+          minHeight: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "20px 0 40px",
+        }}
+      >
+        <AuthCard initialTab="register" />
       </div>
-    </div>
+    </PageShell>
   );
 }

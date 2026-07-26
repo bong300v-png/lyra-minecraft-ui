@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #06080f; font-family: "Space Grotesk", sans-serif; color: #E6EBF4;
+  background-image: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(139,92,246,.14), transparent 65%), radial-gradient(1.5px 1.5px at 14% 30%, rgba(230,235,244,.7), transparent), radial-gradient(1px 1px at 76% 16%, rgba(139,92,246,.8), transparent), radial-gradient(1.5px 1.5px at 86% 64%, rgba(230,235,244,.5), transparent);
+}
+a { color: #E6EBF4; text-decoration: none; } a:hover { color: #ffffff; }
+input::placeholder { color: #4a5262; }
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <nav style="display: flex; align-items: center; gap: 28px; padding: 22px 48px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <a href="Lyra Landing.dc.html" style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="Lyra" style="width: 40px; height: 40px; border-radius: 10px;">
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: .04em;">LYRA</span>
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .1em;">
+      <a href="Lyra Landing.dc.html">TRANG CHỦ</a>
+      <a href="Lyra Play.dc.html">HƯỚNG DẪN</a>
+      <a href="Lyra Store.dc.html">STORE</a>
+      <a href="Lyra Forums.dc.html">FORUMS</a>
+    </div>
+  </nav>
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px 90px;">
+    <div style="width: 420px; background: linear-gradient(180deg, rgba(16,16,22,.94), rgba(11,15,26,.94)); border: 1px solid rgba(139,92,246,.3); border-radius: 24px; padding: 40px 38px; backdrop-filter: blur(10px);">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 64px; height: 64px; border-radius: 16px; margin-bottom: 14px; box-shadow: 0 0 40px rgba(139,92,246,.35);">
+        <h1 style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 6px;">{{ title }}</h1>
+        <p style="font-size: 13px; color: #9aa3b5; margin: 0;">{{ subtitle }}</p>
+      </div>
+      <div style="display: flex; background: rgba(230,235,244,.06); border-radius: 12px; padding: 4px; margin-bottom: 24px;">
+        <button onClick="{{ showLogin }}" style="flex: 1; border: none; border-radius: 9px; padding: 9px 0; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .08em; cursor: pointer; background: {{ loginTabBg }}; color: {{ loginTabFg }};">ĐĂNG NHẬP</button>
+        <button onClick="{{ showRegister }}" style="flex: 1; border: none; border-radius: 9px; padding: 9px 0; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .08em; cursor: pointer; background: {{ regTabBg }}; color: {{ regTabFg }};">ĐĂNG KÝ</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <input type="text" placeholder="Tên trong game (IGN)" style="background: rgba(230,235,244,.05); border: 1px solid #2a2a34; border-radius: 12px; padding: 13px 16px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #E6EBF4; outline: none;" style-focus="border-color: #8B5CF6;">
+        <sc-if value="{{ isRegister }}" hint-placeholder-val="{{ false }}">
+          <input type="email" placeholder="Email" style="background: rgba(230,235,244,.05); border: 1px solid #2a2a34; border-radius: 12px; padding: 13px 16px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #E6EBF4; outline: none;" style-focus="border-color: #8B5CF6;">
+        </sc-if>
+        <input type="password" placeholder="Mật khẩu" style="background: rgba(230,235,244,.05); border: 1px solid #2a2a34; border-radius: 12px; padding: 13px 16px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #E6EBF4; outline: none;" style-focus="border-color: #8B5CF6;">
+        <button style="background: #8B5CF6; color: #fff; border: none; border-radius: 12px; padding: 14px 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .12em; cursor: pointer; box-shadow: 0 8px 30px rgba(139,92,246,.4); margin-top: 6px;" style-hover="filter: brightness(1.12);">{{ ctaLabel }}</button>
+      </div>
+      <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #626b7a; line-height: 1.7;">Đăng nhập để nhận thưởng vote, quản lý rank<br>và đồng bộ cosmetic trên toàn thiên hà.</div>
+    </div>
+  </main>
+  <footer style="border-top: 1px solid #1a1a22; padding: 26px 48px; display: flex; align-items: center; gap: 14px; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; font-size: 12px; color: #626b7a; letter-spacing: .08em;">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3H1v4G5Zwk3YKkFyyXJImybWvkx/hf_20260726_162659_808c9d52-3962-4abc-99ac-a83f75774d43.svg" alt="" style="width: 24px; height: 24px; border-radius: 6px;">
+    <span>LYRA NETWORK · PLAY.LYRA.HOST</span>
+    <a href="Lyra Terms.dc.html" style="color: #626b7a;">ĐIỀU KHOẢN &amp; BẢO MẬT</a>
+    <span style="margin-left: auto;">© 2026 Lyra</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  state = { tab: "login" };
+  renderVals() {
+    const isReg = this.state.tab === "register";
+    const on = { bg: "#8B5CF6", fg: "#fff" }, off = { bg: "transparent", fg: "#9aa3b5" };
+    return {
+      isRegister: isReg,
+      title: isReg ? "Tạo tài khoản Lyra" : "Chào mừng trở lại",
+      subtitle: isReg ? "Một tài khoản cho cả ba thế giới" : "Đăng nhập bằng tên trong game của bạn",
+      ctaLabel: isReg ? "TẠO TÀI KHOẢN ✦" : "VÀO THIÊN HÀ ✦",
+      loginTabBg: isReg ? off.bg : on.bg, loginTabFg: isReg ? off.fg : on.fg,
+      regTabBg: isReg ? on.bg : off.bg, regTabFg: isReg ? on.fg : off.fg,
+      showLogin: () => this.setState({ tab: "login" }),
+      showRegister: () => this.setState({ tab: "register" })
+    };
+  }
+}
+</script>
+</body>
+</html>
