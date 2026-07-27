@@ -15,9 +15,9 @@ type VoteSite = {
 };
 
 const VOTE_SITES: readonly VoteSite[] = [
-  { n: "01", name: "minecraft-mp.com", lockNote: "Mở khi beta công khai" },
-  { n: "02", name: "minecraftservers.org", lockNote: "Mở khi beta công khai" },
-  { n: "03", name: "minevn.net forum", lockNote: "Mở khi beta công khai" },
+  { n: "01", name: "Site vote #1 — công bố khi mở", lockNote: "Mở khi beta công khai" },
+  { n: "02", name: "Site vote #2 — công bố khi mở", lockNote: "Mở khi beta công khai" },
+  { n: "03", name: "Site vote #3 — công bố khi mở", lockNote: "Mở khi beta công khai" },
 ];
 
 type StreakReward = {
